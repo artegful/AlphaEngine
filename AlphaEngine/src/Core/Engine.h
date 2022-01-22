@@ -19,6 +19,8 @@ namespace Alpha
 
 		void Run();
 		LayerStack& GetLayerStack();
+		Window& GetWindow();
+
 		static Engine* Get();
 
 	private:
@@ -28,8 +30,10 @@ namespace Alpha
 
 		std::chrono::time_point<std::chrono::steady_clock> previousTime;
 		float deltaTime = 0;
+		bool isImGuiEnabled;
 
 		void UpdateDeltaTime();
+		void UpdateImGui();
 		void OnEvent(Event& event);
 	};
 }

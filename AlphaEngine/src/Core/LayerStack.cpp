@@ -4,10 +4,6 @@
 
 namespace Alpha
 {
-    LayerStack::LayerStack() :
-        layerInsertIterator(layers.begin())
-    { }
-
     LayerStack::~LayerStack()
     {
         for (auto layer : layers)
@@ -18,19 +14,20 @@ namespace Alpha
 
     void LayerStack::AddLayer(Layer* layer)
     {
-        layerInsertIterator = layers.emplace(layerInsertIterator, layer);
+        layers.emplace(layers.begin() + insertIndex, layer);
+        insertIndex++;
         layer->Open();
     }
 
     void LayerStack::AddOverlay(Layer* overlay)
     {
-        layers.push_back(overlay);
+        layers.emplace_back(overlay);
         overlay->Open();
     }
 
     void LayerStack::RemoveLayer(Layer* layer)
     {
-        auto result = std::find(layers.begin(), layers.end(), layer);
+        auto result = std::find(layers.begin(), layers.begin() + insertIndex, layer);
 
         if (result != layers.end())
         {
@@ -38,7 +35,7 @@ namespace Alpha
             delete (*result);
 
             layers.erase(result);
-            layerInsertIterator--;
+            insertIndex--;
         }
     }
 
