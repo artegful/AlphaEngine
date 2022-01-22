@@ -10,6 +10,7 @@
 namespace Alpha
 {
 	struct Config;
+	struct Event;
 
 	class Engine
 	{
@@ -29,6 +30,7 @@ namespace Alpha
 		float deltaTime = 0;
 
 		void UpdateDeltaTime();
+		void OnEvent(Event& event);
 	};
 }
 

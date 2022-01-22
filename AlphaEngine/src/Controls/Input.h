@@ -5,6 +5,12 @@
 
 namespace Alpha
 {
+	struct Event;
+	struct KeyPressedEvent;
+	struct KeyReleasedEvent;
+	struct MouseButtonPressedEvent;
+	struct MouseButtonReleasedEvent;
+
 	class Input
 	{
 	public:
@@ -14,12 +20,7 @@ namespace Alpha
 		static bool IsMouseButtonDown(int keyCode);
 		static bool IsMouseButtonPressed(int keyCode);
 
-		static glm::vec2 GetMousePosition();
-		static glm::vec2 GetMouseScroll();
-
-		static bool IsDragging();
-
-		static void Initialize(GLFWwindow* window);
+		static void OnEvent(Event& event);
 		static void EndFrame();
 
 	private:
@@ -29,14 +30,9 @@ namespace Alpha
 		static bool keyButtons[GLFW_KEY_LAST + 1];
 		static bool previousKeyButtons[GLFW_KEY_LAST + 1];
 
-		static glm::vec2 mousePosition;
-		static glm::vec2 mouseScroll;
-
-		static bool isDragging;
-
-		static void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
-		static void CursorPositionCallback(GLFWwindow* window, double xpos, double ypos);
-		static void MouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
-		static void ScrollCallback(GLFWwindow* window, double xoffset, double yoffset);
+		static bool OnKeyPressedEvent(KeyPressedEvent& event);
+		static bool OnKeyReleasedEvent(KeyReleasedEvent& event);
+		static bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& event);
+		static bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& event);
 	};
 }

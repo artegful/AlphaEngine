@@ -21,6 +21,9 @@ namespace Alpha
 		std::vector<Layer*>::iterator begin();
 		std::vector<Layer*>::iterator end();
 
+		std::vector<Layer*>::reverse_iterator rbegin();
+		std::vector<Layer*>::reverse_iterator rend();
+
 	private:
 		std::vector<Layer*> layers;
 

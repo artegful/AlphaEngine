@@ -60,9 +60,18 @@ namespace Alpha
         return layers.begin();
     }
 
-
     std::vector<Layer*>::iterator LayerStack::end()
     {
         return layers.end();
+    }
+
+    std::vector<Layer*>::reverse_iterator LayerStack::rbegin()
+    {
+        return layers.rbegin();
+    }
+
+    std::vector<Layer*>::reverse_iterator LayerStack::rend()
+    {
+        return layers.rend();
     }
 }

@@ -199,6 +199,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Events\Event.h" />
+    <ClInclude Include="src\Events\KeyPressedEvent.h" />
+    <ClInclude Include="src\Events\KeyReleasedEvent.h" />
+    <ClInclude Include="src\Events\MouseButtonPressedEvent.h" />
+    <ClInclude Include="src\Events\MouseButtonReleasedEvent.h" />
     <ClInclude Include="src\Layers\DebugLayer.h" />
     <ClInclude Include="src\Layers\GameLayer.h" />
     <ClInclude Include="src\Core\LayerStack.h" />
