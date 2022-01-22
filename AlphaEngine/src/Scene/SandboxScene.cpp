@@ -25,9 +25,9 @@ namespace Alpha
 
 		std::shared_ptr<Sprite> sprite = std::make_shared<Sprite>(texture);
 
-		for (int x = -30; x <= 30; x++)
+		for (int x = -10; x <= 10; x++)
 		{
-			for (int y = -30; y <= 30; y++)
+			for (int y = -10; y <= 10; y++)
 			{
 				Entity entity = CreateEntity();
 

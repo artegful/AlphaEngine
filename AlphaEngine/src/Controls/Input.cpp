@@ -1,5 +1,10 @@
 #include "Input.h"
 
+#include "Events/KeyPressedEvent.h"
+#include "Events/KeyReleasedEvent.h"
+#include "Events/MouseButtonPressedEvent.h"
+#include "Events/MouseButtonReleasedEvent.h"
+
 namespace Alpha
 {
 	bool Input::mouseButtons[GLFW_MOUSE_BUTTON_LAST + 1]{ false };
@@ -7,19 +12,6 @@ namespace Alpha
 
 	bool Input::keyButtons[GLFW_KEY_LAST + 1]{ false };
 	bool Input::previousKeyButtons[GLFW_KEY_LAST + 1]{ false };
-
-	glm::vec2 Input::mousePosition(0);
-	glm::vec2 Input::mouseScroll(0);
-
-	bool Input::isDragging{ false };
-
-	void Input::Initialize(GLFWwindow* window)
-	{
-		glfwSetKeyCallback(window, KeyCallback);
-		glfwSetCursorPosCallback(window, CursorPositionCallback);
-		glfwSetMouseButtonCallback(window, MouseButtonCallback);
-		glfwSetScrollCallback(window, ScrollCallback);
-	}
 
 	bool Input::IsKeyDown(int keyCode)
 	{
@@ -61,78 +53,45 @@ namespace Alpha
 		return false;
 	}
 
-	glm::vec2 Input::GetMousePosition()
-	{
-		return mousePosition;
-	}
-
-	glm::vec2 Input::GetMouseScroll()
-	{
-		return mouseScroll;
-	}
-
-	bool Input::IsDragging()
-	{
-		return isDragging;
-	}
-
-
 	void Input::EndFrame()
 	{
 		memcpy(previousMouseButtons, mouseButtons, sizeof(mouseButtons));
 		memcpy(previousKeyButtons, keyButtons, sizeof(keyButtons));
 	}
 
-	void Input::KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+	void Input::OnEvent(Event& event)
 	{
-		if (key < 0)
-		{
-			return;
-		}
-
-		switch (action)
-		{
-		case GLFW_PRESS:
-			keyButtons[key] = true;
-			break;
-
-		case GLFW_RELEASE:
-			keyButtons[key] = false;
-			break;
-		}
+		Dispatcher::Dispatch<KeyPressedEvent>(event, OnKeyPressedEvent);
+		Dispatcher::Dispatch<KeyReleasedEvent>(event, OnKeyReleasedEvent);
+		Dispatcher::Dispatch<MouseButtonPressedEvent>(event, OnMouseButtonPressedEvent);
+		Dispatcher::Dispatch<MouseButtonReleasedEvent>(event, OnMouseButtonReleasedEvent);
 	}
 
-	void Input::CursorPositionCallback(GLFWwindow* window, double xpos, double ypos)
-	{
-		mousePosition.x = (float) xpos;
-		mousePosition.y = (float) ypos;
+	bool Input::OnKeyPressedEvent(KeyPressedEvent& event)
+	{	
+		keyButtons[event.GetKeyCode()] = true;
 
-		isDragging = mouseButtons[0];
+		return false;
 	}
 
-	void Input::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
+	bool Input::OnKeyReleasedEvent(KeyReleasedEvent& event)
 	{
-		switch (action)
-		{
-		case GLFW_PRESS:
-			mouseButtons[button] = true;
-			break;
+		keyButtons[event.GetKeyCode()] = false;
 
-		case GLFW_RELEASE:
-			mouseButtons[button] = false;
-
-			if (button == 0)
-			{
-				isDragging = false;
-			}
-
-			break;
-		}
+		return false;
 	}
 
-	void Input::ScrollCallback(GLFWwindow* window, double xoffset, double yoffset)
+	bool Input::OnMouseButtonPressedEvent(MouseButtonPressedEvent& event)
 	{
-		mouseScroll.x = (float) xoffset;
-		mouseScroll.y = (float) yoffset;
+		mouseButtons[event.GetMouseButton()] = true;
+
+		return false;
+	}
+
+	bool Input::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& event)
+	{
+		mouseButtons[event.GetMouseButton()] = false;
+
+		return false;
 	}
 }
