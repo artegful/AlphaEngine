@@ -4,21 +4,22 @@
 
 #include "Core.h"
 #include "Config.h"
+#include "Layer.h"
 #include "Controls/Input.h"
 #include "Render/RenderCommand.h"
 #include "Render/RendererAPI.h"
 
 namespace Alpha
 {
+	Engine* Engine::Instance = nullptr;
+
 	Engine::Engine(const Config& config) :
-		window(config.Width, config.Height),
-		sceneManager{ }
+		window(config.Width, config.Height)
 	{
+		Instance = this;
 		RenderCommand::SetAPI(config.RenderApi);
 
 		window.Initialize();
-		sceneManager.ChangeScene(0);
-		RenderCommand::SetClearColor({1.0f, 0.0f, 0.0f, 1.0f});
 
 		previousTime = std::chrono::steady_clock::now();
 	}
@@ -28,14 +29,28 @@ namespace Alpha
 		while (!window.ShouldClose())
 		{
 			UpdateDeltaTime();
-
 			window.Update();
-			sceneManager.Update(deltaTime);
+
+			for (auto layer : layerStack)
+			{
+				layer->Update(deltaTime);
+			}
 
 			window.SwapBuffers();
-
 			Input::EndFrame();
 		}
+	}
+
+	LayerStack& Engine::GetLayerStack()
+	{
+		return layerStack;
+	}
+
+	Engine* Engine::Get()
+	{
+		AL_ASSERT(Instance, "You must construct engine instance");
+
+		return Instance;
 	}
 
 	void Engine::UpdateDeltaTime()
