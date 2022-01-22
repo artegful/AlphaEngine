@@ -9,7 +9,6 @@ namespace Alpha
 	class LayerStack
 	{
 	public:
-		LayerStack();
 		~LayerStack();
 
 		void AddLayer(Layer* layer);
@@ -27,7 +26,7 @@ namespace Alpha
 	private:
 		std::vector<Layer*> layers;
 
-		std::vector<Layer*>::iterator layerInsertIterator;
+		uint32_t insertIndex;
 	};
 }
 

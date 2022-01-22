@@ -16,7 +16,7 @@ namespace Alpha
 		}
 		else
 		{
-			AL_ENGINE_INFO("(", severity, ") ", message);
+			//AL_ENGINE_INFO("(", severity, ") ", message);
 		}
 	}
 

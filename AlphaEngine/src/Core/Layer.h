@@ -12,6 +12,7 @@ namespace Alpha
 		virtual void Update(float deltaTime) { }
 
 		virtual void OnEvent(Event& event) { }
+		virtual void OnImGui() { }
 	};
 }
 

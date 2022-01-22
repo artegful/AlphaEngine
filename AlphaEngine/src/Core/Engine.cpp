@@ -5,6 +5,7 @@
 #include "Core.h"
 #include "Config.h"
 #include "Layer.h"
+#include "Layers/ImGuiLayer.h"
 #include "Events/Event.h"
 #include "Controls/Input.h"
 #include "Render/RenderCommand.h"
@@ -15,7 +16,8 @@ namespace Alpha
 	Engine* Engine::Instance = nullptr;
 
 	Engine::Engine(const Config& config) :
-		window(config.Width, config.Height, EVENT_BIND(OnEvent))
+		window(config.Width, config.Height, EVENT_BIND(OnEvent)),
+		isImGuiEnabled(config.IsImGuiEnabled)
 	{
 		Instance = this;
 		RenderCommand::SetAPI(config.RenderApi);
@@ -23,6 +25,11 @@ namespace Alpha
 		window.Initialize();
 
 		previousTime = std::chrono::steady_clock::now();
+
+		if (isImGuiEnabled)
+		{
+			layerStack.AddOverlay(new ImGuiLayer());
+		}
 	}
 
 	void Engine::Run()
@@ -37,6 +44,11 @@ namespace Alpha
 				layer->Update(deltaTime);
 			}
 
+			if (isImGuiEnabled)
+			{
+				UpdateImGui();
+			}
+
 			window.SwapBuffers();
 			Input::EndFrame();
 		}
@@ -45,6 +57,11 @@ namespace Alpha
 	LayerStack& Engine::GetLayerStack()
 	{
 		return layerStack;
+	}
+
+	Window& Engine::GetWindow()
+	{
+		return window;
 	}
 
 	Engine* Engine::Get()
@@ -59,6 +76,18 @@ namespace Alpha
 		auto now = std::chrono::steady_clock::now();
 		deltaTime = std::chrono::duration_cast<std::chrono::duration<float>>(now - previousTime).count();
 		previousTime = now;
+	}
+
+	void Engine::UpdateImGui()
+	{
+		ImGuiLayer::Begin();
+
+		for (auto layer : layerStack)
+		{
+			layer->OnImGui();
+		}
+
+		ImGuiLayer::End();
 	}
 
 	void Engine::OnEvent(Event& event)

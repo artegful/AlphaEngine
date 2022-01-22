@@ -23,6 +23,9 @@ namespace Alpha
 		void Initialize();
 
 		void SwapBuffers();
+
+		GLFWwindow* GetNativeWindow();
+
 	private:
 		static std::function<void(Event&)> EventCallback;
 		GLFWwindow* window;

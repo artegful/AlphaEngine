@@ -47,6 +47,11 @@ namespace Alpha
 		renderContext->SwapBuffers();
 	}
 
+	GLFWwindow* Window::GetNativeWindow()
+	{
+		return window;
+	}
+
 	bool Window::ShouldClose() const
 	{
 		return glfwWindowShouldClose(window);
