@@ -199,6 +199,10 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Layers\DebugLayer.h" />
+    <ClInclude Include="src\Layers\GameLayer.h" />
+    <ClInclude Include="src\Core\LayerStack.h" />
+    <ClInclude Include="src\Core\Layer.h" />
     <ClInclude Include="src\Render\API.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
@@ -241,6 +245,9 @@
     <ClInclude Include="src\Render\VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Layers\DebugLayer.cpp" />
+    <ClCompile Include="src\Layers\GameLayer.cpp" />
+    <ClCompile Include="src\Core\LayerStack.cpp" />
     <ClCompile Include="src\Controls\Input.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLVertexArray.cpp" />
