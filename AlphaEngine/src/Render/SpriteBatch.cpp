@@ -13,7 +13,7 @@
 namespace Alpha
 {
 	SpriteBatch::SpriteBatch() : 
-		shader{ Resources::ResourceAllocator<ShaderProgram>::Get().Add("assets/shaders/default") },
+		shader{ ResourceAllocator<Shader>::Add("assets/shaders/default.glsl") },
 		amountStored(0),
 		textures{}
 	{
@@ -106,10 +106,10 @@ namespace Alpha
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertexBuffer), vertexBuffer);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		shader->Use();
-		shader->SetUniformMatrix4f("projection", camera.GetProjection());
-		shader->SetUniformMatrix4f("view", cameraTransform.GetInverseTransform());
-		shader->SetUniformIntPointer("textures", textureIds, MAX_TEXTURES);
+		shader->Bind();
+		shader->SetUniformMat4("projection", camera.GetProjection());
+		shader->SetUniformMat4("view", cameraTransform.GetInverseTransform());
+		shader->SetUniformIntArray("textures", textureIds, MAX_TEXTURES);
 
 		glBindVertexArray(vaoId);
 		glEnableVertexAttribArray(0);
@@ -136,7 +136,7 @@ namespace Alpha
 		glDisableVertexAttribArray(0);
 		glBindVertexArray(0);
 
-		shader->Detach();
+		shader->Unbind();
 	}
 
 	void SpriteBatch::GenerateIndexBuffer()
