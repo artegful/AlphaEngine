@@ -213,6 +213,7 @@
     <ClInclude Include="src\Render\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Render\Shader.h" />
+    <ClInclude Include="src\Render\Texture.h" />
     <ClInclude Include="src\Scene\SandboxScene.h" />
     <ClInclude Include="src\Render\BufferLayout.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLIndexBuffer.h" />
@@ -242,10 +243,11 @@
     <ClInclude Include="src\Scene\Scene.h" />
     <ClInclude Include="src\Scene\SceneManager.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLShader.h" />
-    <ClInclude Include="src\Render\Texture.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Components\CameraComponent.h" />
     <ClInclude Include="src\Components\TransformComponent.h" />
     <ClInclude Include="src\ECS\System.h" />
+    <ClInclude Include="src\Utils\Utils.h" />
     <ClInclude Include="vendor\glew\include\GL\glew.h" />
     <ClInclude Include="vendor\stb\stb_image.h" />
     <ClInclude Include="src\Render\VertexBuffer.h" />
@@ -261,6 +263,7 @@
     <ClCompile Include="src\Render\RenderCommand.cpp" />
     <ClCompile Include="src\Render\RendererAPI.cpp" />
     <ClCompile Include="src\Render\Shader.cpp" />
+    <ClCompile Include="src\Render\Texture.cpp" />
     <ClCompile Include="src\Scene\SandboxScene.cpp" />
     <ClCompile Include="src\Render\BufferLayout.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLIndexBuffer.cpp" />
@@ -281,7 +284,8 @@
     <ClCompile Include="src\Scene\Scene.cpp" />
     <ClCompile Include="src\Scene\SceneManager.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
-    <ClCompile Include="src\Render\Texture.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Utils\Utils.cpp" />
     <ClCompile Include="vendor\stb\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
