@@ -33,7 +33,6 @@ namespace Alpha
 		GLuint id;
 
 		void AddShader(const std::string& source, const GLenum shaderType);
-		std::string GetNameFromPath(const std::string& path);
 		std::string ReadFile(const std::string& path);
 		std::unordered_map<GLenum, std::string> Parse(const std::string& source);
 		GLenum GetShaderType(const std::string& filePath);
