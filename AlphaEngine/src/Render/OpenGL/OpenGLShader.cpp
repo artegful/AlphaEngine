@@ -7,6 +7,7 @@
 
 #include "Core/Core.h"
 #include "glm/gtc/type_ptr.hpp"
+#include "Utils/Utils.h"
 
 namespace Alpha
 {
@@ -26,7 +27,7 @@ namespace Alpha
 
 	OpenGLShader::OpenGLShader(const std::string& path) : OpenGLShader()
 	{
-		name = GetNameFromPath(path);
+		name = Utils::GetNameFromPath(path);
 
 		std::string source = ReadFile(path);
 		std::unordered_map<GLenum, std::string> openGLShaderToSource = Parse(source);
@@ -174,11 +175,6 @@ namespace Alpha
 		AL_ENGINE_ASSERT(ShaderTypeSpecifierToType.contains(word), word + " shader type is not supported or invalid");
 
 		return ShaderTypeSpecifierToType.at(word);
-	}
-
-	std::string OpenGLShader::GetNameFromPath(const std::string& path)
-	{
-		return std::filesystem::path(path).filename().string();
 	}
 
 	void OpenGLShader::Link()

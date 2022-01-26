@@ -20,7 +20,7 @@ namespace Alpha
 		SpriteBatch();
 
 		bool HasSpace() const;
-		bool HasTexture(const Texture* texture) const;
+		bool HasTexture(const std::shared_ptr<Texture>& texture) const;
 		bool HasTextureSpace() const;
 
 		void AddSprite(const SpriteComponent& sprite, const TransformComponent& transform);
@@ -42,7 +42,7 @@ namespace Alpha
 
 		QuadVertex vertexBuffer[MAX_SPRITES * VERTICES_IN_SPRITE];
 		GLuint indexBuffer[MAX_SPRITES * INDICES_IN_SPRITE];
-		std::vector<const Texture*> textures;
+		std::vector<std::shared_ptr<Texture>> textures;
 
 		unsigned int amountStored;
 

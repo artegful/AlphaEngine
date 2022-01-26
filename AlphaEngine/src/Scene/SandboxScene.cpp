@@ -21,7 +21,7 @@ namespace Alpha
 		Entity camera = CreateEntity();
 		camera.AddComponent<CameraComponent>(16.0f / 9.0f);
 
-		Texture* texture = new Texture("assets/images/dino.png");
+		std::shared_ptr<Texture> texture = ResourceAllocator<Texture>::Add("assets/images/dino.png");
 
 		std::shared_ptr<Sprite> sprite = std::make_shared<Sprite>(texture);
 

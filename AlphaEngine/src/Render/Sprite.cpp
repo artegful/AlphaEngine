@@ -2,13 +2,13 @@
 
 namespace Alpha
 {
-    Sprite::Sprite(Texture* texture) :
+    Sprite::Sprite(std::shared_ptr<Texture>& texture) :
         texture(texture), 
         uvCoords { glm::vec2(0.0f, 0.0f), glm::vec2(1.0f, 0.0f), 
                    glm::vec2(1.0f, 1.0f), glm::vec2(0.0f, 1.0f) }
     { }
 
-    Sprite::Sprite(Texture* texture, glm::vec2 uvCoords[4]) :
+    Sprite::Sprite(std::shared_ptr<Texture>& texture, glm::vec2 uvCoords[4]) :
         texture(texture)
     {
         memcpy(this->uvCoords, uvCoords, sizeof(uvCoords));
@@ -19,7 +19,7 @@ namespace Alpha
         return uvCoords;
     }
 
-    const Texture* Sprite::GetTexture() const
+    std::shared_ptr<Texture> Sprite::GetTexture() const
     {
         return texture;
     }

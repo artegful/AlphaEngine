@@ -46,7 +46,7 @@ namespace Alpha
 		return amountStored < MAX_SPRITES;
 	}
 
-	bool SpriteBatch::HasTexture(const Texture* texture) const
+	bool SpriteBatch::HasTexture(const std::shared_ptr<Texture>& texture) const
 	{
 		return std::find(textures.begin(), textures.end(), texture) != textures.end();
 	}
@@ -120,14 +120,14 @@ namespace Alpha
 		int i = 0;
 		for (auto it = textures.begin(); it != textures.end(); it++, i++)
 		{
-			(*it)->UseInSlot(i);
+			(*it)->Bind();
 		}
 
 		glDrawElements(GL_TRIANGLES, amountStored * INDICES_IN_SPRITE, GL_UNSIGNED_INT, 0);
 
 		for (auto texture : textures)
 		{
-			texture->Detach();
+			texture->Unbind();
 		}
 
 		glDisableVertexAttribArray(3);
