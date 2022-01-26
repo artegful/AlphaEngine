@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -212,6 +212,7 @@
     <ClInclude Include="src\Render\API.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Render\Shader.h" />
     <ClInclude Include="src\Scene\SandboxScene.h" />
     <ClInclude Include="src\Render\BufferLayout.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLIndexBuffer.h" />
@@ -240,8 +241,7 @@
     <ClInclude Include="src\Controls\Input.h" />
     <ClInclude Include="src\Scene\Scene.h" />
     <ClInclude Include="src\Scene\SceneManager.h" />
-    <ClInclude Include="src\Render\Shader.h" />
-    <ClInclude Include="src\Render\ShaderProgram.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Render\Texture.h" />
     <ClInclude Include="src\Components\CameraComponent.h" />
     <ClInclude Include="src\Components\TransformComponent.h" />
@@ -260,6 +260,7 @@
     <ClCompile Include="src\Render\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Render\RenderCommand.cpp" />
     <ClCompile Include="src\Render\RendererAPI.cpp" />
+    <ClCompile Include="src\Render\Shader.cpp" />
     <ClCompile Include="src\Scene\SandboxScene.cpp" />
     <ClCompile Include="src\Render\BufferLayout.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLIndexBuffer.cpp" />
@@ -276,8 +277,7 @@
     <ClCompile Include="src\Systems\CameraControllerSystem.cpp" />
     <ClCompile Include="src\ECS\Entity.cpp" />
     <ClCompile Include="src\Render\Camera.cpp" />
-    <ClCompile Include="src\Render\Shader.cpp" />
-    <ClCompile Include="src\Render\ShaderProgram.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\Scene\Scene.cpp" />
     <ClCompile Include="src\Scene\SceneManager.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />

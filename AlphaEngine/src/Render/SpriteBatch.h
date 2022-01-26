@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "GL/glew.h"
-#include "ShaderProgram.h"
+#include "Shader.h"
 
 namespace Alpha
 {
@@ -50,7 +50,7 @@ namespace Alpha
 		GLuint vboId;
 		GLuint eboId;
 
-		std::shared_ptr<ShaderProgram> shader;
+		std::shared_ptr<Shader> shader;
 
 		void GenerateIndexBuffer();
 	};
