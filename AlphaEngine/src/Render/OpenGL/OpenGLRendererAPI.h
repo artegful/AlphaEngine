@@ -7,9 +7,12 @@ namespace Alpha
 	class OpenGLRendererAPI : public RendererAPI
 	{
 	public:
-		void SetClearColor(const glm::vec4& color);
-		void Clear();
+		void Initialize() override;
 
-		void DrawIndexed();
+		void SetClearColor(const glm::vec4& color) override;
+		void Clear() override;
+
+		void DrawIndexed(const VertexArray& vertexArray) override;
+		void DrawIndexed(const VertexArray& vertexArray, size_t amount) override;
 	};
 }

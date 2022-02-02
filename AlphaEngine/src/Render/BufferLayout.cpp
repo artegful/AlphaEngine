@@ -13,7 +13,7 @@ namespace Alpha
 		return stride;
 	}
 
-	constexpr std::vector<BufferElement>::const_iterator BufferLayout::begin() const
+	std::vector<BufferElement>::const_iterator BufferLayout::begin() const
 	{
 		const std::vector<int> vector{ 1, 2, 3 };
 
@@ -22,7 +22,7 @@ namespace Alpha
 		return elements.begin();
 	}
 
-	constexpr std::vector<BufferElement>::const_iterator BufferLayout::end() const
+	std::vector<BufferElement>::const_iterator BufferLayout::end() const
 	{
 		return elements.end();
 	}

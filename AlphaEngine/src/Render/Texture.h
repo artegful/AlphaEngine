@@ -1,27 +1,26 @@
 #pragma once
 
-#include <unordered_map>
-
-#include "GL/glew.h"
+#include <memory>
+#include <string>
 
 namespace Alpha
 {
 	class Texture
 	{
 	public:
-		Texture(const char* filePath);
+		virtual ~Texture() = default;
 
-		void Use() const;
-		void UseInSlot(int slotNumber) const;
-		void Detach() const;
+		virtual void Bind(int slot = 0) = 0;
+		virtual void Unbind() = 0;
 
-	private:
-		static const std::unordered_map<int, GLenum> ChannelsToFormat;
+		virtual void SetData(void* data, size_t size, int channels = 3) = 0;
 
-		GLuint textureId;
-		int width;
-		int height;
-		int channels;
+		virtual int GetWidth() const = 0;
+		virtual int GetHeight() const = 0;
+
+		virtual bool operator==(const Texture& texture) = 0;
+
+		static std::shared_ptr<Texture> Create(const std::string& path);
+		static std::shared_ptr<Texture> Create(size_t width, size_t height);
 	};
 }
-

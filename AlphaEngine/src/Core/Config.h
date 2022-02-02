@@ -9,6 +9,7 @@ namespace Alpha
 		int Width;
 		int Height;
 		API RenderApi;
+		bool IsImGuiEnabled = false;
 	};
 }
 

@@ -1,31 +1,36 @@
 #pragma once
 
 #include <string>
+#include <memory>
 #include <unordered_map>
-
-#include "GL/glew.h"
+#include "glm/glm.hpp"
 
 namespace Alpha
 {
 	class Shader
 	{
 	public:
-		Shader(const std::string& fileName);
-		Shader(const std::string& fileName, GLenum shaderType);
 
-		~Shader() = default;
+		enum class ShaderType 
+		{
+			Vertex,
+			Fragment
+		};
 
-	private:
-		Shader(GLenum shaderType);
+		virtual ~Shader() = default;
 
-		const static std::unordered_map<std::string, GLenum> ExtensionToType;
-		GLuint shaderId;
+		virtual void Bind() = 0;
+		virtual void Unbind() = 0;
 
-		void CompileShader(const std::string& source);
-		GLenum GetShaderType(const std::string& filePath);
+		//TODO move to material system later
+		virtual void SetInt(const std::string& name, int value) = 0;
+		virtual void SetIntArray(const std::string& name, int values[], size_t amount) = 0;
+		virtual void SetFloat3(const std::string& name, const glm::vec3& value) = 0;
+		virtual void SetFloat4(const std::string& name, const glm::vec4& value) = 0;
+		virtual void SetMat4(const std::string& name, const glm::mat4& value) = 0;
 
-		friend class ShaderProgram;
+		//TODO write all remaining uniforms
+
+		static std::shared_ptr<Shader> Create(const std::string& path);
 	};
-
 }
-

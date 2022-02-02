@@ -9,7 +9,7 @@ namespace Alpha
 	{
 	public:
 
-		OpenGLVertexBuffer(const float* buffer, uint32_t size);
+		OpenGLVertexBuffer(void* buffer, uint32_t size);
 		OpenGLVertexBuffer(uint32_t size);
 
 		~OpenGLVertexBuffer();
@@ -19,6 +19,8 @@ namespace Alpha
 
 		void SetLayout(const std::shared_ptr<BufferLayout>& bufferLayout) override;
 		const BufferLayout& GetLayout() const override;
+
+		void SetData(void* data, size_t size) override;
 
 	private:
 		OpenGLVertexBuffer();

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -93,7 +93,7 @@
       <PreprocessorDefinitions>AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;$(SolutionDir)ImGui\ImGui;$(SolutionDir)ImGui\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +121,7 @@
       <PreprocessorDefinitions>AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;$(SolutionDir)ImGui\ImGui;$(SolutionDir)ImGui\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,7 +149,7 @@
       <PreprocessorDefinitions>AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;$(SolutionDir)ImGui\ImGui;$(SolutionDir)ImGui\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -177,7 +177,7 @@
       <PreprocessorDefinitions>AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;$(SolutionDir)ImGui\ImGui;$(SolutionDir)ImGui\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -199,9 +199,25 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\Transform.h" />
+    <ClInclude Include="src\Render\SpriteProperties.h" />
+    <ClInclude Include="src\Render\Renderer2D.h" />
+    <ClInclude Include="src\Layers\ImGuiLayer.h" />
+    <ClInclude Include="src\Events\Event.h" />
+    <ClInclude Include="src\Events\KeyPressedEvent.h" />
+    <ClInclude Include="src\Events\KeyReleasedEvent.h" />
+    <ClInclude Include="src\Events\MouseButtonPressedEvent.h" />
+    <ClInclude Include="src\Events\MouseButtonReleasedEvent.h" />
+    <ClInclude Include="src\Layers\DebugLayer.h" />
+    <ClInclude Include="src\Layers\GameLayer.h" />
+    <ClInclude Include="src\Core\LayerStack.h" />
+    <ClInclude Include="src\Core\Layer.h" />
     <ClInclude Include="src\Render\API.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Render\Shader.h" />
+    <ClInclude Include="src\Render\Texture.h" />
+    <ClInclude Include="src\Render\VertexArray.h" />
     <ClInclude Include="src\Scene\SandboxScene.h" />
     <ClInclude Include="src\Render\BufferLayout.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLIndexBuffer.h" />
@@ -230,22 +246,31 @@
     <ClInclude Include="src\Controls\Input.h" />
     <ClInclude Include="src\Scene\Scene.h" />
     <ClInclude Include="src\Scene\SceneManager.h" />
-    <ClInclude Include="src\Render\Shader.h" />
-    <ClInclude Include="src\Render\ShaderProgram.h" />
-    <ClInclude Include="src\Render\Texture.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Components\CameraComponent.h" />
     <ClInclude Include="src\Components\TransformComponent.h" />
     <ClInclude Include="src\ECS\System.h" />
+    <ClInclude Include="src\Utils\Utils.h" />
     <ClInclude Include="vendor\glew\include\GL\glew.h" />
     <ClInclude Include="vendor\stb\stb_image.h" />
     <ClInclude Include="src\Render\VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Render\IndexBuffer.cpp" />
+    <ClCompile Include="src\Render\Renderer2D.cpp" />
+    <ClCompile Include="src\Layers\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Layers\DebugLayer.cpp" />
+    <ClCompile Include="src\Layers\GameLayer.cpp" />
+    <ClCompile Include="src\Core\LayerStack.cpp" />
     <ClCompile Include="src\Controls\Input.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Render\RenderCommand.cpp" />
     <ClCompile Include="src\Render\RendererAPI.cpp" />
+    <ClCompile Include="src\Render\Shader.cpp" />
+    <ClCompile Include="src\Render\Texture.cpp" />
+    <ClCompile Include="src\Render\VertexArray.cpp" />
     <ClCompile Include="src\Scene\SandboxScene.cpp" />
     <ClCompile Include="src\Render\BufferLayout.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLIndexBuffer.cpp" />
@@ -262,17 +287,22 @@
     <ClCompile Include="src\Systems\CameraControllerSystem.cpp" />
     <ClCompile Include="src\ECS\Entity.cpp" />
     <ClCompile Include="src\Render\Camera.cpp" />
-    <ClCompile Include="src\Render\Shader.cpp" />
-    <ClCompile Include="src\Render\ShaderProgram.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\Scene\Scene.cpp" />
     <ClCompile Include="src\Scene\SceneManager.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
-    <ClCompile Include="src\Render\Texture.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Utils\Utils.cpp" />
     <ClCompile Include="vendor\stb\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shaders\fragment.frag" />
     <None Include="assets\shaders\vertex.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImGui\ImGui.vcxproj">
+      <Project>{1485cf80-94a8-466e-9220-68f8e9f66890}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

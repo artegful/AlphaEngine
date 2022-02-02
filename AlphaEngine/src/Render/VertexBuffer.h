@@ -21,6 +21,9 @@ namespace Alpha
 		virtual void SetLayout(const std::shared_ptr<BufferLayout>& layout) = 0;
 		virtual const BufferLayout& GetLayout() const = 0;
 
-		static VertexBuffer* Create(const float* buffer, uint32_t size);
+		virtual void SetData(void* data, size_t size) = 0;
+
+		static std::shared_ptr<VertexBuffer> Create(void* buffer, uint32_t size);
+		static std::shared_ptr<VertexBuffer> Create(uint32_t size);
 	};
 }

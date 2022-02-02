@@ -13,7 +13,7 @@
 namespace Alpha
 {
 	SpriteBatch::SpriteBatch() : 
-		shader{ Resources::ResourceAllocator<ShaderProgram>::Get().Add("assets/shaders/default") },
+		shader{ ResourceAllocator<Shader>::Get("assets/shaders/default.glsl") },
 		amountStored(0),
 		textures{}
 	{
@@ -46,7 +46,7 @@ namespace Alpha
 		return amountStored < MAX_SPRITES;
 	}
 
-	bool SpriteBatch::HasTexture(const Texture* texture) const
+	bool SpriteBatch::HasTexture(const std::shared_ptr<Texture>& texture) const
 	{
 		return std::find(textures.begin(), textures.end(), texture) != textures.end();
 	}
@@ -81,7 +81,7 @@ namespace Alpha
 			}
 		}
 
-		glm::mat4 transformMatrix = transform.GetTransform();
+		glm::mat4 transformMatrix = transform.Transform.GetTransformMatrix();
 
 		const glm::vec2* uvCoords = sprite.Sprite->GetUvCoords();
 
@@ -106,10 +106,10 @@ namespace Alpha
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertexBuffer), vertexBuffer);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		shader->Use();
-		shader->SetUniformMatrix4f("projection", camera.GetProjection());
-		shader->SetUniformMatrix4f("view", cameraTransform.GetInverseTransform());
-		shader->SetUniformIntPointer("textures", textureIds, MAX_TEXTURES);
+		shader->Bind();
+		shader->SetMat4("projection", camera.Camera.GetProjectionMatrix());
+		shader->SetMat4("view", glm::inverse(cameraTransform.Transform.GetTransformMatrix()));
+		shader->SetIntArray("textures", textureIds, MAX_TEXTURES);
 
 		glBindVertexArray(vaoId);
 		glEnableVertexAttribArray(0);
@@ -120,14 +120,14 @@ namespace Alpha
 		int i = 0;
 		for (auto it = textures.begin(); it != textures.end(); it++, i++)
 		{
-			(*it)->UseInSlot(i);
+			(*it)->Bind();
 		}
 
 		glDrawElements(GL_TRIANGLES, amountStored * INDICES_IN_SPRITE, GL_UNSIGNED_INT, 0);
 
 		for (auto texture : textures)
 		{
-			texture->Detach();
+			texture->Unbind();
 		}
 
 		glDisableVertexAttribArray(3);
@@ -136,7 +136,7 @@ namespace Alpha
 		glDisableVertexAttribArray(0);
 		glBindVertexArray(0);
 
-		shader->Detach();
+		shader->Unbind();
 	}
 
 	void SpriteBatch::GenerateIndexBuffer()

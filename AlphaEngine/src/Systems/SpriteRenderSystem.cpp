@@ -38,8 +38,6 @@ namespace Alpha
 		{
 			auto [transform, camera] = view.get<TransformComponent, CameraComponent>(entity);
 
-			Alpha::RenderCommand::Clear();
-
 			for (auto& spriteBatch : spriteBatches)
 			{
 				spriteBatch.Draw(camera, transform);

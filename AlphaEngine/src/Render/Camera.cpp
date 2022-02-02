@@ -4,44 +4,33 @@
 
 namespace Alpha
 {
-    Camera::Camera(int width, int height) :
-        position(0),
-        viewMatrix(1),
-        projectionMatrix(glm::ortho<float>(-width / 10.0f, width / 10.0f, -height / 10.0f, height / 10.0f))
+    Camera::Camera(glm::vec2 size) : Camera(size.x, size.y)
     { }
 
-    glm::vec2 Camera::GetPosition()
+    Camera::Camera(float width, float height) :
+        projectionMatrix(glm::ortho<float>(-width, width, -height, height))
+    { }
+
+    Transform& Camera::GetTransform()
     {
-        return position;
+        return transform;
     }
 
-    void Camera::SetPosition(glm::vec2 position)
-    {
-        this->position = position;
-
-        UpdateViewMatrix();
-    }
-
-    glm::mat4 Camera::GetProjectionMatrix()
+    glm::mat4 Camera::GetProjectionMatrix() const
     {
         return projectionMatrix;
     }
 
-    glm::mat4 Camera::GetViewMatrix()
+    glm::mat4 Camera::GetViewMatrix() const
     {
-        return viewMatrix;
+        return glm::inverse(transform.GetTransformMatrix());
     }
 
-    void Camera::UpdateViewMatrix()
+    glm::mat4 Camera::GetViewProjectionMatrix() const
     {
-        // to get view matrix we can use lookat
-        // or reverse matrix of all transforms
-        // applied to camera
-        // but in 2D we do not rotate or scale camera
-        // so just use inverse of translate matrix
-
-        viewMatrix[3][0] = -position.x;
-        viewMatrix[3][1] = -position.y;
+        return projectionMatrix * GetViewMatrix();
     }
+
+
 }
 

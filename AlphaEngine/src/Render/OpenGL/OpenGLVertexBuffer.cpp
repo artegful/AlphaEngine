@@ -4,18 +4,14 @@
 
 namespace Alpha
 {
-	OpenGLVertexBuffer::OpenGLVertexBuffer(const float* buffer, uint32_t size) : VertexBuffer()
+	OpenGLVertexBuffer::OpenGLVertexBuffer(void* buffer, uint32_t size) : OpenGLVertexBuffer()
 	{
 		glBufferData(GL_ARRAY_BUFFER, size, buffer, GL_STATIC_DRAW);
-
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
-	OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size) : VertexBuffer()
+	OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size) : OpenGLVertexBuffer()
 	{
-		glBufferData(GL_ARRAY_BUFFER, size, NULL, GL_STATIC_DRAW);
-
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBufferData(GL_ARRAY_BUFFER, size, nullptr, GL_DYNAMIC_DRAW);
 	}
 
 	OpenGLVertexBuffer::OpenGLVertexBuffer()
@@ -43,10 +39,17 @@ namespace Alpha
 	{
 		this->bufferLayout = bufferLayout;
 	}
+
 	const BufferLayout& OpenGLVertexBuffer::GetLayout() const
 	{
 		AL_ENGINE_ASSERT(bufferLayout, "No buffer layout in vertex buffer");
 
 		return *bufferLayout;
+	}
+
+	void OpenGLVertexBuffer::SetData(void* data, size_t size)
+	{
+		glBindBuffer(GL_ARRAY_BUFFER, id);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, size, data);
 	}
 }

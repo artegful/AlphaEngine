@@ -1,27 +1,25 @@
 #pragma once
 
 #include "glm/glm.hpp"
+#include "Core/Transform.h"
 
 namespace Alpha
 {
 	class Camera
 	{
 	public:
-		Camera(int width, int height);
+		Camera(glm::vec2 size);
+		Camera(float width, float height);
 
-		glm::vec2 GetPosition();
-		void SetPosition(glm::vec2 position);
-
-		glm::mat4 GetProjectionMatrix();
-		glm::mat4 GetViewMatrix();
+		Transform& GetTransform();
+		glm::mat4 GetProjectionMatrix() const;
+		glm::mat4 GetViewMatrix() const;
+		glm::mat4 GetViewProjectionMatrix() const;
 
 	private:
-		glm::vec2 position;
+		Transform transform;
 
 		glm::mat4 projectionMatrix;
-		glm::mat4 viewMatrix;
-
-		void UpdateViewMatrix();
 	};
 }
 
