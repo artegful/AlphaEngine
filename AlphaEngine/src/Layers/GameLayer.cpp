@@ -7,7 +7,7 @@ namespace Alpha
 	void GameLayer::Open()
 	{
 		sceneManager.ChangeScene(0);
-		RenderCommand::SetClearColor({ 0.0f, 0.0f, 0.0f, 1.0f });
+		RenderCommand::SetClearColor({ 1.0f, 0.0f, 0.0f, 1.0f });
 	}
 
 	void GameLayer::Close()

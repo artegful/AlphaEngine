@@ -13,7 +13,7 @@
 namespace Alpha
 {
 	SpriteBatch::SpriteBatch() : 
-		shader{ ResourceAllocator<Shader>::Add("assets/shaders/default.glsl") },
+		shader{ ResourceAllocator<Shader>::Get("assets/shaders/default.glsl") },
 		amountStored(0),
 		textures{}
 	{
@@ -81,7 +81,7 @@ namespace Alpha
 			}
 		}
 
-		glm::mat4 transformMatrix = transform.GetTransform();
+		glm::mat4 transformMatrix = transform.Transform.GetTransformMatrix();
 
 		const glm::vec2* uvCoords = sprite.Sprite->GetUvCoords();
 
@@ -107,9 +107,9 @@ namespace Alpha
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 		shader->Bind();
-		shader->SetUniformMat4("projection", camera.GetProjection());
-		shader->SetUniformMat4("view", cameraTransform.GetInverseTransform());
-		shader->SetUniformIntArray("textures", textureIds, MAX_TEXTURES);
+		shader->SetMat4("projection", camera.Camera.GetProjectionMatrix());
+		shader->SetMat4("view", glm::inverse(cameraTransform.Transform.GetTransformMatrix()));
+		shader->SetIntArray("textures", textureIds, MAX_TEXTURES);
 
 		glBindVertexArray(vaoId);
 		glEnableVertexAttribArray(0);

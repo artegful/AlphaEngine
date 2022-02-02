@@ -18,6 +18,8 @@ namespace Alpha
 		Window(int width, int height, std::function<void(Event&)> eventCallback);
 
 		bool ShouldClose() const;
+		int GetWidth() const;
+		int GetHeight() const;
 
 		void Update();
 		void Initialize();

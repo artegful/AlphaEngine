@@ -2,28 +2,28 @@
 
 namespace Alpha
 {
-	OpenGLIndexBuffer::OpenGLIndexBuffer(const uint32_t* buffer, uint32_t size) : OpenGLIndexBuffer()
+	OpenGLIndexBuffer::OpenGLIndexBuffer(const uint32_t* buffer, std::size_t count) : OpenGLIndexBuffer()
 	{
-		this->size = size;
+		this->count = count;
 
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, buffer, GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(const uint32_t), buffer, GL_STATIC_DRAW);
 
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}
 
-	OpenGLIndexBuffer::OpenGLIndexBuffer(uint32_t size) : OpenGLIndexBuffer()
+	OpenGLIndexBuffer::OpenGLIndexBuffer(uint32_t count) : OpenGLIndexBuffer()
 	{
-		this->size = size;
+		this->count = count;
 
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, NULL, GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(const uint32_t), NULL, GL_STATIC_DRAW);
 
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}
 
 	OpenGLIndexBuffer::OpenGLIndexBuffer() : 
-		size(0)
+		count(0)
 	{
-		glCreateBuffers(1, &id);
+		glGenBuffers(1, &id);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id);
 	}
 
@@ -44,6 +44,6 @@ namespace Alpha
 
 	uint32_t OpenGLIndexBuffer::GetAmountOfElements() const
 	{
-		return size;
+		return count;
 	}
 }

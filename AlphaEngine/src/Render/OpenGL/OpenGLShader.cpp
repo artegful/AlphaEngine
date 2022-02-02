@@ -9,12 +9,14 @@
 #include "glm/gtc/type_ptr.hpp"
 #include "Utils/Utils.h"
 
+using namespace std::string_literals;
+
 namespace Alpha
 {
-	const std::unordered_map<std::string, GLenum> OpenGLShader::ShaderTypeSpecifierToType
+	const std::unordered_map<GLenum, std::string> OpenGLShader::ShaderTypeToDefine
 	{ 
-		{ "vert", GL_VERTEX_SHADER }, 
-		{ "frag", GL_FRAGMENT_SHADER }
+		{ GL_VERTEX_SHADER, "VERTEX" },
+		{ GL_FRAGMENT_SHADER, "FRAGMENT" }
 	};
 
 	const std::unordered_map<Shader::ShaderType, GLenum> OpenGLShader::ShaderTypeToOpenGLType
@@ -30,23 +32,21 @@ namespace Alpha
 		name = Utils::GetNameFromPath(path);
 
 		std::string source = ReadFile(path);
-		std::unordered_map<GLenum, std::string> openGLShaderToSource = Parse(source);
 
-		for (auto& [type, source] : openGLShaderToSource)
+		auto versionStart = source.find("#version");
+		AL_ASSERT(versionStart != std::string::npos, "Shader file must include version directive");
+
+		auto versionLineEnd = source.find("\r\n", versionStart);
+
+		std::string versionLine = source.substr(versionStart, versionLineEnd - versionStart + 2);
+		source.erase(versionStart, versionLineEnd);
+
+		for (auto& [key, value] : ShaderTypeToDefine)
 		{
-			AddShader(source, type);
-		}
-
-		Link();
-	}
-
-	OpenGLShader::OpenGLShader(const std::string& name, const std::unordered_map<ShaderType, const std::string>& shaderSources) : OpenGLShader(name)
-	{
-		this->name = name;
-
-		for (auto& [type, source] : shaderSources)
-		{
-			AddShader(source, ShaderTypeToOpenGLType.at(type));
+			if (source.find(value) != std::string::npos)
+			{
+				AddShader(source, key, versionLine);
+			}
 		}
 
 		Link();
@@ -62,28 +62,35 @@ namespace Alpha
 		glUseProgram(0);
 	}
 
-	void OpenGLShader::SetUniformInt(const std::string& name, int value)
+	void OpenGLShader::SetInt(const std::string& name, int value)
 	{
 		GLint location = glGetUniformLocation(id, name.data());
 
 		glUniform1i(location, value);
 	}
 
-	void OpenGLShader::SetUniformIntArray(const std::string& name, int values[], size_t amount)
+	void OpenGLShader::SetIntArray(const std::string& name, int values[], size_t amount)
 	{
 		GLint location = glGetUniformLocation(id, name.data());
 
 		glUniform1iv(location, amount, values);
 	}
 
-	void OpenGLShader::SetUniformFloat3(const std::string& name, glm::vec3& value)
+	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
 	{
 		GLint location = glGetUniformLocation(id, name.data());
 
 		glUniform3fv(location, 1, glm::value_ptr(value));
 	}
 
-	void OpenGLShader::SetUniformMat4(const std::string& name, const glm::mat4& value)
+	void OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
+	{
+		GLint location = glGetUniformLocation(id, name.data());
+
+		glUniform4fv(location, 1, glm::value_ptr(value));
+	}
+
+	void OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
 	{
 		GLint location = glGetUniformLocation(id, name.data());
 
@@ -95,15 +102,16 @@ namespace Alpha
 		id = glCreateProgram();
 	}
 
-	void OpenGLShader::AddShader(const std::string& source, const GLenum shaderType)
+	void OpenGLShader::AddShader(const std::string& source, const GLenum shaderType, const std::string& versionLine)
 	{
-		const GLchar* sources[1] = { source.c_str() };
+		std::string defineTypeLine = "#define "s + ShaderTypeToDefine.at(shaderType) + "\r\n";
 
-		const GLint lengths[1] = { (int) source.size() };
+		const GLchar* sources[3] = { versionLine.data(), defineTypeLine.data(), source.c_str() };
+		const GLint lengths[3] = { (int)versionLine.size(), (int)defineTypeLine.size(), (int)source.size() };
 
 		GLuint shaderId = glCreateShader(shaderType);
 
-		glShaderSource(shaderId, 1, sources, lengths);
+		glShaderSource(shaderId, 3, sources, lengths);
 		glCompileShader(shaderId);
 
 		GLint result;
@@ -114,7 +122,7 @@ namespace Alpha
 			GLchar errorBuffer[1024]{ 0 };
 
 			glGetShaderInfoLog(shaderId, sizeof(errorBuffer), NULL, errorBuffer);
-			AL_ASSERT(false, std::string("shader compilation failed with: ") + errorBuffer);
+			AL_ASSERT(false, "shader compilation failed with: "s + errorBuffer);
 			return;
 		}
 
@@ -140,43 +148,6 @@ namespace Alpha
 		return "";
 	}
 
-	std::unordered_map<GLenum, std::string> OpenGLShader::Parse(const std::string& source)
-	{
-		size_t previousEnd = 0;
-		std::unordered_map<GLenum, std::string> shaders;
-		size_t specifier = source.find(TypeSpecifier, previousEnd);
-
-		//AL_ASSERT(specifier != std::string::npos, std::string("Shader ") + name + " is empty");
-
-		while (specifier != std::string::npos)
-		{
-			size_t endOfLine = source.find("\r\n", specifier);
-			size_t startOfType = specifier + TypeSpecifier.length() + 1;
-			std::string type = source.substr(startOfType, endOfLine - startOfType);
-
-			specifier = source.find(TypeSpecifier, endOfLine);
-			size_t endOfSourceCode = specifier == std::string::npos ? source.length() : specifier;
-
-			//remove all spaces
-			type.erase(std::remove(type.begin(), type.end(), ' '), type.end());
-			GLenum shaderType = GetShaderType(type);
-
-			AL_ASSERT(!shaders.contains(shaderType), std::string("Can't have multiple shaders on one type in shader ") + name);
-
-			size_t startOfSource = endOfLine + 1;
-			shaders[shaderType] = source.substr(startOfSource, endOfSourceCode - startOfSource);
-		}
-
-		return shaders;
-	}
-
-	GLenum OpenGLShader::GetShaderType(const std::string& word)
-	{
-		AL_ENGINE_ASSERT(ShaderTypeSpecifierToType.contains(word), word + " shader type is not supported or invalid");
-
-		return ShaderTypeSpecifierToType.at(word);
-	}
-
 	void OpenGLShader::Link()
 	{
 		glLinkProgram(id);
@@ -189,7 +160,7 @@ namespace Alpha
 			GLchar errorBuffer[1024]{ 0 };
 
 			glGetProgramInfoLog(id, sizeof(errorBuffer), NULL, errorBuffer);
-			AL_ASSERT(false, std::string("program link failed with: ") + errorBuffer);
+			AL_ASSERT(false, "program link failed with: "s + errorBuffer);
 			return;
 		}
 
@@ -202,7 +173,7 @@ namespace Alpha
 			GLchar errorBuffer[1024]{ 0 };
 
 			glGetProgramInfoLog(id, sizeof(errorBuffer), NULL, errorBuffer);
-			AL_ASSERT(false, std::string("program validate failed with: ") + errorBuffer);
+			AL_ASSERT(false, "program validate failed with: "s + errorBuffer);
 			return;
 		}
 	}

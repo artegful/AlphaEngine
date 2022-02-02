@@ -7,11 +7,11 @@
 
 namespace Alpha
 {
-	class OpenGLIndexBuffer : public Alpha::IndexBuffer
+	class OpenGLIndexBuffer : public IndexBuffer
 	{
 	public:
-		OpenGLIndexBuffer(const uint32_t* buffer, uint32_t size);
-		OpenGLIndexBuffer(uint32_t size);
+		OpenGLIndexBuffer(const uint32_t* buffer, std::size_t count);
+		OpenGLIndexBuffer(uint32_t count);
 
 		~OpenGLIndexBuffer();
 
@@ -24,7 +24,7 @@ namespace Alpha
 		OpenGLIndexBuffer();
 
 		GLuint id;
-		uint32_t size;
+		uint32_t count;
 	};
 }
 

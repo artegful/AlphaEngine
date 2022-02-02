@@ -57,6 +57,16 @@ namespace Alpha
 		return glfwWindowShouldClose(window);
 	}
 
+	int Window::GetWidth() const
+	{
+		return width;
+	}
+
+	int Window::GetHeight() const
+	{
+		return height;
+	}
+
 	void Window::InitializeWindow()
 	{
 		if (!glfwInit())

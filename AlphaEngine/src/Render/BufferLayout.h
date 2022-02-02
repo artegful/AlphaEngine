@@ -27,7 +27,7 @@ namespace Alpha
 		Bool
 	};
 
-	static int GetSize(ElementType type)
+	constexpr static uint32_t GetSize(ElementType type)
 	{
 		switch (type)
 		{
@@ -45,9 +45,10 @@ namespace Alpha
 		}
 
 		AL_ENGINE_ASSERT(false, "The provided element type is not supported");
+		return 0;
 	}
 
-	static GLenum GetOpenGLType(ElementType type)
+	constexpr static GLenum GetOpenGLType(ElementType type)
 	{
 		switch (type)
 		{
@@ -68,12 +69,34 @@ namespace Alpha
 		return 0;
 	}
 
+	constexpr static uint32_t GetElementCount(ElementType type)
+	{
+		switch (type)
+		{
+		case ElementType::Int:    return 1;
+		case ElementType::Int2:   return 2;
+		case ElementType::Int3:   return 3;
+		case ElementType::Int4:   return 4;
+		case ElementType::Float:  return 1;
+		case ElementType::Float2: return 2;
+		case ElementType::Float3: return 3;
+		case ElementType::Float4: return 4;
+		case ElementType::Mat3:	  return 9;
+		case ElementType::Mat4:   return 16;
+		case ElementType::Bool:   return 1;
+		}
+
+		AL_ENGINE_ASSERT(false, "The provided element type is not supported");
+		return 0;
+	}
+
 	struct BufferElement
 	{
 		BufferElement(ElementType type, const std::string& name, bool isNormalized = false) :
-			Type(type), Name(name), Size(GetSize(type)), IsNormalized(isNormalized), Offset(0)
+			Type(type), Name(name), ElementCount(GetElementCount(type)), Size(GetSize(type)), IsNormalized(isNormalized), Offset(0)
 		{ }
 
+		uint32_t ElementCount;
 		uint32_t Size;
 		uint32_t Offset;
 		ElementType Type;
@@ -88,8 +111,8 @@ namespace Alpha
 
 		uint32_t GetStride() const;
 
-		constexpr std::vector<BufferElement>::const_iterator begin() const;
-		constexpr std::vector<BufferElement>::const_iterator end() const;
+		std::vector<BufferElement>::const_iterator begin() const;
+		std::vector<BufferElement>::const_iterator end() const;
 
 	private:
 		std::vector<BufferElement> elements;
