@@ -29,9 +29,9 @@ namespace Alpha
 		const BufferLayout& layout = buffer->GetLayout();
 
 		int index = 0;
-		for (auto& element : layout)
+		for (const auto& element : layout)
 		{
-			glVertexAttribPointer(index, element.Size, GetOpenGLType(element.Type), element.IsNormalized, layout.GetStride(), (const void*) element.Offset);
+			glVertexAttribPointer(index, element.ElementCount, GetOpenGLType(element.Type), element.IsNormalized, layout.GetStride(), (const void*) element.Offset);
 			glEnableVertexAttribArray(index);
 			index++;
 		}
@@ -43,7 +43,7 @@ namespace Alpha
 		vertexBuffers.push_back(buffer);
 	}
 
-	void OpenGLVertexArray::AddIndexBuffer(const std::shared_ptr<IndexBuffer>& buffer)
+	void OpenGLVertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& buffer)
 	{
 		glBindVertexArray(id);
 		buffer->Bind();
@@ -52,5 +52,10 @@ namespace Alpha
 		buffer->Unbind();
 
 		indexBuffer = buffer;
+	}
+
+	std::size_t OpenGLVertexArray::GetAmountOfElements() const
+	{
+		return indexBuffer->GetAmountOfElements();
 	}
 }

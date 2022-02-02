@@ -13,7 +13,7 @@ namespace Alpha
 		static ResourceAllocator<T>& Instance();
 
 		template<typename... Args>
-		static std::shared_ptr<T> Add(const std::string& filePath, Args&&... args);
+		static std::shared_ptr<T> Get(const std::string& filePath, Args&&... args);
 
 	private:
 		std::unordered_map<std::string, std::shared_ptr<T>> pathToPtr;
@@ -32,7 +32,7 @@ namespace Alpha
 
 	template<typename T>
 	template<typename... Args>
-	std::shared_ptr<T> ResourceAllocator<T>::Add(const std::string& filePath, Args&&... args)
+	std::shared_ptr<T> ResourceAllocator<T>::Get(const std::string& filePath, Args&&... args)
 	{
 		return Instance().AddOrGet(filePath, std::forward<Args>(args)...);
 	}

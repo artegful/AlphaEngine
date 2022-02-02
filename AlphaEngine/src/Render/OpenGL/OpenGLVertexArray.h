@@ -12,11 +12,13 @@ namespace Alpha
 	public:
 		OpenGLVertexArray();
 
-		void Bind();
-		void Unbind();
+		void Bind() override;
+		void Unbind() override;
 
-		void AddVertexBuffer(const std::shared_ptr<VertexBuffer>& buffer);
-		void AddIndexBuffer(const std::shared_ptr<IndexBuffer>& buffer);
+		void AddVertexBuffer(const std::shared_ptr<VertexBuffer>& buffer) override;
+		void SetIndexBuffer(const std::shared_ptr<IndexBuffer>& buffer) override;
+
+		std::size_t GetAmountOfElements() const override;
 
 	private:
 		std::vector<std::shared_ptr<VertexBuffer>> vertexBuffers;

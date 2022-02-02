@@ -1,5 +1,6 @@
-#type vert
 #version 330 core
+
+#ifdef VERTEX
 
 layout (location = 0) in vec3 aPosition;
 layout (location = 1) in vec4 aColor;
@@ -22,8 +23,9 @@ void main()
 	fTextureId = aTextureId;
 }
 
-#type frag
-#version 330 core
+#endif
+
+#ifdef FRAGMENT
 
 in vec4 fColor;
 in vec2 fUv;
@@ -44,3 +46,5 @@ void main()
 		color = texture(textures[fTextureId], fUv);
 	}
 }
+
+#endif

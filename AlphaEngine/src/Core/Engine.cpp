@@ -10,6 +10,7 @@
 #include "Controls/Input.h"
 #include "Render/RenderCommand.h"
 #include "Render/RendererAPI.h"
+#include "Render/Renderer2D.h"
 
 namespace Alpha
 {
@@ -23,6 +24,7 @@ namespace Alpha
 		RenderCommand::SetAPI(config.RenderApi);
 
 		window.Initialize();
+		RenderCommand::Initialize();
 
 		previousTime = std::chrono::steady_clock::now();
 

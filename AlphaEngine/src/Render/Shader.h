@@ -23,14 +23,14 @@ namespace Alpha
 		virtual void Unbind() = 0;
 
 		//TODO move to material system later
-		virtual void SetUniformInt(const std::string& name, int value) = 0;
-		virtual void SetUniformIntArray(const std::string& name, int values[], size_t amount) = 0;
-		virtual void SetUniformFloat3(const std::string& name, glm::vec3& value) = 0;
-		virtual void SetUniformMat4(const std::string& name, const glm::mat4& value) = 0;
+		virtual void SetInt(const std::string& name, int value) = 0;
+		virtual void SetIntArray(const std::string& name, int values[], size_t amount) = 0;
+		virtual void SetFloat3(const std::string& name, const glm::vec3& value) = 0;
+		virtual void SetFloat4(const std::string& name, const glm::vec4& value) = 0;
+		virtual void SetMat4(const std::string& name, const glm::mat4& value) = 0;
 
 		//TODO write all remaining uniforms
 
 		static std::shared_ptr<Shader> Create(const std::string& path);
-		static std::shared_ptr<Shader> Create(const std::string& name, const std::unordered_map<ShaderType, const std::string>& shaderSources);
 	};
 }

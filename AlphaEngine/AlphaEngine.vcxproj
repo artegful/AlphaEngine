@@ -199,6 +199,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\Transform.h" />
+    <ClInclude Include="src\Render\SpriteProperties.h" />
+    <ClInclude Include="src\Render\Renderer2D.h" />
     <ClInclude Include="src\Layers\ImGuiLayer.h" />
     <ClInclude Include="src\Events\Event.h" />
     <ClInclude Include="src\Events\KeyPressedEvent.h" />
@@ -214,6 +217,7 @@
     <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Render\Shader.h" />
     <ClInclude Include="src\Render\Texture.h" />
+    <ClInclude Include="src\Render\VertexArray.h" />
     <ClInclude Include="src\Scene\SandboxScene.h" />
     <ClInclude Include="src\Render\BufferLayout.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLIndexBuffer.h" />
@@ -253,6 +257,8 @@
     <ClInclude Include="src\Render\VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Render\IndexBuffer.cpp" />
+    <ClCompile Include="src\Render\Renderer2D.cpp" />
     <ClCompile Include="src\Layers\ImGuiLayer.cpp" />
     <ClCompile Include="src\Layers\DebugLayer.cpp" />
     <ClCompile Include="src\Layers\GameLayer.cpp" />
@@ -264,6 +270,7 @@
     <ClCompile Include="src\Render\RendererAPI.cpp" />
     <ClCompile Include="src\Render\Shader.cpp" />
     <ClCompile Include="src\Render\Texture.cpp" />
+    <ClCompile Include="src\Render\VertexArray.cpp" />
     <ClCompile Include="src\Scene\SandboxScene.cpp" />
     <ClCompile Include="src\Render\BufferLayout.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLIndexBuffer.cpp" />

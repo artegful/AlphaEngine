@@ -16,20 +16,20 @@ namespace Alpha
 
 			if (Alpha::Input::IsKeyDown(GLFW_KEY_W))
 			{
-				transform.Position.y += 10.0f * deltaTime;
+				transform.Transform.Position.y += 10.0f * deltaTime;
 			}
 			else if (Alpha::Input::IsKeyDown(GLFW_KEY_S))
 			{
-				transform.Position.y -= 10.0f * deltaTime;
+				transform.Transform.Position.y -= 10.0f * deltaTime;
 			}
 
 			if (Alpha::Input::IsKeyDown(GLFW_KEY_D))
 			{
-				transform.Position.x += 10.0f * deltaTime;
+				transform.Transform.Position.x += 10.0f * deltaTime;
 			}
 			else if (Alpha::Input::IsKeyDown(GLFW_KEY_A))
 			{
-				transform.Position.x -= 10.0f * deltaTime;
+				transform.Transform.Position.x -= 10.0f * deltaTime;
 			}
 		}
 	}
