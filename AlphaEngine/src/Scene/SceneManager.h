@@ -7,6 +7,8 @@ namespace Alpha
 {
 	class Scene;
 
+	struct Event;
+
 	class SceneManager
 	{
 	public:
@@ -14,6 +16,9 @@ namespace Alpha
 
 		void ChangeScene(int id);
 		void Update(float deltaTime);
+		void OnEvent(Event& event);
+
+		Scene* GetCurrentScene();
 
 	private:
 		std::vector<Scene*> scenes;

@@ -4,20 +4,24 @@
 #include "Events/KeyReleasedEvent.h"
 #include "Events/MouseButtonPressedEvent.h"
 #include "Events/MouseButtonReleasedEvent.h"
+#include "Events/MouseScrolledEvent.h"
 
 namespace Alpha
 {
-	bool Input::mouseButtons[GLFW_MOUSE_BUTTON_LAST + 1]{ false };
-	bool Input::previousMouseButtons[GLFW_MOUSE_BUTTON_LAST + 1]{ false };
+	bool Input::MouseButtons[GLFW_MOUSE_BUTTON_LAST + 1]{ false };
+	bool Input::PreviousMouseButtons[GLFW_MOUSE_BUTTON_LAST + 1]{ false };
 
-	bool Input::keyButtons[GLFW_KEY_LAST + 1]{ false };
-	bool Input::previousKeyButtons[GLFW_KEY_LAST + 1]{ false };
+	bool Input::KeyButtons[GLFW_KEY_LAST + 1]{ false };
+	bool Input::PreviousKeyButtons[GLFW_KEY_LAST + 1]{ false };
+
+	glm::vec2 Input::Scroll;
+	bool Input::HasScrolled;
 
 	bool Input::IsKeyDown(int keyCode)
 	{
 		if (keyCode <= GLFW_KEY_LAST)
 		{
-			return keyButtons[keyCode];
+			return KeyButtons[keyCode];
 		}
 
 		return false;
@@ -27,7 +31,7 @@ namespace Alpha
 	{
 		if (keyCode <= GLFW_KEY_LAST)
 		{
-			return keyButtons[keyCode] && !previousKeyButtons[keyCode];
+			return KeyButtons[keyCode] && !PreviousKeyButtons[keyCode];
 		}
 
 		return false;
@@ -37,7 +41,7 @@ namespace Alpha
 	{
 		if (keyCode <= GLFW_MOUSE_BUTTON_LAST)
 		{
-			return mouseButtons[keyCode];
+			return MouseButtons[keyCode];
 		}
 
 		return false;
@@ -47,16 +51,29 @@ namespace Alpha
 	{
 		if (keyCode <= GLFW_MOUSE_BUTTON_LAST)
 		{
-			return mouseButtons[keyCode] && !previousMouseButtons[keyCode];
+			return MouseButtons[keyCode] && !PreviousMouseButtons[keyCode];
 		}
 
 		return false;
 	}
 
+	bool Input::HasScroll()
+	{
+		return HasScrolled;
+	}
+
+	const glm::vec2& Input::GetScroll()
+	{
+		return Scroll;
+	}
+
 	void Input::EndFrame()
 	{
-		memcpy(previousMouseButtons, mouseButtons, sizeof(mouseButtons));
-		memcpy(previousKeyButtons, keyButtons, sizeof(keyButtons));
+		memcpy(PreviousMouseButtons, MouseButtons, sizeof(MouseButtons));
+		memcpy(PreviousKeyButtons, KeyButtons, sizeof(KeyButtons));
+
+		Scroll = { 0, 0 };
+		HasScrolled = false;
 	}
 
 	void Input::OnEvent(Event& event)
@@ -65,32 +82,41 @@ namespace Alpha
 		Dispatcher::Dispatch<KeyReleasedEvent>(event, OnKeyReleasedEvent);
 		Dispatcher::Dispatch<MouseButtonPressedEvent>(event, OnMouseButtonPressedEvent);
 		Dispatcher::Dispatch<MouseButtonReleasedEvent>(event, OnMouseButtonReleasedEvent);
+		Dispatcher::Dispatch<MouseScrolledEvent>(event, OnMouseScrolledEvent);
 	}
 
 	bool Input::OnKeyPressedEvent(KeyPressedEvent& event)
 	{	
-		keyButtons[event.GetKeyCode()] = true;
+		KeyButtons[event.GetKeyCode()] = true;
 
 		return false;
 	}
 
 	bool Input::OnKeyReleasedEvent(KeyReleasedEvent& event)
 	{
-		keyButtons[event.GetKeyCode()] = false;
+		KeyButtons[event.GetKeyCode()] = false;
 
 		return false;
 	}
 
 	bool Input::OnMouseButtonPressedEvent(MouseButtonPressedEvent& event)
 	{
-		mouseButtons[event.GetMouseButton()] = true;
+		MouseButtons[event.GetMouseButton()] = true;
 
 		return false;
 	}
 
 	bool Input::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& event)
 	{
-		mouseButtons[event.GetMouseButton()] = false;
+		MouseButtons[event.GetMouseButton()] = false;
+
+		return false;
+	}
+
+	bool Input::OnMouseScrolledEvent(MouseScrolledEvent& event)
+	{
+		HasScrolled = true;
+		Scroll += event.GetScroll();
 
 		return false;
 	}

@@ -17,4 +17,14 @@ namespace Alpha
 	{
 		sceneManager.Update(deltaTime);
 	}
+
+	void GameLayer::OnEvent(Event& event)
+	{
+		sceneManager.OnEvent(event);
+	}
+
+	SceneManager& GameLayer::GetSceneManager()
+	{
+		return sceneManager;
+	}
 }

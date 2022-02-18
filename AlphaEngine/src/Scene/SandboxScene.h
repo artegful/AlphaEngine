@@ -1,11 +1,11 @@
 #pragma once
 
 #include "Scene.h"
-#include "Render/Camera.h"
 
 namespace Alpha
 {
 	class Texture;
+	class RenderCamera;
 
 	class SandboxScene : public Scene
 	{
@@ -16,9 +16,8 @@ namespace Alpha
 		void Update(float deltaTime) override;
 
 	private:
-		Camera camera;
-
 		std::shared_ptr<Texture> texture;
+		std::unique_ptr<RenderCamera> renderCamera;
 	};
 }
 

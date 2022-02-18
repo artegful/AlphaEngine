@@ -9,6 +9,7 @@ namespace Alpha
 	class LayerStack
 	{
 	public:
+		LayerStack();
 		~LayerStack();
 
 		void AddLayer(Layer* layer);

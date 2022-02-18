@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+#include "Window.h"
 #include "Render/API.h"
 
 namespace Alpha

@@ -3,6 +3,7 @@
 #include <stdexcept>
 
 #include "Core/Core.h"
+#include "Events/Event.h"
 #include "Scene/SandboxScene.h"
 
 namespace Alpha
@@ -34,6 +35,19 @@ namespace Alpha
 		{
 			currentScene->Update(deltaTime);
 		}
+	}
+
+	void SceneManager::OnEvent(Event& event)
+	{
+		for (auto scene : scenes)
+		{
+			scene->OnEvent(event);
+		}
+	}
+
+	Scene* SceneManager::GetCurrentScene()
+	{
+		return currentScene;
 	}
 }
 

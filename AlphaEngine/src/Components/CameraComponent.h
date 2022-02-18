@@ -1,17 +1,22 @@
 #pragma once
 
 #include "glm/gtc/matrix_transform.hpp"
-#include "Render/Camera.h"
+#include "Render/ProjectionCamera.h"
 
 namespace Alpha
 {
 	struct CameraComponent
 	{
-		Camera Camera;
+		ProjectionCamera Camera;
 
-		CameraComponent(const Alpha::Camera& camera) :
+		CameraComponent(const ProjectionCamera& camera) :
 			Camera(camera)
 		{ }
 		CameraComponent(const CameraComponent&) = default;
+
+		operator ProjectionCamera() const
+		{
+			return Camera;
+		}
 	};
 }

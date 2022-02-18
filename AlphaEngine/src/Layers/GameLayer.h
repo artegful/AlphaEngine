@@ -11,6 +11,9 @@ namespace Alpha
 		void Open() override;
 		void Close() override;
 		void Update(float deltaTime) override;
+		void OnEvent(Event& event) override;
+
+		SceneManager& GetSceneManager();
 
 	private:
 		SceneManager sceneManager;

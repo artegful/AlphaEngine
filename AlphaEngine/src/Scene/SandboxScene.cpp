@@ -3,10 +3,13 @@
 #include "ECS/Entity.h"
 
 #include "Core/Engine.h"
+#include "Core/Window.h"
 #include "Render/Texture.h"
 #include "Render/Sprite.h"
 #include "Render/Renderer2D.h"
-#include "Render/SpriteProperties.h"
+#include "Render/RenderCamera.h"
+#include "Render/ProjectionCamera.h"
+#include "Render/RenderProperties2D.h"
 
 #include "Resources/ResourceAllocator.hpp"
 
@@ -21,7 +24,6 @@
 namespace Alpha
 {
 	SandboxScene::SandboxScene() : 
-		camera(Engine::Get()->GetWindow().GetWidth() / 300.0f, Engine::Get()->GetWindow().GetHeight() / 300.0f),
 		texture(ResourceAllocator<Texture>::Get("assets/images/test.jpg"))
 	{
 
@@ -29,12 +31,14 @@ namespace Alpha
 
 	void SandboxScene::Open()
 	{
-		Entity cameraEntity = CreateEntity();
-		cameraEntity.AddComponent<CameraComponent>(camera);
+		Entity cameraEntity = CreateEntity("Camera");
+
+		ProjectionCamera projection(Engine::Get()->GetWindow().GetWidth() / 300.0f, Engine::Get()->GetWindow().GetHeight() / 300.0f);
+		cameraEntity.AddComponent<CameraComponent>(projection);
+
+		renderCamera = std::make_unique<RenderCamera>(cameraEntity.GetComponent<CameraComponent>(), cameraEntity.GetComponent<TransformComponent>());
 
 		std::shared_ptr<Texture> texture = ResourceAllocator<Texture>::Get("assets/images/dino.png");
-
-		std::shared_ptr<Sprite> sprite = std::make_shared<Sprite>(texture);
 
 		for (int x = -10; x <= 10; x++)
 		{
@@ -43,16 +47,17 @@ namespace Alpha
 				Entity entity = CreateEntity();
 
 				auto& spriteComponent = entity.AddComponent<SpriteComponent>();
-				spriteComponent.Sprite = sprite;
+				spriteComponent.Sprite = Sprite::CreateFromCount(texture, { 1, 1 }, { 2, 2 });
 
 				auto& transformComponent = entity.GetComponent<TransformComponent>();
 
-				transformComponent.Transform.Position = glm::vec3(x, y, 0.0f);
+				transformComponent.Transform.Position = { x, y, 0.0f };
+				transformComponent.Transform.Rotation.z = 45.0f;
 			}
 		}
 
-		sceneSystems.push_back(new CameraControllerSystem(registry));
 		sceneSystems.push_back(new SpriteRenderSystem(registry));
+		sceneSystems.push_back(new CameraControllerSystem(registry));
 
 		for (auto system : sceneSystems)
 		{
@@ -64,20 +69,9 @@ namespace Alpha
 
 	void SandboxScene::Update(float deltaTime)
 	{
+		Renderer2D::ResetStats();
+
 		RenderCommand::Clear();
 		Scene::Update(deltaTime);
-
-		Renderer2D::BeginScene(camera);
-
-		for (size_t i = 0; i < 10; i++)
-		{
-			for (size_t j = 0; j < 10; j++)
-			{
-				Renderer2D::DrawQuad({ .Position = { i - 5, j - 5, 0.0f }, .Texture = texture, .Color = { 0.4f, 1.0f, 1.0f, 0.7f }, .Tiling = 3.0f });
-			}
-
-		}
-
-		Renderer2D::EndScene();
 	}
 }

@@ -1,9 +1,12 @@
 #include "OpenGLRenderContext.h"
 
 #include "Core/Core.h"
+#include <sstream>
 
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
+
+using namespace std::string_literals;
 
 namespace Alpha
 {
@@ -24,20 +27,15 @@ namespace Alpha
 	{
 		this->window = window;
 
-		glfwMakeContextCurrent(window);
-
 		glewExperimental = GL_TRUE;
 
-		if (glewInit() != GLEW_OK)
-		{
-			glfwDestroyWindow(window);
-			glfwTerminate();
-		}
+		GLenum result = glewInit();
+		AL_ENGINE_ASSERT(result == GLEW_OK, "Glew initialization failed with: "s + reinterpret_cast<const char*>(glewGetErrorString(result)));
 
 		#ifdef AL_DEBUG
 
-		glEnable(GL_DEBUG_OUTPUT);
-		glDebugMessageCallback(MessageCallback, 0);
+		//glEnable(GL_DEBUG_OUTPUT);
+		//glDebugMessageCallback(MessageCallback, 0);
 		
 		#endif
 	}

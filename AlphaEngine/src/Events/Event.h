@@ -7,7 +7,8 @@ namespace Alpha
 {
 	enum class EventType
 	{
-		KeyPressed, KeyReleased, MousePressed, MouseReleased, Scroll
+		KeyPressed, KeyReleased, MousePressed, MouseReleased, Scroll,
+		WindowResized
 	};
 
 	#define EVENT_TYPE(type) static EventType Type() { return type; }\
