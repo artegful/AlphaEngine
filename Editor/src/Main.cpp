@@ -1,16 +1,25 @@
-#include "Core/Config.h"
-#include "Core/Engine.h"
-#include "Layers/GameLayer.h"
-#include "Layers/DebugLayer.h"
+#include <QApplication>
+#include <QtWidgets>
 
-int main()
+#include "Widgets/EditorWindow.h"
+#include "rttr/property.h"
+
+void ApplyStyles(QApplication& application)
 {
-	Alpha::Engine engine({ 1920, 1080, Alpha::API::OpenGL, true });
+    QFile file(":/dark/stylesheet.qss");
+    file.open(QFile::ReadOnly | QFile::Text);
+    QTextStream stream(&file);
+    application.setStyleSheet(stream.readAll());
+}
 
-	engine.GetLayerStack().AddLayer(new Alpha::GameLayer());
-	engine.GetLayerStack().AddLayer(new Alpha::DebugLayer());
+int main(int argc, char *argv[])
+{
+	QApplication application(argc, argv);
+    ApplyStyles(application);
 
-	engine.Run();
+    EditorWindow window;
+    window.setWindowState(Qt::WindowMaximized);
+	window.show();
 
-	return 0;
+	return application.exec();
 }
