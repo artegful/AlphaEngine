@@ -15,31 +15,17 @@ namespace Alpha
 	class Window
 	{
 	public:
-		Window(int width, int height, std::function<void(Event&)> eventCallback);
+		virtual ~Window() = default;
 
-		bool ShouldClose() const;
-		int GetWidth() const;
-		int GetHeight() const;
+		virtual void Initialize() = 0;
+		virtual void Update() = 0;
+		virtual void SwapBuffers() = 0;
+		virtual void SetEventCallback(std::function<void(Event&)> callback) = 0;
 
-		void Update();
-		void Initialize();
+		virtual bool ShouldClose() const = 0;
+		virtual int GetWidth() const = 0;
+		virtual int GetHeight() const = 0;
 
-		void SwapBuffers();
-
-		GLFWwindow* GetNativeWindow();
-
-	private:
-		static std::function<void(Event&)> EventCallback;
-		GLFWwindow* window;
-		std::unique_ptr<RenderContext> renderContext;
-
-		int width;
-		int height;
-
-		void InitializeWindow();
-		void BindEvents();
-
-		void Bind(GLFWwindow* window, int button, int action, int mods);
 	};
 }
 
