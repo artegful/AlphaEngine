@@ -87,6 +87,12 @@ namespace Alpha
 
 	bool Input::OnKeyPressedEvent(KeyPressedEvent& event)
 	{	
+#ifdef AL_DEBUG
+		if (event.GetKeyCode() > GLFW_KEY_LAST)
+		{
+			return false;
+		}
+#endif
 		KeyButtons[event.GetKeyCode()] = true;
 
 		return false;
@@ -94,6 +100,12 @@ namespace Alpha
 
 	bool Input::OnKeyReleasedEvent(KeyReleasedEvent& event)
 	{
+#ifdef AL_DEBUG
+		if (event.GetKeyCode() > GLFW_KEY_LAST)
+		{
+			return false;
+		}
+#endif
 		KeyButtons[event.GetKeyCode()] = false;
 
 		return false;

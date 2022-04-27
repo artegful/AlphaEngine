@@ -108,6 +108,9 @@
     <QtMoc Include="src\Widgets\Edits\BoolEdit.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="src\Widgets\Edits\ComponentEdit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Windows\QtWidgetWindow.h">
@@ -117,9 +120,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Widgets\Edits\VectorEdit.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Widgets\Edits\ComponentEdit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Widgets\ExpandableWidget.h">
@@ -147,5 +147,10 @@
   <ItemGroup>
     <None Include="Editor.pri" />
     <None Include="Editor.pro" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icons\play.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

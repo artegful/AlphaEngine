@@ -90,10 +90,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,10 +118,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,10 +146,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -174,10 +174,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -199,7 +199,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Reflection\Registration.inl" />
+    <ClCompile Include="src\Reflection\Registration.cpp" />
     <ClCompile Include="src\Controls\Input.cpp" />
     <ClCompile Include="src\Core\Engine.cpp" />
     <ClCompile Include="src\Core\GlfwWindow.cpp" />
@@ -234,6 +234,7 @@
     <ClCompile Include="src\Scene\SandboxScene.cpp" />
     <ClCompile Include="src\Scene\Scene.cpp" />
     <ClCompile Include="src\Scene\SceneManager.cpp" />
+    <ClCompile Include="src\Scene\SceneSerializer.cpp" />
     <ClCompile Include="src\Systems\CameraControllerSystem.cpp" />
     <ClCompile Include="src\Systems\SpriteRenderSystem.cpp" />
     <ClCompile Include="src\Utils\Utils.cpp" />
@@ -245,6 +246,9 @@
   <ItemGroup>
     <ProjectReference Include="..\ImGui\ImGui.vcxproj">
       <Project>{1485cf80-94a8-466e-9220-68f8e9f66890}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\yaml-cpp\yaml-cpp.vcxproj">
+      <Project>{6e3fc247-a2ba-434f-8fda-1e13564b4542}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -275,6 +279,7 @@
     <ClInclude Include="src\Events\WindowResizedEvent.h" />
     <ClInclude Include="src\Layers\DebugLayer.h" />
     <ClInclude Include="src\Layers\GameLayer.h" />
+    <ClInclude Include="src\Layers\GameMode.h" />
     <ClInclude Include="src\Layers\ImGuiLayer.h" />
     <ClInclude Include="src\Reflection\MetadataType.h" />
     <ClInclude Include="src\Reflection\MetadataVectorUsage.h" />
@@ -305,6 +310,7 @@
     <ClInclude Include="src\Scene\SandboxScene.h" />
     <ClInclude Include="src\Scene\Scene.h" />
     <ClInclude Include="src\Scene\SceneManager.h" />
+    <ClInclude Include="src\Scene\SceneSerializer.h" />
     <ClInclude Include="src\Systems\CameraControllerSystem.h" />
     <ClInclude Include="src\Systems\SpriteRenderSystem.h" />
     <ClInclude Include="src\Utils\Utils.h" />

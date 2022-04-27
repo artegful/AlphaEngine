@@ -22,6 +22,12 @@ template<int T>
 struct VectorComponentDispatcher;
 
 template<>
+struct VectorComponentDispatcher<2>
+{
+	using Type = glm::vec2;
+};
+
+template<>
 struct VectorComponentDispatcher<3>
 {
 	using Type = glm::vec3;

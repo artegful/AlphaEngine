@@ -1,20 +1,26 @@
 #include "EntityModel.h"
 
-#include "Core/Engine.h"
-#include "ECS/Entity.h"
 #include "Scene/Scene.h"
-#include "Layers/GameLayer.h"
-#include "Scene/SceneManager.h"
+#include "ECS/Entity.h"
 #include "Components/NameComponent.h"
 
-EntityModel::EntityModel() :
-    currentScene(Alpha::Engine::Get()->GetGameLayer().GetSceneManager().GetCurrentScene())
+EntityModel::EntityModel(Alpha::Scene* scene) :
+    currentScene(scene)
 { 
     entities = QVector<Alpha::Entity>::fromStdVector(currentScene->GetAllEntities());
 }
 
 EntityModel::~EntityModel()
 { }
+
+void EntityModel::ChangeScene(Alpha::Scene* scene)
+{
+    currentScene = scene;
+
+    beginResetModel();
+    entities = QVector<Alpha::Entity>::fromStdVector(currentScene->GetAllEntities());
+    endResetModel();
+}
 
 bool EntityModel::removeRows(int position, int rows, const QModelIndex& parent)
 {
@@ -102,7 +108,35 @@ int EntityModel::columnCount(const QModelIndex& parent) const
     return 1;
 }
 
+void EntityModel::Remove(QModelIndexList& indexes)
+{
+    qSort(indexes.begin(), indexes.end(), qGreater<QModelIndex>());
+
+    beginRemoveRows(indexes.first().parent(), indexes.last().row(), indexes.first().row());
+    for (auto it = indexes.begin(); it != indexes.end(); it++)
+    {
+        currentScene->DestroyEntity(entities[it->row()]);
+        entities.erase(entities.begin() + it->row());
+    }
+    endRemoveRows();
+}
+
+void EntityModel::Create()
+{
+    beginInsertRows(QModelIndex(), entities.size(), entities.size());
+
+    Alpha::Entity entity = currentScene->CreateEntity();
+    entities.push_back(entity);
+
+    endInsertRows();
+}
+
 Alpha::Entity& EntityModel::GetEntity(QModelIndex index)
 {
     return entities[index.row()];
+}
+
+Alpha::Scene* EntityModel::GetCurrentScene() const
+{
+    return currentScene;
 }

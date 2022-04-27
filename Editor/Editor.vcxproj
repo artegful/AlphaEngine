@@ -136,7 +136,7 @@
     <ClInclude Include="src\Widgets\ExpanderLayout.h" />
     <ClInclude Include="src\Widgets\Edits\ReflectedItemEdit.h" />
     <ClInclude Include="src\Widgets\Edits\EditFactory.h" />
-    <ClInclude Include="src\Widgets\Edits\ComponentEdit.h" />
+    <QtMoc Include="src\Widgets\Edits\ComponentEdit.h" />
     <ClInclude Include="src\Widgets\ExpandableWidget.h" />
     <ClInclude Include="src\Widgets\Edits\VectorEdit.h" />
     <QtMoc Include="src\Models\EntityModel.h" />
@@ -148,6 +148,9 @@
   <ItemGroup>
     <None Include="Editor.pri" />
     <None Include="Editor.pro" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icons\play.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

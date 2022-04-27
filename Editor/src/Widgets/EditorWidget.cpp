@@ -17,6 +17,7 @@ void EditorWidget::initializeGL()
 	engine = new Alpha::Engine({ 600, 400, Alpha::API::OpenGL });
 	engine->SetCustomWindow(engineWindow);
 	engine->Initialize();
+	engine->GetGameLayer().SetMode(Alpha::GameMode::Editor);
 }
 
 void EditorWidget::paintGL()

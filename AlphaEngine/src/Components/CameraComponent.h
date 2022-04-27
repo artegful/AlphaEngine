@@ -9,6 +9,9 @@ namespace Alpha
 	{
 		ProjectionCamera Camera;
 
+		CameraComponent():
+			Camera(16.0f / 9.0f)
+		{ }
 		CameraComponent(const ProjectionCamera& camera) :
 			Camera(camera)
 		{ }

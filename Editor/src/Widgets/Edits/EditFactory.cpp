@@ -22,6 +22,10 @@ BaseEdit* EditFactory::CreateEdit(const rttr::instance& instance, const rttr::pr
     {
         return new FloatEdit(instance, property, parent);
     }
+    if (type == rttr::type::get<glm::vec2>())
+    {
+        return new VectorEdit<2>(instance, property, parent);
+    }
     if (type == rttr::type::get<glm::vec3>())
     {
         return new VectorEdit<3>(instance, property, parent);

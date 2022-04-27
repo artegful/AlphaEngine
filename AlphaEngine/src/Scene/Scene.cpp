@@ -5,12 +5,20 @@
 #include "Components/NameComponent.h"
 #include "Components/TransformComponent.h"
 #include "Events/Event.h"
+#include "Core/Engine.h"
+#include "Render/ProjectionCamera.h"
+#include "Render/RenderCamera.h"
+#include "Components/CameraComponent.h"
+#include "Core/Window.h"
 
 namespace Alpha
 {
 	Scene::Scene() :
 		registry{},
 		sceneSystems{}
+	{ }
+
+	void Scene::Open()
 	{ }
 
 	void Scene::Update(float deltaTime)

@@ -14,9 +14,10 @@ class EntityModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
-    explicit EntityModel();
+    explicit EntityModel(Alpha::Scene* scene);
     ~EntityModel();
 
+    void ChangeScene(Alpha::Scene* scene);
     bool removeRows(int position, int rows, const QModelIndex& parent);
     QVariant data(const QModelIndex& index, int role) const override;
     bool setData(const QModelIndex& index, const QVariant& value, int role);
@@ -29,7 +30,11 @@ public:
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
     int columnCount(const QModelIndex& parent = QModelIndex()) const override;
 
+    void Remove(QModelIndexList& indexes);
+    void Create();
+
     Alpha::Entity& GetEntity(QModelIndex index);
+    Alpha::Scene* GetCurrentScene() const;
 
 private:
     Alpha::Scene* currentScene;

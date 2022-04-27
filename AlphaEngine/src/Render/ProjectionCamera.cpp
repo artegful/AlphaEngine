@@ -9,12 +9,12 @@ namespace Alpha
 
     ProjectionCamera::ProjectionCamera(float width, float height) :
         projectionMatrix(glm::ortho<float>(-width, width, -height, height)),
-        aspectRatio(width / height),
-        zoom(width / aspectRatio)
+        size(width, height),
+        zoom(1.0f)
     { }
 
     ProjectionCamera::ProjectionCamera(float aspectRatio) :
-        aspectRatio(aspectRatio),
+        size(aspectRatio, 1.0f),
         zoom(1.0f)
     {
         UpdateProjectionMatrix();
@@ -31,14 +31,21 @@ namespace Alpha
         UpdateProjectionMatrix();
     }
 
-    float ProjectionCamera::GetAspectRatio() const
+    glm::vec2 ProjectionCamera::GetSize() const
     {
-        return aspectRatio;
+        return size;
+    }
+
+    void ProjectionCamera::SetSize(glm::vec2 size)
+    {
+        this->size = size;
+
+        UpdateProjectionMatrix();
     }
 
     void ProjectionCamera::SetAspectRatio(float aspectRatio)
     {
-        this->aspectRatio = aspectRatio;
+        size.x = size.y * aspectRatio;
 
         UpdateProjectionMatrix();
     }
@@ -50,7 +57,7 @@ namespace Alpha
 
     void ProjectionCamera::UpdateProjectionMatrix()
     {
-        projectionMatrix = glm::ortho<float>(-zoom * aspectRatio, zoom * aspectRatio, -zoom, zoom);
+        projectionMatrix = glm::ortho<float>(-zoom * size.x / 2.0f, zoom * size.x / 2.0f, -zoom * size.y / 2.0f, zoom * size.y / 2.0f);
     }
 }
 

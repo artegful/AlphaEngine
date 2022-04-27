@@ -23,48 +23,12 @@
 
 namespace Alpha
 {
-	SandboxScene::SandboxScene() : 
-		texture(ResourceAllocator<Texture>::Get("assets/images/test.jpg"))
-	{
-
-	}
-
 	void SandboxScene::Open()
 	{
-		Entity cameraEntity = CreateEntity("Camera");
-
-		ProjectionCamera projection(Engine::Get()->GetWindow().GetWidth() / 300.0f, Engine::Get()->GetWindow().GetHeight() / 300.0f);
-		cameraEntity.AddComponent<CameraComponent>(projection);
-
-		renderCamera = std::make_unique<RenderCamera>(cameraEntity.GetComponent<CameraComponent>(), cameraEntity.GetComponent<TransformComponent>());
-
-		std::shared_ptr<Texture> texture = ResourceAllocator<Texture>::Get("assets/images/dino.png");
-
-		for (int x = -10; x <= 10; x++)
-		{
-			for (int y = -10; y <= 10; y++)
-			{
-				Entity entity = CreateEntity();
-
-				auto& spriteComponent = entity.AddComponent<SpriteComponent>();
-				spriteComponent.Sprite = Sprite::CreateFromCount(texture, { 1, 1 }, { 2, 2 });
-
-				auto& transformComponent = entity.GetComponent<TransformComponent>();
-
-				transformComponent.Transform.Position = { x, y, 0.0f };
-				transformComponent.Transform.Rotation.z = 45.0f;
-			}
-		}
-
-		sceneSystems.push_back(new SpriteRenderSystem(registry));
-		sceneSystems.push_back(new CameraControllerSystem(registry));
-
 		for (auto system : sceneSystems)
 		{
 			system->Start();
 		}
-
-		Renderer2D::Initialize();
 	}
 
 	void SandboxScene::Update(float deltaTime)

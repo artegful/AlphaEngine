@@ -17,7 +17,7 @@ namespace Alpha
 		Scene();
 		virtual ~Scene() = default;
 
-		virtual void Open() { };
+		virtual void Open();
 		virtual void Update(float deltaTime);
 		virtual void Close() { };
 		virtual void OnEvent(Event& event);
@@ -35,6 +35,8 @@ namespace Alpha
 		size_t amountOfUnnamedEntities = 0;
 
 		friend class Entity;
+		friend class System;
+		friend class SceneSerializer;
 	};
 }
 

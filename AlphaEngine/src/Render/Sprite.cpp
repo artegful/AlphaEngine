@@ -48,4 +48,9 @@ namespace Alpha
 
         return CreateFromSize(spriteSheet, spriteCoodsInCells, cellSizeInPixels, spriteSizeInCells);
     }
+
+    std::shared_ptr<Sprite> Sprite::Create(const std::shared_ptr<Texture> texture, const glm::vec2 uvs[4])
+    {
+        return std::make_shared<Sprite>(texture, uvs);
+    }
 }

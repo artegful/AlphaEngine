@@ -15,45 +15,7 @@
 #include "Render/RendererAPI.h"
 #include "Render/Renderer2D.h"
 
-#include "rttr/registration.h"
-
-#include "Components/TransformComponent.h"
-#include "Components/SpriteComponent.h"
-#include "Components/CameraComponent.h"
-#include "Reflection/MetadataType.h"
-#include "Reflection/MetadataVectorUsage.h"
-
-RTTR_REGISTRATION
-{
-	using namespace rttr;
-
-	registration::class_<Alpha::TransformComponent>("TransformComponent")
-		.property("Transform", &Alpha::TransformComponent::Transform)
-		(
-			policy::prop::bind_as_ptr
-		);
-
-	registration::class_<Alpha::SpriteComponent>("SpriteComponent")
-		.property("Color", &Alpha::SpriteComponent::Color)
-		(
-			metadata(Alpha::MetadataType::VectorUsage, Alpha::MetadataVectorUsage::Color)
-		);
-
-	registration::class_<Alpha::Transform>("Transform")
-		.property("Position", &Alpha::Transform::Position)
-		.property("Rotation", &Alpha::Transform::Rotation)
-		.property("Scale", &Alpha::Transform::Scale);
-
-	registration::class_<Alpha::CameraComponent>("CameraComponent")
-		.property("Camera", &Alpha::CameraComponent::Camera)
-		(
-			policy::prop::bind_as_ptr
-		);
-
-	registration::class_<Alpha::ProjectionCamera>("ProjectionCamera")
-		.property("Zoom", &Alpha::ProjectionCamera::GetZoom, &Alpha::ProjectionCamera::SetZoom)
-		.property("AspectRatio", &Alpha::ProjectionCamera::GetAspectRatio, &Alpha::ProjectionCamera::SetAspectRatio);
-}
+#include "Reflection/Registration.cpp"
 
 namespace Alpha
 {

@@ -9,12 +9,23 @@
 
 class ComponentEdit : public ExpandableWidget
 {
+	Q_OBJECT
+
 public:
 	ComponentEdit(const rttr::instance& instancePtr, rttr::type type, QWidget* parent);
 	void SetInstance(rttr::variant instancePtr);
 
+signals:
+	void DeleteButtonPressed(rttr::type componentType);
+
 private:
 	QVector<BaseEdit*> edits;
 	QVBoxLayout* layout;
+	rttr::type* componentType;
+
+	QToolButton* deleteButton;
+
+private slots:
+	void OnDeleteButtonPressed();
 };
 

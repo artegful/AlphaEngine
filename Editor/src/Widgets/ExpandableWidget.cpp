@@ -11,7 +11,7 @@ ExpandableWidget::ExpandableWidget(const QString& name, QWidget* parent) : QFram
     mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->setSpacing(0);
 
-    QHBoxLayout* headerLayout = new QHBoxLayout(this);
+    headerLayout = new QHBoxLayout(this);
     headerLayout->setSpacing(15);
     toggleButton = new QToolButton(this);
     toggleButton->setStyleSheet("QToolButton { border: none; }");

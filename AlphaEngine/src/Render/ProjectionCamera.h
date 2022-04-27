@@ -14,7 +14,9 @@ namespace Alpha
 
 		float GetZoom() const;
 		void SetZoom(float zoom);
-		float GetAspectRatio() const;
+		glm::vec2 GetSize() const;
+		void SetSize(glm::vec2 size);
+
 		void SetAspectRatio(float aspectRatio);
 
 		const glm::mat4& GetProjectionMatrix() const;
@@ -23,7 +25,7 @@ namespace Alpha
 		static constexpr float MIN_ZOOM = 0.001f;
 
 		glm::mat4 projectionMatrix;
-		float aspectRatio;
+		glm::vec2 size;
 		float zoom;
 
 		void UpdateProjectionMatrix();

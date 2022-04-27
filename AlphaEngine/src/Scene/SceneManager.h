@@ -13,16 +13,15 @@ namespace Alpha
 	{
 	public:
 		SceneManager();
+		~SceneManager();
 
-		void ChangeScene(int id);
+		void ChangeScene(Scene* scene);
 		void Update(float deltaTime);
 		void OnEvent(Event& event);
 
 		Scene* GetCurrentScene();
 
 	private:
-		std::vector<Scene*> scenes;
-
 		Scene* currentScene;
 	};
 }

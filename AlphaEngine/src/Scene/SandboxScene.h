@@ -10,7 +10,7 @@ namespace Alpha
 	class SandboxScene : public Scene
 	{
 	public:
-		SandboxScene();
+		SandboxScene() = default;
 
 		void Open() override;
 		void Update(float deltaTime) override;

@@ -5,10 +5,12 @@
 
 namespace Alpha
 {
+	class SceneManager;
+
 	class System
 	{
 	public:
-		System(entt::registry& registry);
+		System(SceneManager* scene);
 		virtual ~System() = default;
 
 		virtual void Start() { }
@@ -16,7 +18,10 @@ namespace Alpha
 		virtual void OnEvent(Event& event) { };
 
 	protected:
-		entt::registry& registry;
+		entt::registry& GetRegistry() const;
+
+	private:
+		SceneManager* sceneManager;
 	};
 }
 
