@@ -20,6 +20,7 @@ namespace Alpha
 
 		int GetWidth() const override;
 		int GetHeight() const override;
+		std::string GetPath() const override;
 
 		bool operator==(const Texture& texture) override;
 
@@ -29,6 +30,7 @@ namespace Alpha
 		static const std::unordered_map<int, GLenum> ChannelsToFormat;
 
 		std::string name;
+		std::string path;
 		GLuint id;
 		int width;
 		int height;

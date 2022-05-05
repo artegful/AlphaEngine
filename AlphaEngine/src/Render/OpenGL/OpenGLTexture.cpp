@@ -16,6 +16,7 @@ namespace Alpha
 
 	OpenGLTexture::OpenGLTexture(const std::string& path) : OpenGLTexture()
 	{
+		this->path = path;
 		name = Utils::GetNameFromPath(path);
 
 		stbi_set_flip_vertically_on_load(1);
@@ -78,6 +79,12 @@ namespace Alpha
 	{
 		return height;
 	}
+
+	std::string OpenGLTexture::GetPath() const
+	{
+		return path;
+	};
+
 
 	bool OpenGLTexture::operator==(const Texture& texture)
 	{

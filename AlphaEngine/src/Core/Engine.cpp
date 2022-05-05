@@ -5,6 +5,9 @@
 #include "Core.h"
 #include "Config.h"
 #include "Layer.h"
+#include "Window.h"
+#include "GlfwWindow.h"
+#include "Layers/GameLayer.h"
 #include "Layers/ImGuiLayer.h"
 #include "Events/Event.h"
 #include "Controls/Input.h"
@@ -12,48 +15,65 @@
 #include "Render/RendererAPI.h"
 #include "Render/Renderer2D.h"
 
+#include "rttr/registration.h"
+#include "rttr/constructor.h"
+
+#include "Components/TransformComponent.h"
+#include "Components/SpriteComponent.h"
+#include "Components/OrthoCameraComponent.h"
+
+#include "ECS/Script.h"
+
+#include "Reflection/MetadataType.h"
+#include "Reflection/MetadataVectorUsage.h"
+
+#include "Reflection/Registration.h"
+
+#include "rttr/constructor.h"
+
 namespace Alpha
 {
 	Engine* Engine::Instance = nullptr;
 
-	Engine::Engine(const Config& config) :
-		window(config.Width, config.Height, EVENT_BIND(OnEvent)),
-		isImGuiEnabled(config.IsImGuiEnabled)
+	Engine::Engine(const Alpha::Config& config) :
+		isImGuiEnabled(config.IsImGuiEnabled),
+		window(nullptr)
 	{
 		Instance = this;
 		RenderCommand::SetAPI(config.RenderApi);
+		window.reset(new GlfwWindow(config.Width, config.Height));
+   	}
 
-		window.Initialize();
-		RenderCommand::Initialize();
-
-		previousTime = std::chrono::steady_clock::now();
-
-		if (isImGuiEnabled)
-		{
-			layerStack.AddOverlay(new ImGuiLayer());
-		}
+	void Engine::SetCustomWindow(const std::shared_ptr<Window>& customWindow)
+	{
+		window = customWindow;
 	}
 
 	void Engine::Run()
 	{
-		while (!window.ShouldClose())
+		while (!window->ShouldClose())
 		{
-			UpdateDeltaTime();
-			window.Update();
-
-			for (auto layer : layerStack)
-			{
-				layer->Update(deltaTime);
-			}
-
-			if (isImGuiEnabled)
-			{
-				UpdateImGui();
-			}
-
-			window.SwapBuffers();
-			Input::EndFrame();
+			Update();
 		}
+	}
+
+	void Engine::Update()
+	{
+		UpdateDeltaTime();
+		window->Update();
+
+		for (auto layer : layerStack)
+		{
+			layer->Update(deltaTime);
+		}
+
+		if (isImGuiEnabled)
+		{
+			UpdateImGui();
+		}
+
+		window->SwapBuffers();
+		Input::EndFrame();
 	}
 
 	LayerStack& Engine::GetLayerStack()
@@ -63,7 +83,12 @@ namespace Alpha
 
 	Window& Engine::GetWindow()
 	{
-		return window;
+		return *window;
+	}
+
+	GameLayer& Engine::GetGameLayer()
+	{
+		return *gameLayer;
 	}
 
 	Engine* Engine::Get()
@@ -90,6 +115,23 @@ namespace Alpha
 		}
 
 		ImGuiLayer::End();
+	}
+
+	void Engine::Initialize()
+	{
+		window->Initialize();
+		window->SetEventCallback(EVENT_BIND(OnEvent));
+		RenderCommand::Initialize();
+
+		previousTime = std::chrono::steady_clock::now();
+
+		gameLayer = new GameLayer();
+		layerStack.AddLayer(gameLayer);
+
+		if (isImGuiEnabled)
+		{
+			layerStack.AddOverlay(new ImGuiLayer());
+		}
 	}
 
 	void Engine::OnEvent(Event& event)

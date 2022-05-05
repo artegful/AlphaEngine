@@ -4,6 +4,10 @@
 
 namespace Alpha
 {
+    LayerStack::LayerStack() :
+        insertIndex(0)
+    { }
+
     LayerStack::~LayerStack()
     {
         for (auto layer : layers)

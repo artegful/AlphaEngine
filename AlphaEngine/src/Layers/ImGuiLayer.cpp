@@ -4,8 +4,9 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
-#include "Core/Engine.h"
 #include "GLFW/glfw3.h"
+#include "Core/Engine.h"
+#include "Core/GlfwWindow.h"
 
 namespace Alpha
 {
@@ -28,7 +29,11 @@ namespace Alpha
 			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
 		}
 
-		ImGui_ImplGlfw_InitForOpenGL(Engine::Get()->GetWindow().GetNativeWindow(), true);
+		//casting using pointers to avoid exception
+		GlfwWindow* window = dynamic_cast<GlfwWindow*>(&Engine::Get()->GetWindow());
+		AL_ENGINE_ASSERT(window, "Currently you can use ImGui only with GLFW window implementation");
+
+		ImGui_ImplGlfw_InitForOpenGL(window->GetNativeWindow(), true);
 		ImGui_ImplOpenGL3_Init("#version 330");
 	}
 

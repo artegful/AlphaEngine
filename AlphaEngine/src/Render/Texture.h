@@ -17,6 +17,7 @@ namespace Alpha
 
 		virtual int GetWidth() const = 0;
 		virtual int GetHeight() const = 0;
+		virtual std::string GetPath() const = 0;
 
 		virtual bool operator==(const Texture& texture) = 0;
 

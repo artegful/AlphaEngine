@@ -6,12 +6,14 @@
 #include "RenderCommand.h"
 #include "Resources/ResourceAllocator.hpp"
 
+#include "RenderCamera.h"
 #include "VertexArray.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "BufferLayout.h"
 #include "Shader.h"
 #include "Texture.h"
+#include "Sprite.h"
 
 namespace Alpha
 {
@@ -23,6 +25,15 @@ namespace Alpha
 	GLuint ebo;
 
 	Renderer2D::RenderData Renderer2D::Data;
+	Renderer2D::StatsData Renderer2D::Stats;
+
+	glm::vec2 Renderer2D::RenderData::DefaultUvs[4]
+	{
+		{ 0.0f, 0.0f },
+		{ 1.0f, 0.0f },
+		{ 1.0f, 1.0f },
+		{ 0.0f, 1.0f }
+	};
 
 	void Renderer2D::Initialize()
 	{
@@ -50,7 +61,7 @@ namespace Alpha
 			});
 		Data.VertexBuffer->SetLayout(layout);
 
-		uint32_t indices[RenderData::MAX_INDICES];
+		uint32_t* indices = new uint32_t[RenderData::MAX_INDICES];
 		uint32_t offset = 0;
 		for (size_t i = 0; i < RenderData::MAX_INDICES; i += 6)
 		{
@@ -66,6 +77,7 @@ namespace Alpha
 		}
 
 		std::shared_ptr<IndexBuffer> indexBuffer = IndexBuffer::Create(indices, RenderData::MAX_INDICES);
+		delete[] indices;
 
 		Data.VertexArray->AddVertexBuffer(Data.VertexBuffer);
 		Data.VertexArray->SetIndexBuffer(indexBuffer);
@@ -85,78 +97,114 @@ namespace Alpha
 	{
 	}
 
-	void Renderer2D::BeginScene(const Camera& camera)
+	void Renderer2D::BeginScene(const RenderCamera& camera)
 	{
 		Data.Shader->Bind();
 		Data.Shader->SetMat4("uViewProjectionMatrix", camera.GetViewProjectionMatrix());
 
-		Data.NextEmptyVertex = Data.Vertices;
-		Data.SpritesStored = 0;
+		ClearBatch();
 	}
 
-	void Renderer2D::DrawQuad(const SpriteProperties properties)
+	void Renderer2D::DrawQuad(const RenderProperties2D& properties)
 	{
-		float textureId = 0.0f;
-
-		if (properties.Texture)
+		if (Data.SpritesStored >= RenderData::MAX_SPRITES)
 		{
-			textureId = FindOrAddTexture(properties.Texture);
+			Flush();
 		}
 
-		//Nice code
-		Data.NextEmptyVertex->Position = { properties.Position.x - properties.Size.x / 2.0f, properties.Position.y - properties.Size.y / 2.0f, 0.0f };
-		Data.NextEmptyVertex->Color = properties.Color;
-		Data.NextEmptyVertex->Uv = { 0.0f, 0.0f };
-		Data.NextEmptyVertex->TextureIndex = textureId;
-		Data.NextEmptyVertex->Tiling = properties.Tiling;
-		Data.NextEmptyVertex++;
+		glm::vec4 positions[]
+		{
+			{ -0.5f, -0.5f, 0.0f, 1.0f },
+			{  0.5f, -0.5f, 0.0f, 1.0f },
+			{  0.5f,  0.5f, 0.0f, 1.0f },
+			{ -0.5f,  0.5f, 0.0f, 1.0f }
+		};
 
-		Data.NextEmptyVertex->Position = { properties.Position.x + properties.Size.x / 2.0f, properties.Position.y - properties.Size.y / 2.0f, 0.0f };
-		Data.NextEmptyVertex->Color = properties.Color;
-		Data.NextEmptyVertex->Uv = { 1.0f, 0.0f };
-		Data.NextEmptyVertex->TextureIndex = textureId;
-		Data.NextEmptyVertex->Tiling = properties.Tiling;
-		Data.NextEmptyVertex++;
+		glm::mat4 transformation = glm::translate(glm::mat4(1.0f), properties.Position);
 
-		Data.NextEmptyVertex->Position = { properties.Position.x + properties.Size.x / 2.0f, properties.Position.y + properties.Size.y / 2.0f, 0.0f };
-		Data.NextEmptyVertex->Color = properties.Color;
-		Data.NextEmptyVertex->Uv = { 1.0f, 1.0f };
-		Data.NextEmptyVertex->TextureIndex = textureId;
-		Data.NextEmptyVertex->Tiling = properties.Tiling;
-		Data.NextEmptyVertex++;
+		//Comparing with default value
+		if (properties.RotationAngle)
+		{
+			transformation = glm::rotate(transformation, properties.RotationAngle, { 0.0f, 0.0f, 1.0f });
+		}
 
-		Data.NextEmptyVertex->Position = { properties.Position.x - properties.Size.x / 2.0f, properties.Position.y + properties.Size.y / 2.0f, 0.0f };
-		Data.NextEmptyVertex->Color = properties.Color;
-		Data.NextEmptyVertex->Uv = { 0.0f, 1.0f };
-		Data.NextEmptyVertex->TextureIndex = textureId;
-		Data.NextEmptyVertex->Tiling = properties.Tiling;
-		Data.NextEmptyVertex++;
+		transformation = glm::scale(transformation, glm::vec3(properties.Size, 1.0f));
+
+		float textureId = 0.0f;
+		const glm::vec2 *uvs = RenderData::DefaultUvs;
+
+		if (properties.Sprite && properties.Sprite->HasTexture())
+		{
+			uvs = properties.Sprite->GetUvs();
+			textureId = (float)FindOrAddTexture(properties.Sprite->GetTexture());
+		}
+
+		for (auto i = 0; i < 4; i++)
+		{
+			Data.NextEmptyVertex->Position = transformation * positions[i];
+			Data.NextEmptyVertex->Color = properties.Color;
+			Data.NextEmptyVertex->Uv = uvs[i];
+			Data.NextEmptyVertex->TextureIndex = textureId;
+			Data.NextEmptyVertex->Tiling = properties.Tiling;
+			Data.NextEmptyVertex++;
+		}
 
 		Data.SpritesStored++;
+		Stats.Quads++;
 	}
 
 	void Renderer2D::EndScene()
 	{
-		Data.VertexBuffer->SetData(Data.Vertices, (uint8_t*)Data.NextEmptyVertex - (uint8_t*)Data.Vertices);
-
 		Flush();
+	}
+
+	const Renderer2D::StatsData& Renderer2D::GetStats()
+	{
+		return Stats;
+	}
+
+	void Renderer2D::ResetStats()
+	{
+		Stats.Reset();
 	}
 
 	void Renderer2D::Flush()
 	{
+		UploadData();
 		Data.VertexArray->Bind();
 
-		for (auto i = 0; i < Data.NextTextureIndex; i++)
+		for (size_t i = 0; i < Data.NextTextureIndex; i++)
 		{
 			Data.Textures[i]->Bind(i);
 		}
 
 		RenderCommand::DrawIndexed(*Data.VertexArray, 6 * Data.SpritesStored);
+		Stats.DrawCalls++;
+
+		ClearBatch();
+	}
+
+	void Renderer2D::UploadData()
+	{
+		Data.VertexBuffer->SetData(Data.Vertices, (uint8_t*)Data.NextEmptyVertex - (uint8_t*)Data.Vertices);
+	}
+
+	void Renderer2D::ClearBatch()
+	{
+		Data.NextEmptyVertex = Data.Vertices;
+		Data.SpritesStored = 0;
+
+		for (size_t i = 1; i < Data.NextTextureIndex; i++)
+		{
+			Data.Textures[i].reset();
+		}
+
+		Data.NextTextureIndex = 1;
 	}
 
 	int Renderer2D::FindOrAddTexture(const std::shared_ptr<Texture> texture)
 	{
-		for (auto i = 0; i < Data.NextTextureIndex; i++)
+		for (size_t i = 0; i < Data.NextTextureIndex; i++)
 		{
 			if (*Data.Textures[i].get() == *texture.get())
 			{
@@ -164,8 +212,18 @@ namespace Alpha
 			}
 		}
 
+		if (Data.NextTextureIndex >= RenderData::MAX_TEXTURES)
+		{
+			Flush();
+		}
+
 		Data.Textures[Data.NextTextureIndex] = texture;
 		Data.NextTextureIndex++;
 		return Data.NextTextureIndex - 1;
+	}
+
+	void Renderer2D::StatsData::Reset()
+	{
+		memset(this, 0, sizeof(StatsData));
 	}
 }

@@ -1,12 +1,14 @@
 #include "Core/Config.h"
 #include "Core/Engine.h"
 #include "Layers/GameLayer.h"
+#include "Layers/DebugLayer.h"
 
 int main()
 {
-	Alpha::Engine engine({ 1920, 1080, Alpha::API::OpenGL });
+	Alpha::Engine engine(Alpha::Config{ 1920, 1080, Alpha::API::OpenGL, true });
 
 	engine.GetLayerStack().AddLayer(new Alpha::GameLayer());
+	engine.GetLayerStack().AddOverlay(new Alpha::DebugLayer());
 
 	engine.Run();
 

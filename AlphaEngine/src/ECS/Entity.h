@@ -18,6 +18,12 @@ namespace Alpha
 		}
 
 		template<typename T>
+		bool HasComponent()
+		{
+			return scene->registry.all_of<T>(handle);
+		}
+
+		template<typename T>
 		void RemoveComponent()
 		{
 			scene->registry.remove<T>(handle);
@@ -25,6 +31,12 @@ namespace Alpha
 
 		template<typename T>
 		T& GetComponent()
+		{
+			return scene->registry.get<T>(handle);
+		}
+
+		template<typename T>
+		const T& GetComponent() const
 		{
 			return scene->registry.get<T>(handle);
 		}
@@ -38,6 +50,8 @@ namespace Alpha
 	private:
 		Alpha::Scene *scene;
 		entt::entity handle;
+
+		friend class Scene;
 	};
 }
 

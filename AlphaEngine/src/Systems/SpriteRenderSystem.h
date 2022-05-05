@@ -1,24 +1,21 @@
 #pragma once
 
 #include <vector>
-
 #include "ECS/System.h"
-#include "Render/SpriteBatch.h"
 
 namespace Alpha
 {
+	struct WindowResizedEvent;
+	class RenderCamera;
+
 	class SpriteRenderSystem : public System
 	{
 	public:
-		SpriteRenderSystem(entt::registry& registry);
+		SpriteRenderSystem(SceneManager* scene);
 
 		void Start() override;
 		void Update(float deltaTime) override;
-
-	private:
-		std::vector<SpriteBatch> spriteBatches;
-
-		void AddToNearestBatch(const TransformComponent& transform, const SpriteComponent& sprite);
+		void RenderScene(const RenderCamera& camera);
 	};
 }
 
