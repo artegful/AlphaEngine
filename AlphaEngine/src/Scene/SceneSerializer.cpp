@@ -12,7 +12,11 @@
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
 #include "Render/Sprite.h"
-#include "Components/CameraComponent.h"
+#include "Components/OrthoCameraComponent.h"
+#include "Components/Rigidbody2DComponent.h"
+#include "Components/Box2DColliderComponent.h"
+
+#include "rttr/type.h"
 
 namespace YAML
 {
@@ -131,15 +135,45 @@ namespace Alpha
 			yaml << YAML::EndMap;
 		}
 
-		if (entity.HasComponent<CameraComponent>())
+		if (entity.HasComponent<OrthoCameraComponent>())
 		{
-			CameraComponent& cameraComponent = entity.GetComponent<CameraComponent>();
+			auto& cameraComponent = entity.GetComponent<OrthoCameraComponent>();
 
-			yaml << YAML::Key << "CameraComponent";
+			yaml << YAML::Key << "OrthoCameraComponent";
 			yaml << YAML::BeginMap;
 
 			yaml << YAML::Key << "Size" << YAML::Value << cameraComponent.Camera.GetSize();
 			yaml << YAML::Key << "Zoom" << YAML::Value << cameraComponent.Camera.GetZoom();
+
+			yaml << YAML::EndMap;
+		}
+
+		if (entity.HasComponent<Rigidbody2DComponent>())
+		{
+			auto& rigidbody2DComponent = entity.GetComponent<Rigidbody2DComponent>();
+
+			yaml << YAML::Key << "Rigidbody2DComponent";
+			yaml << YAML::BeginMap;
+
+			yaml << YAML::Key << "Type" << YAML::Value << static_cast<int>(rigidbody2DComponent.Type);
+			yaml << YAML::Key << "IsFixedRotation" << YAML::Value << rigidbody2DComponent.IsFixedRotation;
+
+			yaml << YAML::EndMap;
+		}
+
+		if (entity.HasComponent<Box2DColliderComponent>())
+		{
+			auto& box2DComponent = entity.GetComponent<Box2DColliderComponent>();
+
+			yaml << YAML::Key << "Box2DColliderComponent";
+			yaml << YAML::BeginMap;
+
+			yaml << YAML::Key << "Offset" << YAML::Value << box2DComponent.Offset;
+			yaml << YAML::Key << "Size" << YAML::Value << box2DComponent.Size;
+			yaml << YAML::Key << "Density" << YAML::Value << box2DComponent.Density;
+			yaml << YAML::Key << "Friction" << YAML::Value << box2DComponent.Friction;
+			yaml << YAML::Key << "Restitution" << YAML::Value << box2DComponent.Restitution;
+			yaml << YAML::Key << "RestitutionThreshold" << YAML::Value << box2DComponent.RestitutionThreshold;
 
 			yaml << YAML::EndMap;
 		}
@@ -183,14 +217,36 @@ namespace Alpha
 			}
 		}
 
-		const YAML::Node& cameraComponentNode = yaml["CameraComponent"];
+		const YAML::Node& cameraComponentNode = yaml["OrthoCameraComponent"];
 		if (cameraComponentNode)
 		{
 			glm::vec2 serializedSize = cameraComponentNode["Size"].as<glm::vec2>();
-			CameraComponent& cameraComponent = entity.AddComponent<CameraComponent>(ProjectionCamera(serializedSize));
+			OrthoCameraComponent& cameraComponent = entity.AddComponent<OrthoCameraComponent>(OrthoCamera(serializedSize));
 
 			float zoom = cameraComponentNode["Zoom"].as<float>();
 			cameraComponent.Camera.SetZoom(zoom);
+		}
+
+		const YAML::Node& rigidbody2DComponentNode = yaml["Rigidbody2DComponent"];
+		if (rigidbody2DComponentNode)
+		{
+			Rigidbody2DComponent& rigidbody2DComponent = entity.AddComponent<Rigidbody2DComponent>();
+
+			rigidbody2DComponent.IsFixedRotation = rigidbody2DComponentNode["IsFixedRotation"].as<bool>();
+			rigidbody2DComponent.Type = static_cast<Alpha::Rigidbody2DComponent::BodyType>(rigidbody2DComponentNode["Type"].as<int>());
+		}
+
+		const YAML::Node& Box2DColliderComponentNode = yaml["Box2DColliderComponent"];
+		if (Box2DColliderComponentNode)
+		{
+			Box2DColliderComponent& box2DComponent = entity.AddComponent<Box2DColliderComponent>();
+
+			box2DComponent.Offset = Box2DColliderComponentNode["Offset"].as<glm::vec2>();
+			box2DComponent.Size = Box2DColliderComponentNode["Size"].as<glm::vec2>();
+			box2DComponent.Density = Box2DColliderComponentNode["Density"].as<float>();
+			box2DComponent.Friction = Box2DColliderComponentNode["Friction"].as<float>();
+			box2DComponent.Restitution = Box2DColliderComponentNode["Restitution"].as<float>();
+			box2DComponent.RestitutionThreshold = Box2DColliderComponentNode["RestitutionThreshold"].as<float>();
 		}
 	}
 

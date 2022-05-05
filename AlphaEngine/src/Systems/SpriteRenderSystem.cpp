@@ -1,5 +1,7 @@
 #include "SpriteRenderSystem.h"
 
+#include "entt/entt.hpp"
+
 #include "Render/RenderCamera.h"
 #include "Render/Renderer2D.h"
 
@@ -7,7 +9,7 @@
 
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
-#include "Components/CameraComponent.h"
+#include "Components/OrthoCameraComponent.h"
 
 namespace Alpha
 {
@@ -23,11 +25,11 @@ namespace Alpha
 	{
 		Renderer2D::ResetStats();
 
-		auto view = GetRegistry().view<TransformComponent, CameraComponent>();
+		auto view = GetRegistry().view<TransformComponent, OrthoCameraComponent>();
 
 		for (auto& entity : view)
 		{
-			auto [transform, camera] = view.get<TransformComponent, CameraComponent>(entity);
+			auto [transform, camera] = view.get<TransformComponent, OrthoCameraComponent>(entity);
 
 			RenderScene({ camera, transform });
 		}
@@ -42,7 +44,9 @@ namespace Alpha
 		{
 			auto [spriteTransform, spriteComponent] = view.get<TransformComponent, SpriteComponent>(sprite);
 
-			Renderer2D::DrawQuad({ .Position = spriteTransform.Transform.Position, .Size = spriteTransform.Transform.Scale, .RotationAngle = glm::radians(spriteTransform.Transform.Rotation.z), .Sprite = spriteComponent.Sprite, .Color = spriteComponent.Color });
+			Renderer2D::DrawQuad({ .Position = spriteTransform.Transform.Position, .Size = spriteTransform.Transform.Scale, 
+				.RotationAngle = glm::radians(spriteTransform.Transform.Rotation.z), .Sprite = spriteComponent.Sprite, 
+				.Color = spriteComponent.Color });
 		}
 
 		Renderer2D::EndScene();

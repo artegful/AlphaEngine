@@ -4,7 +4,9 @@
 
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
-#include "Components/CameraComponent.h"
+#include "Components/OrthoCameraComponent.h"
+#include "Components/Rigidbody2DComponent.h"
+#include "Components/Box2DColliderComponent.h"
 #include "ECS/Entity.h"
 
 InspectorWidget::InspectorWidget(QWidget* parent) : QWidget(parent)
@@ -17,11 +19,19 @@ InspectorWidget::InspectorWidget(QWidget* parent) : QWidget(parent)
 	QAction* addSpriteComponent = new QAction(tr("Sprite Component"));
 	connect(addSpriteComponent, &QAction::triggered, this, &InspectorWidget::OnAddSpriteComponent);
 
-	QAction* addCameraComponent = new QAction(tr("Camera Component"));
+	QAction* addCameraComponent = new QAction(tr("OrthoCamera Component"));
 	connect(addCameraComponent, &QAction::triggered, this, &InspectorWidget::OnAddCameraComponent);
+
+	QAction* addRigidbody2DComponent = new QAction(tr("Rigidbody 2D"));
+	connect(addRigidbody2DComponent, &QAction::triggered, this, &InspectorWidget::OnAddRidigbody2DComponent);
+
+	QAction* addBox2DColliderComponent = new QAction(tr("2D Box Collider"));
+	connect(addBox2DColliderComponent, &QAction::triggered, this, &InspectorWidget::OnAddBox2DColliderComponent);
 
 	buttonMenu->addAction(addSpriteComponent);
 	buttonMenu->addAction(addCameraComponent);
+	buttonMenu->addAction(addRigidbody2DComponent);
+	buttonMenu->addAction(addBox2DColliderComponent);
 
 	addComponentButton = new QToolButton(this);
 	addComponentButton->setPopupMode(QToolButton::MenuButtonPopup);
@@ -52,7 +62,9 @@ void InspectorWidget::Reset()
 
 	TryShowComponentEdit<Alpha::TransformComponent>();
 	TryShowComponentEdit<Alpha::SpriteComponent>();
-	TryShowComponentEdit<Alpha::CameraComponent>();
+	TryShowComponentEdit<Alpha::OrthoCameraComponent>();
+	TryShowComponentEdit<Alpha::Rigidbody2DComponent>();
+	TryShowComponentEdit<Alpha::Box2DColliderComponent>();
 
 	show();
 }
@@ -72,7 +84,17 @@ void InspectorWidget::OnAddSpriteComponent()
 
 void InspectorWidget::OnAddCameraComponent()
 {
-	TryAddComponent<Alpha::CameraComponent>();
+	TryAddComponent<Alpha::OrthoCameraComponent>();
+}
+
+void InspectorWidget::OnAddRidigbody2DComponent()
+{
+	TryAddComponent<Alpha::Rigidbody2DComponent>();
+}
+
+void InspectorWidget::OnAddBox2DColliderComponent()
+{
+	TryAddComponent<Alpha::Box2DColliderComponent>();
 }
 
 void InspectorWidget::OnSelectedEntityChanged(Alpha::Entity& selectedEnitity)
@@ -82,7 +104,8 @@ void InspectorWidget::OnSelectedEntityChanged(Alpha::Entity& selectedEnitity)
 
 void InspectorWidget::OnDeleteButtonPressed(rttr::type componentType)
 {
-	TryDeleteComponent<Alpha::TransformComponent>(componentType);
 	TryDeleteComponent<Alpha::SpriteComponent>(componentType);
-	TryDeleteComponent<Alpha::CameraComponent>(componentType);
+	TryDeleteComponent<Alpha::OrthoCameraComponent>(componentType);
+	TryDeleteComponent<Alpha::Rigidbody2DComponent>(componentType);
+	TryDeleteComponent<Alpha::Box2DColliderComponent>(componentType);
 }

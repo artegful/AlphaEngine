@@ -5,7 +5,7 @@
 namespace Alpha
 {
 	struct WindowResizedEvent;
-	class ProjectionCamera;
+	class PerspectiveCamera;
 	struct Transform;
 
 	class CameraControllerSystem : public System
@@ -16,9 +16,9 @@ namespace Alpha
 		void Update(float deltaTime) override;
 		void OnEvent(Event& event) override;
 
-		void UpdateCamera(float deltaTime, Transform& cameraTransform, ProjectionCamera& camera);
+		void UpdateCamera(float deltaTime, Transform& cameraTransform, PerspectiveCamera& camera);
 		void UpdateTransformPosition(float deltaTime, Transform& transform);
-		void UpdateCameraZoom(float deltaTime, ProjectionCamera& camera);
+		void UpdateCameraZoom(float deltaTime, PerspectiveCamera& camera);
 
 	private:
 		float scrollSpeed;

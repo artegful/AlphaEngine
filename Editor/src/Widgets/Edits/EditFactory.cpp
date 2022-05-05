@@ -8,6 +8,7 @@
 #include "FloatEdit.h"
 #include "VectorEdit.h"
 #include "ColorEdit.h"
+#include "EnumEdit.h"
 #include "ReflectedItemEdit.h"
 
 BaseEdit* EditFactory::CreateEdit(const rttr::instance& instance, const rttr::property& property, QWidget* parent)
@@ -40,6 +41,10 @@ BaseEdit* EditFactory::CreateEdit(const rttr::instance& instance, const rttr::pr
         }
 
         return new VectorEdit<4>(instance, property, parent);
+    }
+    if (type.is_enumeration())
+    {
+        return new EnumEdit(instance, property, parent);
     }
 
     return new ReflectedItemEdit(instance, property, parent);

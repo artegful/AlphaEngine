@@ -9,6 +9,8 @@ Entities:
       Scale: [1, 1, 1]
     SpriteComponent:
       Color: [0, 0, 0, 1]
+    NativeScriptComponent:
+      Script: TestScript
   - Entity: 43325
     Name: MyCamera
     TransformComponent:

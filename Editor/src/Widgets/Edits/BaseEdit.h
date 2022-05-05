@@ -29,16 +29,6 @@ public:
 	{
 		rttr::variant result = property.get_value(instancePtr);
 
-		if (!result)
-		{
-			qDebug() << "Error!";
-		}
-
-		if (!result.is_type<T>())
-		{
-			qDebug() << "Error!";
-		}
-
 		return result.convert<T>();
 	}
 

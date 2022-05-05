@@ -13,5 +13,10 @@ namespace Alpha
 	{
 		return sceneManager->GetCurrentScene()->registry;
 	}
+
+	Scene* System::GetCurrentScene() const
+	{
+		return sceneManager->GetCurrentScene();
+	}
 }
 

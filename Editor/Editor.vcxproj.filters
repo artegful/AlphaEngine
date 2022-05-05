@@ -88,6 +88,9 @@
     <ClCompile Include="src\Widgets\Edits\FloatEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Widgets\Edits\EnumEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Widgets\EditorWindow.h">
@@ -109,6 +112,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="src\Widgets\Edits\ComponentEdit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Widgets\Edits\EnumEdit.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

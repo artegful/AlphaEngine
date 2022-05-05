@@ -5,7 +5,7 @@
 FloatEdit::FloatEdit(const rttr::instance& instance, const rttr::property& property, QWidget* parent) : BaseEdit(instance, property, parent)
 {
 	lineEdit = new QLineEdit(this);
-	lineEdit->setValidator(new QIntValidator());
+	lineEdit->setValidator(new QDoubleValidator());
 	connect(lineEdit, &QLineEdit::textChanged, this, &FloatEdit::OnLineChanged);
 
 	StandardEditLayout *layout = new StandardEditLayout(property, this);

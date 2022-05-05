@@ -16,6 +16,8 @@ namespace Alpha
 		~SceneManager();
 
 		void ChangeScene(Scene* scene);
+		void Start();
+		void Stop();
 		void Update(float deltaTime);
 		void OnEvent(Event& event);
 

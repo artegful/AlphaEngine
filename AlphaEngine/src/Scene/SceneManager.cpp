@@ -3,8 +3,8 @@
 #include <stdexcept>
 
 #include "Core/Core.h"
+#include "Scene.h"
 #include "Events/Event.h"
-#include "Scene/SandboxScene.h"
 
 namespace Alpha
 {
@@ -31,6 +31,16 @@ namespace Alpha
 		currentScene = scene;
 
 		currentScene->Open();
+	}
+
+	void SceneManager::Start()
+	{
+		currentScene->Start();
+	}
+
+	void SceneManager::Stop()
+	{
+		currentScene->Stop();
 	}
 
 	void SceneManager::Update(float deltaTime)

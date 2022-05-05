@@ -17,11 +17,11 @@ namespace Alpha
 	class SceneManager;
 	class Scene;
 
-	class System
+	class SceneSystem
 	{
 	public:
-		System(SceneManager* scene);
-		virtual ~System() = default;
+		SceneSystem(Scene* scene);
+		virtual ~SceneSystem() = default;
 
 		virtual void Start() { }
 		virtual void Update(float deltaTime) = 0;
@@ -29,10 +29,7 @@ namespace Alpha
 
 	protected:
 		entt::registry& GetRegistry() const;
-		Scene* GetCurrentScene() const;
-
-	private:
-		SceneManager* sceneManager;
+		Scene* scene;
 	};
 }
 

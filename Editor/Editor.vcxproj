@@ -97,6 +97,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Widgets\Edits\EnumEdit.cpp" />
     <ClCompile Include="src\Widgets\Edits\FloatEdit.cpp" />
     <ClCompile Include="src\Widgets\ExpanderLayout.cpp" />
     <ClCompile Include="src\Widgets\Edits\ReflectedItemEdit.cpp" />
@@ -130,6 +131,7 @@
   <ItemGroup>
     <ClInclude Include="src\Widgets\Edits\FloatEdit.h" />
     <ClInclude Include="src\Widgets\Edits\ColorEdit.h" />
+    <QtMoc Include="src\Widgets\Edits\EnumEdit.h" />
     <ClInclude Include="src\Widgets\Edits\StandardEditLayout.h" />
     <QtMoc Include="src\Widgets\Edits\BaseEdit.h" />
     <QtMoc Include="src\Widgets\Edits\BoolEdit.h" />

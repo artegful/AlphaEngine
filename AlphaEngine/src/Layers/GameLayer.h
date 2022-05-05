@@ -7,6 +7,7 @@
 #include "Scene/SceneManager.h"
 #include "Systems/CameraControllerSystem.h"
 #include "Systems/SpriteRenderSystem.h"
+#include "Render/PerspectiveCamera.h"
 #include "Render/RenderCamera.h"
 
 namespace Alpha
@@ -34,7 +35,7 @@ namespace Alpha
 		SpriteRenderSystem sceneRenderer;
 		CameraControllerSystem cameraController;
 
-		ProjectionCamera editorCamera;
+		PerspectiveCamera editorCamera;
 		Transform editorCameraTransform;
 
 		void UpdateGame(float deltaTime);

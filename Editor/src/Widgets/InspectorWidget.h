@@ -45,8 +45,11 @@ private:
 
 private slots:
 	void OnDeleteButtonPressed(rttr::type componentType);
+
 	void OnAddSpriteComponent();
 	void OnAddCameraComponent();
+	void OnAddRidigbody2DComponent();
+	void OnAddBox2DColliderComponent();
 };
 
 template<typename T>

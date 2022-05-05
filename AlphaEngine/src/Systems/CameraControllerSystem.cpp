@@ -1,8 +1,11 @@
 #include "CameraControllerSystem.h"
 
+#include "entt/entt.hpp"
+
 #include "Controls/Input.h"
 #include "Components/TransformComponent.h"
-#include "Components/CameraComponent.h"
+#include "Components/OrthoCameraComponent.h"
+#include "Render/PerspectiveCamera.h"
 
 #include "Events/WindowResizedEvent.h"
 
@@ -16,14 +19,7 @@ namespace Alpha
 
 	void CameraControllerSystem::Update(float deltaTime)
 	{
-		auto view = GetRegistry().view<TransformComponent, CameraComponent>();
 
-		for (auto& entity : view)
-		{
-			auto [transform, camera] = view.get<TransformComponent, CameraComponent>(entity);
-
-			UpdateCamera(deltaTime, transform.Transform, camera.Camera);
-		}
 	}
 
 	void CameraControllerSystem::OnEvent(Event& event)
@@ -31,7 +27,7 @@ namespace Alpha
 		Dispatcher::Dispatch<WindowResizedEvent>(event, EVENT_BIND(OnWindowResized));
 	}
 
-	void CameraControllerSystem::UpdateCamera(float deltaTime, Transform& cameraTransform, ProjectionCamera& camera)
+	void CameraControllerSystem::UpdateCamera(float deltaTime, Transform& cameraTransform, PerspectiveCamera& camera)
 	{
 		UpdateTransformPosition(deltaTime, cameraTransform);
 		UpdateCameraZoom(deltaTime, camera);
@@ -58,7 +54,7 @@ namespace Alpha
 		}
 	}
 
-	void CameraControllerSystem::UpdateCameraZoom(float deltaTime, ProjectionCamera& camera)
+	void CameraControllerSystem::UpdateCameraZoom(float deltaTime, PerspectiveCamera& camera)
 	{
 		if (Input::HasScroll())
 		{
@@ -73,11 +69,11 @@ namespace Alpha
 	{
 		float newAspectRatio = static_cast<float>(event.GetNewSize().x) / event.GetNewSize().y;
 
-		auto view = GetRegistry().view<CameraComponent>();
+		auto view = GetRegistry().view<OrthoCameraComponent>();
 
 		for (auto& entity : view)
 		{
-			auto& camera = view.get<CameraComponent>(entity);
+			auto& camera = view.get<OrthoCameraComponent>(entity);
 
 			camera.Camera.SetAspectRatio(newAspectRatio);
 		}

@@ -15,7 +15,21 @@
 #include "Render/RendererAPI.h"
 #include "Render/Renderer2D.h"
 
-#include "Reflection/Registration.cpp"
+#include "rttr/registration.h"
+#include "rttr/constructor.h"
+
+#include "Components/TransformComponent.h"
+#include "Components/SpriteComponent.h"
+#include "Components/OrthoCameraComponent.h"
+
+#include "ECS/Script.h"
+
+#include "Reflection/MetadataType.h"
+#include "Reflection/MetadataVectorUsage.h"
+
+#include "Reflection/Registration.h"
+
+#include "rttr/constructor.h"
 
 namespace Alpha
 {
@@ -28,7 +42,7 @@ namespace Alpha
 		Instance = this;
 		RenderCommand::SetAPI(config.RenderApi);
 		window.reset(new GlfwWindow(config.Width, config.Height));
-	}
+   	}
 
 	void Engine::SetCustomWindow(const std::shared_ptr<Window>& customWindow)
 	{

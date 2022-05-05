@@ -1,61 +1,61 @@
-#include "ProjectionCamera.h"
+#include "OrthoCamera.h"
 
 #include "glm/gtc/matrix_transform.hpp"
 
 namespace Alpha
 {
-    ProjectionCamera::ProjectionCamera(glm::vec2 size) : ProjectionCamera(size.x, size.y)
+    OrthoCamera::OrthoCamera(glm::vec2 size) : OrthoCamera(size.x, size.y)
     { }
 
-    ProjectionCamera::ProjectionCamera(float width, float height) :
+    OrthoCamera::OrthoCamera(float width, float height) :
         projectionMatrix(glm::ortho<float>(-width, width, -height, height)),
         size(width, height),
         zoom(1.0f)
     { }
 
-    ProjectionCamera::ProjectionCamera(float aspectRatio) :
+    OrthoCamera::OrthoCamera(float aspectRatio) :
         size(aspectRatio, 1.0f),
         zoom(1.0f)
     {
         UpdateProjectionMatrix();
     }
 
-    float ProjectionCamera::GetZoom() const
+    float OrthoCamera::GetZoom() const
     {
         return zoom;
     }
 
-    void ProjectionCamera::SetZoom(float zoom)
+    void OrthoCamera::SetZoom(float zoom)
     {
         this->zoom = zoom < MIN_ZOOM ? MIN_ZOOM : zoom;
         UpdateProjectionMatrix();
     }
 
-    glm::vec2 ProjectionCamera::GetSize() const
+    glm::vec2 OrthoCamera::GetSize() const
     {
         return size;
     }
 
-    void ProjectionCamera::SetSize(glm::vec2 size)
+    void OrthoCamera::SetSize(glm::vec2 size)
     {
         this->size = size;
 
         UpdateProjectionMatrix();
     }
 
-    void ProjectionCamera::SetAspectRatio(float aspectRatio)
+    void OrthoCamera::SetAspectRatio(float aspectRatio)
     {
         size.x = size.y * aspectRatio;
 
         UpdateProjectionMatrix();
     }
 
-    const glm::mat4& ProjectionCamera::GetProjectionMatrix() const
+    const glm::mat4& OrthoCamera::GetProjectionMatrix() const
     {
         return projectionMatrix;
     }
 
-    void ProjectionCamera::UpdateProjectionMatrix()
+    void OrthoCamera::UpdateProjectionMatrix()
     {
         projectionMatrix = glm::ortho<float>(-zoom * size.x / 2.0f, zoom * size.x / 2.0f, -zoom * size.y / 2.0f, zoom * size.y / 2.0f);
     }

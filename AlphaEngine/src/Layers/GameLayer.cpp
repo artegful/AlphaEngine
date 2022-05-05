@@ -12,13 +12,14 @@ namespace Alpha
 		mode(GameMode::Game),
 		sceneRenderer(&sceneManager),
 		cameraController(&sceneManager),
-		editorCamera(16.0f / 9.0f)
+		editorCamera(16.0f / 9.0f, 90),
+		editorCameraTransform(Transform({ 0, 0, 20 }))
 	{ }
 
 	void GameLayer::Open()
 	{
 		sceneManager.ChangeScene(new Scene());
-		RenderCommand::SetClearColor({ 1.0f, 0.0f, 0.0f, 1.0f });
+		RenderCommand::SetClearColor({ 0.5f, 0.5f, 0.5f, 1.0f });
 
 		sceneRenderer.Start();
 		cameraController.Start();
@@ -53,7 +54,24 @@ namespace Alpha
 
 	void GameLayer::SetMode(GameMode mode)
 	{
+		bool isChanged = this->mode != mode;
+
 		this->mode = mode;
+
+		if (isChanged)
+		{
+			switch (this->mode)
+			{
+			case GameMode::Editor:
+				sceneManager.Stop();
+				break;
+
+			case GameMode::Game:
+				sceneManager.Start();
+				break;
+			}
+		}
+
 	}
 
 	SceneManager& GameLayer::GetSceneManager()
