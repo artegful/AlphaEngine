@@ -1,0 +1,22 @@
+Version: 1
+Scene: some name here
+Entities:
+  - Entity: 43325
+    Name: BlackSquareSprite
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [0, 0, 0, 1]
+    NativeScriptComponent:
+      Script: TestScript
+  - Entity: 43325
+    Name: MyCamera
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    CameraComponent:
+      Size: [1.72972977, 1]
+      Zoom: 2

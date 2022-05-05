@@ -1,69 +1,56 @@
 #include "SpriteRenderSystem.h"
 
-#include "Render/Sprite.h"
-#include "Render/RenderCommand.h"
+#include "entt/entt.hpp"
+
+#include "Render/RenderCamera.h"
+#include "Render/Renderer2D.h"
+
+#include "Events/WindowResizedEvent.h"
 
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
-#include "Components/CameraComponent.h"
+#include "Components/OrthoCameraComponent.h"
 
 namespace Alpha
 {
-	SpriteRenderSystem::SpriteRenderSystem(entt::registry& registry) : System(registry)
-	{
-	}
+	SpriteRenderSystem::SpriteRenderSystem(SceneManager* sceneManager) : System(sceneManager)
+	{ }
 
 	void SpriteRenderSystem::Start()
 	{
-		if (spriteBatches.empty())
-		{
-			spriteBatches.emplace_back();
-		}
-
-		auto view = registry.view<TransformComponent, SpriteComponent>();
-
-		for (auto& entity : view)
-		{
-			auto [transform, sprite] = view.get<TransformComponent, SpriteComponent>(entity);
-
-			AddToNearestBatch(transform, sprite);
-		}
+		Renderer2D::Initialize();
 	}
 
 	void SpriteRenderSystem::Update(float deltaTime)
 	{
-		auto view = registry.view<TransformComponent, CameraComponent>();
+		Renderer2D::ResetStats();
+
+		auto view = GetRegistry().view<TransformComponent, OrthoCameraComponent>();
 
 		for (auto& entity : view)
 		{
-			auto [transform, camera] = view.get<TransformComponent, CameraComponent>(entity);
+			auto [transform, camera] = view.get<TransformComponent, OrthoCameraComponent>(entity);
 
-			for (auto& spriteBatch : spriteBatches)
-			{
-				spriteBatch.Draw(camera, transform);
-			}
-
-			break;
+			RenderScene({ camera, transform });
 		}
 	}
 
-	void SpriteRenderSystem::AddToNearestBatch(const TransformComponent& transform, const SpriteComponent& spriteComponent)
+	void SpriteRenderSystem::RenderScene(const RenderCamera& camera)
 	{
-		auto result = std::find_if(spriteBatches.begin(), spriteBatches.end(), [&](const SpriteBatch batch)
-			{
-				return batch.HasSpace() && (!spriteComponent.Sprite || spriteComponent.Sprite && 
-					(batch.HasTexture(spriteComponent.Sprite->GetTexture()) || batch.HasTextureSpace()));
-			});
+		Renderer2D::BeginScene(camera);
 
-		if (result != spriteBatches.end())
+		auto view = GetRegistry().view<TransformComponent, SpriteComponent>();
+		for (auto& sprite : view)
 		{
-			(*result).AddSprite(spriteComponent, transform);
+			auto [spriteTransform, spriteComponent] = view.get<TransformComponent, SpriteComponent>(sprite);
+
+			Renderer2D::DrawQuad({ .Position = spriteTransform.Transform.Position, .Size = spriteTransform.Transform.Scale, 
+				.RotationAngle = glm::radians(spriteTransform.Transform.Rotation.z), .Sprite = spriteComponent.Sprite, 
+				.Color = spriteComponent.Color });
 		}
-		else
-		{
-			spriteBatches.emplace_back();
-			spriteBatches.back().AddSprite(spriteComponent, transform);
-		}
+
+		Renderer2D::EndScene();
 	}
+
 }
 

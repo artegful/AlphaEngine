@@ -12,8 +12,8 @@ layout (location = 4) in float vTiling;
 
 out vec2 fUv;
 out vec4 fColor;
-out float fTextureIndex;
-out float fTiling;
+flat out float fTextureIndex;
+flat out float fTiling;
 
 void main()
 {
@@ -32,8 +32,8 @@ uniform sampler2D uTextures[32];
 
 in vec4 fColor;
 in vec2 fUv;
-in float fTextureIndex;
-in float fTiling;
+flat in float fTextureIndex;
+flat in float fTiling;
 
 out vec4 color;
 

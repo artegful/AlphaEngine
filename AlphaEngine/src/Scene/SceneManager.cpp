@@ -3,29 +3,44 @@
 #include <stdexcept>
 
 #include "Core/Core.h"
-#include "Scene/SandboxScene.h"
+#include "Scene.h"
+#include "Events/Event.h"
 
 namespace Alpha
 {
 	SceneManager::SceneManager() :
-		scenes{ new SandboxScene() },
-		currentScene()
+		currentScene(nullptr)
+	{ }
+
+	SceneManager::~SceneManager()
 	{
-		//TODO deserialize scene
+		if (currentScene)
+		{
+			delete currentScene;
+		}
 	}
 
-	void SceneManager::ChangeScene(int id)
+	void SceneManager::ChangeScene(Scene* scene)
 	{
-		AL_ENGINE_ASSERT(id >= 0 && std::cmp_less(id, scenes.size()), "Scene id wasn't in valid range");
-
 		if (currentScene)
 		{
 			currentScene->Close();
 		}
 
-		currentScene = scenes[id];
+		delete currentScene;
+		currentScene = scene;
 
 		currentScene->Open();
+	}
+
+	void SceneManager::Start()
+	{
+		currentScene->Start();
+	}
+
+	void SceneManager::Stop()
+	{
+		currentScene->Stop();
 	}
 
 	void SceneManager::Update(float deltaTime)
@@ -34,6 +49,16 @@ namespace Alpha
 		{
 			currentScene->Update(deltaTime);
 		}
+	}
+
+	void SceneManager::OnEvent(Event& event)
+	{
+		currentScene->OnEvent(event);
+	}
+
+	Scene* SceneManager::GetCurrentScene()
+	{
+		return currentScene;
 	}
 }
 

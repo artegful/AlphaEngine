@@ -90,10 +90,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;$(SolutionDir)ImGui\ImGui;$(SolutionDir)ImGui\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)Box2D\include;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -106,10 +106,10 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;librttr_core_s_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(ProjectDir)vendor\glfw\lib-vc2022;$(ProjectDir)vendor\glew\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\rttr\lib;$(SolutionDir)vendor\glfw\lib-vc2022;$(SolutionDir)vendor\glew\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -118,10 +118,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;$(SolutionDir)ImGui\ImGui;$(SolutionDir)ImGui\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,20 +136,20 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;librttr_core_s_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(ProjectDir)vendor\glfw\lib-vc2022;$(ProjectDir)vendor\glew\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\rttr\lib;$(SolutionDir)vendor\glfw\lib-vc2022;$(SolutionDir)vendor\glew\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;$(SolutionDir)ImGui\ImGui;$(SolutionDir)ImGui\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)Box2D\include;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,10 +162,10 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;librttr_core_s_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(ProjectDir)vendor\glfw\lib-vc2022;$(ProjectDir)vendor\glew\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\rttr\lib;$(SolutionDir)vendor\glfw\lib-vc2022;$(SolutionDir)vendor\glew\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -174,10 +174,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>AL_DEBUG;AL_WINDOWS</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vendor\entt;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glew\include;$(ProjectDir)vendor\stb;$(ProjectDir)src;$(SolutionDir)ImGui\ImGui;$(SolutionDir)ImGui\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -192,117 +192,144 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;librttr_core_s_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(ProjectDir)vendor\glfw\lib-vc2022;$(ProjectDir)vendor\glew\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\rttr\lib;$(SolutionDir)vendor\glfw\lib-vc2022;$(SolutionDir)vendor\glew\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Core\Transform.h" />
-    <ClInclude Include="src\Render\SpriteProperties.h" />
-    <ClInclude Include="src\Render\Renderer2D.h" />
-    <ClInclude Include="src\Layers\ImGuiLayer.h" />
-    <ClInclude Include="src\Events\Event.h" />
-    <ClInclude Include="src\Events\KeyPressedEvent.h" />
-    <ClInclude Include="src\Events\KeyReleasedEvent.h" />
-    <ClInclude Include="src\Events\MouseButtonPressedEvent.h" />
-    <ClInclude Include="src\Events\MouseButtonReleasedEvent.h" />
-    <ClInclude Include="src\Layers\DebugLayer.h" />
-    <ClInclude Include="src\Layers\GameLayer.h" />
-    <ClInclude Include="src\Core\LayerStack.h" />
-    <ClInclude Include="src\Core\Layer.h" />
-    <ClInclude Include="src\Render\API.h" />
-    <ClInclude Include="src\Render\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Render\Shader.h" />
-    <ClInclude Include="src\Render\Texture.h" />
-    <ClInclude Include="src\Render\VertexArray.h" />
-    <ClInclude Include="src\Scene\SandboxScene.h" />
-    <ClInclude Include="src\Render\BufferLayout.h" />
-    <ClInclude Include="src\Render\OpenGL\OpenGLIndexBuffer.h" />
-    <ClInclude Include="src\Render\IndexBuffer.h" />
-    <ClInclude Include="src\Render\OpenGL\OpenGLVertexBuffer.h" />
-    <ClInclude Include="src\Core\Assert.h" />
-    <ClInclude Include="src\Core\Log.h" />
-    <ClInclude Include="src\Core\Macro.h" />
-    <ClInclude Include="src\Render\OpenGL\OpenGLRenderContext.h" />
-    <ClInclude Include="src\Render\RenderCommand.h" />
-    <ClInclude Include="src\Render\RenderContext.h" />
-    <ClInclude Include="src\Core\Config.h" />
-    <ClInclude Include="src\Core\Engine.h" />
-    <ClInclude Include="src\Render\RendererAPI.h" />
-    <ClInclude Include="src\Render\SpriteSheet.h" />
-    <ClInclude Include="src\Render\Sprite.h" />
-    <ClInclude Include="src\Resources\ResourceAllocator.hpp" />
-    <ClInclude Include="src\Render\SpriteBatch.h" />
-    <ClInclude Include="src\Systems\SpriteRenderSystem.h" />
-    <ClInclude Include="src\Components\SpriteComponent.h" />
-    <ClInclude Include="src\Systems\CameraControllerSystem.h" />
-    <ClInclude Include="src\ECS\Entity.h" />
-    <ClInclude Include="src\Render\Camera.h" />
-    <ClInclude Include="src\Core\Core.h" />
-    <ClInclude Include="src\Core\Window.h" />
-    <ClInclude Include="src\Controls\Input.h" />
-    <ClInclude Include="src\Scene\Scene.h" />
-    <ClInclude Include="src\Scene\SceneManager.h" />
-    <ClInclude Include="src\Render\OpenGL\OpenGLShader.h" />
-    <ClInclude Include="src\Render\OpenGL\OpenGLTexture.h" />
-    <ClInclude Include="src\Components\CameraComponent.h" />
-    <ClInclude Include="src\Components\TransformComponent.h" />
-    <ClInclude Include="src\ECS\System.h" />
-    <ClInclude Include="src\Utils\Utils.h" />
-    <ClInclude Include="vendor\glew\include\GL\glew.h" />
-    <ClInclude Include="vendor\stb\stb_image.h" />
-    <ClInclude Include="src\Render\VertexBuffer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\Render\IndexBuffer.cpp" />
-    <ClCompile Include="src\Render\Renderer2D.cpp" />
-    <ClCompile Include="src\Layers\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Components\Rigidbody2DComponent.cpp" />
+    <ClCompile Include="src\Controls\Input.cpp" />
+    <ClCompile Include="src\Core\Engine.cpp" />
+    <ClCompile Include="src\Core\GlfwWindow.cpp" />
+    <ClCompile Include="src\Core\LayerStack.cpp" />
+    <ClCompile Include="src\ECS\Entity.cpp" />
+    <ClCompile Include="src\ECS\SceneSystem.cpp" />
+    <ClCompile Include="src\ECS\TestScript.cpp" />
+    <ClCompile Include="src\ECS\System.cpp" />
     <ClCompile Include="src\Layers\DebugLayer.cpp" />
     <ClCompile Include="src\Layers\GameLayer.cpp" />
-    <ClCompile Include="src\Core\LayerStack.cpp" />
-    <ClCompile Include="src\Controls\Input.cpp" />
+    <ClCompile Include="src\Layers\ImGuiLayer.cpp" />
+    <ClCompile Include="src\ECS\Script.cpp" />
+    <ClCompile Include="src\Render\BufferLayout.cpp" />
+    <ClCompile Include="src\Render\IndexBuffer.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLIndexBuffer.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLRenderContext.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLTexture.cpp" />
     <ClCompile Include="src\Render\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Render\OpenGL\OpenGLVertexBuffer.cpp" />
+    <ClCompile Include="src\Render\OrthoCamera.cpp" />
+    <ClCompile Include="src\Render\RenderCamera.cpp" />
     <ClCompile Include="src\Render\RenderCommand.cpp" />
+    <ClCompile Include="src\Render\RenderContext.cpp" />
+    <ClCompile Include="src\Render\Renderer2D.cpp" />
     <ClCompile Include="src\Render\RendererAPI.cpp" />
     <ClCompile Include="src\Render\Shader.cpp" />
+    <ClCompile Include="src\Render\PerspectiveCamera.cpp" />
+    <ClCompile Include="src\Render\Sprite.cpp" />
+    <ClCompile Include="src\Render\SpriteSheet.cpp" />
     <ClCompile Include="src\Render\Texture.cpp" />
     <ClCompile Include="src\Render\VertexArray.cpp" />
-    <ClCompile Include="src\Scene\SandboxScene.cpp" />
-    <ClCompile Include="src\Render\BufferLayout.cpp" />
-    <ClCompile Include="src\Render\OpenGL\OpenGLIndexBuffer.cpp" />
-    <ClCompile Include="src\Render\OpenGL\OpenGLVertexBuffer.cpp" />
-    <ClCompile Include="src\Render\OpenGL\OpenGLRenderContext.cpp" />
-    <ClCompile Include="src\Core\Engine.cpp" />
-    <ClCompile Include="src\Render\RenderContext.cpp" />
-    <ClCompile Include="src\Render\SpriteSheet.cpp" />
-    <ClCompile Include="src\Render\Sprite.cpp" />
-    <ClCompile Include="src\Render\SpriteBatch.cpp" />
-    <ClCompile Include="src\ECS\System.cpp" />
     <ClCompile Include="src\Render\VertexBuffer.cpp" />
-    <ClCompile Include="src\Systems\SpriteRenderSystem.cpp" />
-    <ClCompile Include="src\Systems\CameraControllerSystem.cpp" />
-    <ClCompile Include="src\ECS\Entity.cpp" />
-    <ClCompile Include="src\Render\Camera.cpp" />
-    <ClCompile Include="src\Render\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\Resources\stb_image.cpp" />
     <ClCompile Include="src\Scene\Scene.cpp" />
     <ClCompile Include="src\Scene\SceneManager.cpp" />
-    <ClCompile Include="src\Core\Window.cpp" />
-    <ClCompile Include="src\Render\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Scene\SceneSerializer.cpp" />
+    <ClCompile Include="src\Systems\CameraControllerSystem.cpp" />
+    <ClCompile Include="src\Systems\ScriptSystem.cpp" />
+    <ClCompile Include="src\Systems\SpriteRenderSystem.cpp" />
     <ClCompile Include="src\Utils\Utils.cpp" />
-    <ClCompile Include="vendor\stb\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shaders\fragment.frag" />
     <None Include="assets\shaders\vertex.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Box2D\Box2D.vcxproj">
+      <Project>{e6bcfe5f-4961-408b-88b0-6ce11c52dbed}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\ImGui\ImGui.vcxproj">
       <Project>{1485cf80-94a8-466e-9220-68f8e9f66890}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\yaml-cpp\yaml-cpp.vcxproj">
+      <Project>{6e3fc247-a2ba-434f-8fda-1e13564b4542}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Components\Box2DColliderComponent.h" />
+    <ClInclude Include="src\Components\OrthoCameraComponent.h" />
+    <ClInclude Include="src\Components\NameComponent.h" />
+    <ClInclude Include="src\Components\NativeScriptComponent.h" />
+    <ClInclude Include="src\Components\Rigidbody2DComponent.h" />
+    <ClInclude Include="src\Components\SpriteComponent.h" />
+    <ClInclude Include="src\Components\TransformComponent.h" />
+    <ClInclude Include="src\Controls\Input.h" />
+    <ClInclude Include="src\Core\Assert.h" />
+    <ClInclude Include="src\Core\Config.h" />
+    <ClInclude Include="src\Core\Core.h" />
+    <ClInclude Include="src\Core\Engine.h" />
+    <ClInclude Include="src\Core\GlfwWindow.h" />
+    <ClInclude Include="src\Core\Layer.h" />
+    <ClInclude Include="src\Core\LayerStack.h" />
+    <ClInclude Include="src\Core\Log.h" />
+    <ClInclude Include="src\Core\Macro.h" />
+    <ClInclude Include="src\Core\Transform.h" />
+    <ClInclude Include="src\Core\Window.h" />
+    <ClInclude Include="src\ECS\Entity.h" />
+    <ClInclude Include="src\ECS\SceneSystem.h" />
+    <ClInclude Include="src\ECS\TestScript.h" />
+    <ClInclude Include="src\ECS\Script.h" />
+    <ClInclude Include="src\ECS\System.h" />
+    <ClInclude Include="src\Events\Event.h" />
+    <ClInclude Include="src\Events\KeyPressedEvent.h" />
+    <ClInclude Include="src\Events\KeyReleasedEvent.h" />
+    <ClInclude Include="src\Events\MouseButtonPressedEvent.h" />
+    <ClInclude Include="src\Events\MouseButtonReleasedEvent.h" />
+    <ClInclude Include="src\Events\MouseScrolledEvent.h" />
+    <ClInclude Include="src\Events\WindowResizedEvent.h" />
+    <ClInclude Include="src\Layers\DebugLayer.h" />
+    <ClInclude Include="src\Layers\GameLayer.h" />
+    <ClInclude Include="src\Layers\GameMode.h" />
+    <ClInclude Include="src\Layers\ImGuiLayer.h" />
+    <ClInclude Include="src\Reflection\Registration.h" />
+    <ClInclude Include="src\Reflection\MetadataType.h" />
+    <ClInclude Include="src\Reflection\MetadataVectorUsage.h" />
+    <ClInclude Include="src\Render\API.h" />
+    <ClInclude Include="src\Render\BufferLayout.h" />
+    <ClInclude Include="src\Render\PerspectiveCamera.h" />
+    <ClInclude Include="src\Render\OrthoCamera.h" />
+    <ClInclude Include="src\Render\IndexBuffer.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLIndexBuffer.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLRenderContext.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Render\OpenGL\OpenGLVertexBuffer.h" />
+    <ClInclude Include="src\Render\ProjectionCamera.h" />
+    <ClInclude Include="src\Render\RenderCamera.h" />
+    <ClInclude Include="src\Render\RenderCommand.h" />
+    <ClInclude Include="src\Render\RenderContext.h" />
+    <ClInclude Include="src\Render\Renderer2D.h" />
+    <ClInclude Include="src\Render\RendererAPI.h" />
+    <ClInclude Include="src\Render\RenderProperties2D.h" />
+    <ClInclude Include="src\Render\Shader.h" />
+    <ClInclude Include="src\Render\Sprite.h" />
+    <ClInclude Include="src\Render\SpriteSheet.h" />
+    <ClInclude Include="src\Render\Texture.h" />
+    <ClInclude Include="src\Render\VertexArray.h" />
+    <ClInclude Include="src\Render\VertexBuffer.h" />
+    <ClInclude Include="src\Resources\ResourceAllocator.hpp" />
+    <ClInclude Include="src\Scene\Scene.h" />
+    <ClInclude Include="src\Scene\SceneManager.h" />
+    <ClInclude Include="src\Scene\SceneSerializer.h" />
+    <ClInclude Include="src\Systems\CameraControllerSystem.h" />
+    <ClInclude Include="src\Systems\ScriptSystem.h" />
+    <ClInclude Include="src\Systems\SpriteRenderSystem.h" />
+    <ClInclude Include="src\Utils\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,156 @@
+Version: 1
+Scene: some name here
+Entities:
+  - Entity: 43325
+    Name: RightKnightWall
+    TransformComponent:
+      Position: [13, 25, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 50, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: roofPlatform
+    TransformComponent:
+      Position: [10, 30, 0]
+      Rotation: [0, 0, 20]
+      Scale: [7, 1, 1]
+    SpriteComponent:
+      Color: [1, 0.823529422, 0.827450991, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.200000003
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: Floor
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [100, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: LeftWall
+    TransformComponent:
+      Position: [-5, 15, 0]
+      Rotation: [0, 0, 0]
+      Scale: [3, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: RightWall
+    TransformComponent:
+      Position: [10, 9.5, 0]
+      Rotation: [0, 0, 0]
+      Scale: [5, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: Roof
+    TransformComponent:
+      Position: [-6, 15, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 30, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: box
+    TransformComponent:
+      Position: [-0.458276927, 1.01709127, 0]
+      Rotation: [0, 0, -9090.0498]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [0.984313726, 1, 0.0823529437, 1]
+    Rigidbody2DComponent:
+      Type: 1
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 1
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: Camera
+    TransformComponent:
+      Position: [0, 1.01709127, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    OrthoCameraComponent:
+      Size: [1.71631205, 1]
+      Zoom: 30
+  - Entity: 43325
+    Name: Ice
+    TransformComponent:
+      Position: [6, 21, 0]
+      Rotation: [0, 0, 0]
+      Scale: [9, 1, 1]
+    SpriteComponent:
+      Color: [0.509803951, 0.639215708, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.00100000005
+      Restitution: 0
+      RestitutionThreshold: 0.5
