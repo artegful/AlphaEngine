@@ -50,6 +50,7 @@ private slots:
 	void OnAddCameraComponent();
 	void OnAddRidigbody2DComponent();
 	void OnAddBox2DColliderComponent();
+	void OnAddModelComponent();
 };
 
 template<typename T>

@@ -2,6 +2,7 @@
 
 #include <vector>
 #include "ECS/System.h"
+#include "Render/Model.h"
 
 namespace Alpha
 {
@@ -16,6 +17,8 @@ namespace Alpha
 		void Start() override;
 		void Update(float deltaTime) override;
 		void RenderScene(const RenderCamera& camera);
+
+		std::shared_ptr<Model> model;
 	};
 }
 

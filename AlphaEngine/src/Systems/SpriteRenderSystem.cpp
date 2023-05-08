@@ -4,12 +4,16 @@
 
 #include "Render/RenderCamera.h"
 #include "Render/Renderer2D.h"
+#include "Render/Renderer3D.h"
 
 #include "Events/WindowResizedEvent.h"
 
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
 #include "Components/OrthoCameraComponent.h"
+#include <Components/ModelComponent.h>
+#include "Resources/ResourceAllocator.hpp"
+#include <Components/NameComponent.h>
 
 namespace Alpha
 {
@@ -19,6 +23,7 @@ namespace Alpha
 	void SpriteRenderSystem::Start()
 	{
 		Renderer2D::Initialize();
+		Renderer3D::Initialize();
 	}
 
 	void SpriteRenderSystem::Update(float deltaTime)
@@ -37,6 +42,22 @@ namespace Alpha
 
 	void SpriteRenderSystem::RenderScene(const RenderCamera& camera)
 	{
+		Renderer3D::BeginScene(camera);
+
+		auto modelView = GetRegistry().view<TransformComponent, ModelComponent>();
+		for (auto& model : modelView)
+		{
+			auto [transform, modelComponent] = modelView.get<TransformComponent, ModelComponent>(model);
+
+			if (modelComponent.Model != nullptr)
+			{
+				Renderer3D::DrawModel(*modelComponent.Model, transform);
+			}
+		}
+
+		Renderer3D::EndScene();
+
+
 		Renderer2D::BeginScene(camera);
 
 		auto view = GetRegistry().view<TransformComponent, SpriteComponent>();
@@ -44,8 +65,7 @@ namespace Alpha
 		{
 			auto [spriteTransform, spriteComponent] = view.get<TransformComponent, SpriteComponent>(sprite);
 
-			Renderer2D::DrawQuad({ .Position = spriteTransform.Transform.Position, .Size = spriteTransform.Transform.Scale, 
-				.RotationAngle = glm::radians(spriteTransform.Transform.Rotation.z), .Sprite = spriteComponent.Sprite, 
+			Renderer2D::DrawQuad({ .Transform = spriteTransform, .Sprite = spriteComponent.Sprite, 
 				.Color = spriteComponent.Color });
 		}
 

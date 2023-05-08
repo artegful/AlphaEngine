@@ -120,15 +120,7 @@ namespace Alpha
 			{ -0.5f,  0.5f, 0.0f, 1.0f }
 		};
 
-		glm::mat4 transformation = glm::translate(glm::mat4(1.0f), properties.Position);
-
-		//Comparing with default value
-		if (properties.RotationAngle)
-		{
-			transformation = glm::rotate(transformation, properties.RotationAngle, { 0.0f, 0.0f, 1.0f });
-		}
-
-		transformation = glm::scale(transformation, glm::vec3(properties.Size, 1.0f));
+		glm::mat4 transformation = properties.Transform.GetTransformMatrix();
 
 		float textureId = 0.0f;
 		const glm::vec2 *uvs = RenderData::DefaultUvs;

@@ -17,6 +17,9 @@ namespace Alpha
 	glm::vec2 Input::Scroll;
 	bool Input::HasScrolled;
 
+	glm::vec2 Input::MousePosition;
+	glm::vec2 Input::PreviousMousePosition;
+
 	bool Input::IsKeyDown(int keyCode)
 	{
 		if (keyCode <= GLFW_KEY_LAST)
@@ -57,6 +60,22 @@ namespace Alpha
 		return false;
 	}
 
+	glm::vec2 Input::GetMousePos()
+	{
+		return Input::MousePosition;
+	}
+
+	glm::vec2 Input::GetMouseDelta()
+	{
+		return Input::MousePosition - Input::PreviousMousePosition;
+	}
+
+	void Input::SetMousePos(glm::vec2 position)
+	{
+		Input::PreviousMousePosition = Input::MousePosition;
+		Input::MousePosition = position;
+	}
+
 	bool Input::HasScroll()
 	{
 		return HasScrolled;
@@ -78,11 +97,19 @@ namespace Alpha
 
 	void Input::OnEvent(Event& event)
 	{
+		Dispatcher::Dispatch<MouseMovedEvent>(event, OnMouseMovedEvent);
 		Dispatcher::Dispatch<KeyPressedEvent>(event, OnKeyPressedEvent);
 		Dispatcher::Dispatch<KeyReleasedEvent>(event, OnKeyReleasedEvent);
 		Dispatcher::Dispatch<MouseButtonPressedEvent>(event, OnMouseButtonPressedEvent);
 		Dispatcher::Dispatch<MouseButtonReleasedEvent>(event, OnMouseButtonReleasedEvent);
 		Dispatcher::Dispatch<MouseScrolledEvent>(event, OnMouseScrolledEvent);
+	}
+
+	bool Input::OnMouseMovedEvent(MouseMovedEvent& event)
+	{
+		SetMousePos(event.GetPos());
+
+		return true;
 	}
 
 	bool Input::OnKeyPressedEvent(KeyPressedEvent& event)

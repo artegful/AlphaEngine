@@ -16,11 +16,11 @@ namespace Alpha
 			Position(translation)
 		{ }
 
-		glm::mat4 GetTransformMatrix() const
+		inline glm::mat4 GetTransformMatrix() const
 		{
-			//glm::mat4 rotation = glm::toMat4(glm::quat(Rotation));
+			glm::mat4 rotation = glm::toMat4(glm::quat(glm::radians(Rotation)));
 
-			return glm::translate(glm::mat4(1.0f), Position)
+			return glm::translate(glm::mat4(1.0f), Position) * rotation
 				* glm::scale(glm::mat4(1.0f), Scale);
 		}
 	};

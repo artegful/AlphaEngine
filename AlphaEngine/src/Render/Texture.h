@@ -14,10 +14,12 @@ namespace Alpha
 		virtual void Unbind() = 0;
 
 		virtual void SetData(void* data, size_t size, int channels = 3) = 0;
+		virtual void SetType(const std::string& type) = 0;
 
 		virtual int GetWidth() const = 0;
 		virtual int GetHeight() const = 0;
 		virtual std::string GetPath() const = 0;
+		virtual std::string GetType() const = 0;
 
 		virtual bool operator==(const Texture& texture) = 0;
 

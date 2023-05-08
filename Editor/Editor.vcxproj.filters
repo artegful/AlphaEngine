@@ -91,6 +91,9 @@
     <ClCompile Include="src\Widgets\Edits\EnumEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Widgets\Edits\StringEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Widgets\EditorWindow.h">
@@ -149,10 +152,15 @@
     <ClInclude Include="src\Widgets\Edits\FloatEdit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Widgets\Edits\StringEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Editor.pri" />
     <None Include="Editor.pro" />
+    <None Include="packages.config" />
+    <None Include="assets\shaders\model.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icons\play.png">

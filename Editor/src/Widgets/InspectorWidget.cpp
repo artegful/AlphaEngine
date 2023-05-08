@@ -8,6 +8,7 @@
 #include "Components/Rigidbody2DComponent.h"
 #include "Components/Box2DColliderComponent.h"
 #include "ECS/Entity.h"
+#include <Components/ModelComponent.h>
 
 InspectorWidget::InspectorWidget(QWidget* parent) : QWidget(parent)
 {
@@ -25,13 +26,17 @@ InspectorWidget::InspectorWidget(QWidget* parent) : QWidget(parent)
 	QAction* addRigidbody2DComponent = new QAction(tr("Rigidbody 2D"));
 	connect(addRigidbody2DComponent, &QAction::triggered, this, &InspectorWidget::OnAddRidigbody2DComponent);
 
-	QAction* addBox2DColliderComponent = new QAction(tr("2D Box Collider"));
+	QAction* addBox2DColliderComponent = new QAction(tr("2D Box Collider Component"));
 	connect(addBox2DColliderComponent, &QAction::triggered, this, &InspectorWidget::OnAddBox2DColliderComponent);
+
+	QAction* addModelComponent = new QAction(tr("Model Component"));
+	connect(addModelComponent, &QAction::triggered, this, &InspectorWidget::OnAddModelComponent);
 
 	buttonMenu->addAction(addSpriteComponent);
 	buttonMenu->addAction(addCameraComponent);
 	buttonMenu->addAction(addRigidbody2DComponent);
 	buttonMenu->addAction(addBox2DColliderComponent);
+	buttonMenu->addAction(addModelComponent);
 
 	addComponentButton = new QToolButton(this);
 	addComponentButton->setPopupMode(QToolButton::MenuButtonPopup);
@@ -65,6 +70,7 @@ void InspectorWidget::Reset()
 	TryShowComponentEdit<Alpha::OrthoCameraComponent>();
 	TryShowComponentEdit<Alpha::Rigidbody2DComponent>();
 	TryShowComponentEdit<Alpha::Box2DColliderComponent>();
+	TryShowComponentEdit<Alpha::ModelComponent>();
 
 	show();
 }
@@ -95,6 +101,11 @@ void InspectorWidget::OnAddRidigbody2DComponent()
 void InspectorWidget::OnAddBox2DColliderComponent()
 {
 	TryAddComponent<Alpha::Box2DColliderComponent>();
+}
+
+void InspectorWidget::OnAddModelComponent()
+{
+	TryAddComponent<Alpha::ModelComponent>();
 }
 
 void InspectorWidget::OnSelectedEntityChanged(Alpha::Entity& selectedEnitity)

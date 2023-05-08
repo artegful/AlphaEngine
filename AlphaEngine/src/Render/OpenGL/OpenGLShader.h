@@ -16,6 +16,7 @@ namespace Alpha
 		void Bind() override;
 		void Unbind() override;
 
+		uint32_t GetId() const override;
 		void SetInt(const std::string& name, int value) override;
 		void SetIntArray(const std::string& name, int values[], size_t amount) override;
 		void SetFloat3(const std::string& name, const glm::vec3& value) override;

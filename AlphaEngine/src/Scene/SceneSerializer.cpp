@@ -17,6 +17,7 @@
 #include "Components/Box2DColliderComponent.h"
 
 #include "rttr/type.h"
+#include <Components/ModelComponent.h>
 
 namespace YAML
 {
@@ -178,6 +179,18 @@ namespace Alpha
 			yaml << YAML::EndMap;
 		}
 
+		if (entity.HasComponent<ModelComponent>())
+		{
+			auto& modelComponent = entity.GetComponent<ModelComponent>();
+
+			yaml << YAML::Key << "ModelComponent";
+			yaml << YAML::BeginMap;
+
+			yaml << YAML::Key << "Path" << YAML::Value << modelComponent.GetPath();
+
+			yaml << YAML::EndMap;
+		}
+
 		yaml << YAML::EndMap;
 	}
 
@@ -248,6 +261,14 @@ namespace Alpha
 			box2DComponent.Restitution = Box2DColliderComponentNode["Restitution"].as<float>();
 			box2DComponent.RestitutionThreshold = Box2DColliderComponentNode["RestitutionThreshold"].as<float>();
 		}
+
+		const YAML::Node& modelComponentNode = yaml["ModelComponent"];
+		if (modelComponentNode)
+		{
+			auto& modelComponent = entity.AddComponent<ModelComponent>();
+
+			modelComponent.SetPath(modelComponentNode["Path"].as<std::string>());
+		}
 	}
 
 	SceneSerializer::SceneSerializer(Scene* scene) :
@@ -259,7 +280,7 @@ namespace Alpha
 		YAML::Emitter yaml;
 
 		yaml << YAML::BeginMap;
-		yaml << YAML::Key << "Version" << YAML::Value << 1;
+		yaml << YAML::Key << "Version" << YAML::Value << 2;
 		yaml << YAML::Key << "Scene" << YAML::Value << "some name here";
 
 		yaml << YAML::Key << "Entities" << YAML::BeginSeq;

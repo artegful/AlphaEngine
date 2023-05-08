@@ -2,6 +2,7 @@
 
 #include "glfw/glfw3.h"
 #include "glm/vec2.hpp"
+#include <Events/MouseMovedEvent.h>
 
 namespace Alpha
 {
@@ -21,6 +22,10 @@ namespace Alpha
 		static bool IsMouseButtonDown(int keyCode);
 		static bool IsMouseButtonPressed(int keyCode);
 
+		static glm::vec2 GetMousePos();
+		static glm::vec2 GetMouseDelta();
+		static void SetMousePos(glm::vec2 position);
+
 		static bool HasScroll();
 		static const glm::vec2& GetScroll();
 
@@ -37,6 +42,10 @@ namespace Alpha
 		static glm::vec2 Scroll;
 		static bool HasScrolled;
 
+		static glm::vec2 MousePosition;
+		static glm::vec2 PreviousMousePosition;
+
+		static bool OnMouseMovedEvent(MouseMovedEvent& event);
 		static bool OnKeyPressedEvent(KeyPressedEvent& event);
 		static bool OnKeyReleasedEvent(KeyReleasedEvent& event);
 		static bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& event);

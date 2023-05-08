@@ -10,6 +10,7 @@
 
 #include "MetadataType.h"
 #include "MetadataVectorUsage.h"
+#include <Components/ModelComponent.h>
 
 RTTR_REGISTRATION
 {
@@ -65,5 +66,7 @@ RTTR_REGISTRATION
 		.property("Restitution", &Alpha::Box2DColliderComponent::Restitution)
 		.property("RestitutionThreshold", &Alpha::Box2DColliderComponent::RestitutionThreshold);
 
+	registration::class_<Alpha::ModelComponent>("ModelComponent")
+		.property("ObjPath", &Alpha::ModelComponent::GetPath, &Alpha::ModelComponent::SetPath);
 }
 

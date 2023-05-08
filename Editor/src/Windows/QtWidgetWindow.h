@@ -19,10 +19,15 @@ public:
 	int GetWidth() const override;
 	int GetHeight() const override;
 
+	void UpdateMousePosition(QPoint position);
+
 	void WindowResized(QResizeEvent* event);
 	void KeyPressed(QKeyEvent* event);
 	void KeyReleased(QKeyEvent* event);
 	void WheelScroll(QWheelEvent* event);
+	void MousePressed(QMouseEvent* event);
+	void MouseReleased(QMouseEvent* event);
+
 
 private:
 	EditorWidget& widget;

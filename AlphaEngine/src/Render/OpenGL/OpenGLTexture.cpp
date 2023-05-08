@@ -51,6 +51,11 @@ namespace Alpha
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	}
 
+	void OpenGLTexture::SetType(const std::string& type)
+	{
+		this->type = type;
+	}
+
 	void OpenGLTexture::SetData(void* data, size_t size, int channels)
 	{
 		this->channels = channels;
@@ -85,6 +90,10 @@ namespace Alpha
 		return path;
 	};
 
+	std::string OpenGLTexture::GetType() const
+	{
+		return type;
+	};
 
 	bool OpenGLTexture::operator==(const Texture& texture)
 	{

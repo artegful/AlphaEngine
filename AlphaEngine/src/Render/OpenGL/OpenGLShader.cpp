@@ -62,6 +62,11 @@ namespace Alpha
 		glUseProgram(0);
 	}
 
+	uint32_t OpenGLShader::GetId() const
+	{
+		return id;
+	}
+
 	void OpenGLShader::SetInt(const std::string& name, int value)
 	{
 		GLint location = glGetUniformLocation(id, name.data());

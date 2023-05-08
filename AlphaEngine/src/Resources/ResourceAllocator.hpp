@@ -3,6 +3,7 @@
 #include <memory>
 #include <string>
 #include <unordered_map>
+#include <filesystem>
 
 namespace Alpha
 {
@@ -41,7 +42,10 @@ namespace Alpha
 	template<typename... Args>
 	std::shared_ptr<T> ResourceAllocator<T>::AddOrGet(const std::string& filePath, Args&&... args)
 	{
-		auto result = pathToPtr.find(filePath);
+		std::filesystem::path path(filePath);
+		std::string fullPath = std::filesystem::absolute(path).string();
+
+		auto result = pathToPtr.find(fullPath);
 
 		if (result != pathToPtr.end())
 		{
@@ -49,7 +53,7 @@ namespace Alpha
 		}
 
 		std::shared_ptr<T> ptr = T::Create(filePath, args...);
-		pathToPtr[filePath] = ptr;
+		pathToPtr[fullPath] = ptr;
 
 		return ptr;
 	}

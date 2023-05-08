@@ -10,6 +10,7 @@
 #include "ColorEdit.h"
 #include "EnumEdit.h"
 #include "ReflectedItemEdit.h"
+#include "StringEdit.h"
 
 BaseEdit* EditFactory::CreateEdit(const rttr::instance& instance, const rttr::property& property, QWidget* parent)
 {
@@ -45,6 +46,10 @@ BaseEdit* EditFactory::CreateEdit(const rttr::instance& instance, const rttr::pr
     if (type.is_enumeration())
     {
         return new EnumEdit(instance, property, parent);
+    }
+    if (type == rttr::type::get<std::string>())
+    {
+        return new StringEdit(instance, property, parent);
     }
 
     return new ReflectedItemEdit(instance, property, parent);
