@@ -29,7 +29,7 @@ void StringEdit::Update()
 void StringEdit::HandleButton()
 {
 	QString filePath = QFileDialog::getOpenFileName(this, tr("Open Model"),
-		tr("assets"), "Models (*.obj; *.fbx)");
+		tr("assets/models"), "Models (*.obj; *.fbx)");
 
 	if (!filePath.isEmpty())
 	{

@@ -1,5 +1,6 @@
 #include "Model.h"
 
+#include "Core/Log.h"
 #include <filesystem>
 
 namespace Alpha
@@ -12,49 +13,49 @@ namespace Alpha
 
     Model::Model(string const& path)
     {
-        loadModel(path);
+        LoadModel(path);
     }
 
     void Model::Draw(Shader& shader)
     {
-        for (unsigned int i = 0; i < Meshes.size(); i++)
+        for (unsigned int i = 0; i < meshes.size(); i++)
         {
-            Meshes[i].Draw(shader);
+            meshes[i].Draw(shader);
         }
     }
 
-    void Model::loadModel(string const& path)
+    void Model::LoadModel(string const& path)
     {
         Assimp::Importer importer;
         const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
        
         if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
         {
-            cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
+            AL_ERROR("ASSIMP: ", importer.GetErrorString());
             return;
         }
 
-        Directory = std::filesystem::path(path).parent_path();
+        directory = std::filesystem::path(path).parent_path();
 
-        processNode(scene->mRootNode, scene);
+        HandleNode(scene->mRootNode, scene);
     }
 
-    void Model::processNode(aiNode* node, const aiScene* scene)
+    void Model::HandleNode(aiNode* node, const aiScene* scene)
     {
         for (unsigned int i = 0; i < node->mNumMeshes; i++)
         {
             aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-            Meshes.push_back(processMesh(mesh, scene));
+            meshes.push_back(HandleMesh(mesh, scene));
         }
 
         for (unsigned int i = 0; i < node->mNumChildren; i++)
         {
-            processNode(node->mChildren[i], scene);
+            HandleNode(node->mChildren[i], scene);
         }
 
     }
 
-    Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
+    Mesh Model::HandleMesh(aiMesh* mesh, const aiScene* scene)
     {
         vector<Vertex> vertices;
         vector<unsigned int> indices;
@@ -104,39 +105,35 @@ namespace Alpha
 
         aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
 
-        // 1. diffuse maps
-        vector<std::shared_ptr<Texture>> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
+        vector<std::shared_ptr<Texture>> diffuseMaps = LoadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
+        vector<std::shared_ptr<Texture>> specularMaps = LoadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
+        std::vector<std::shared_ptr<Texture>> normalMaps = LoadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
+        std::vector<std::shared_ptr<Texture>> heightMaps = LoadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
+
         textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
-        // 2. specular maps
-        vector<std::shared_ptr<Texture>> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
         textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
-        // 3. normal maps
-        std::vector<std::shared_ptr<Texture>> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
         textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
-        // 4. height maps
-        std::vector<std::shared_ptr<Texture>> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
         textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
 
-        // return a mesh object created from the extracted mesh data
         return Mesh(std::move(vertices), std::move(indices), std::move(textures));
     }
 
-    vector<std::shared_ptr<Texture>> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName)
+    vector<std::shared_ptr<Texture>> Model::LoadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName)
     {
         vector<std::shared_ptr<Texture>> textures;
         for (unsigned int i = 0; i < mat->GetTextureCount(type); i++)
         {
-            aiString str;
-            mat->GetTexture(type, i, &str);
-            std::string fullPath = (Directory / str.C_Str()).string();
-            // check if texture was loaded before and if so, continue to next iteration: skip loading a new texture
+            aiString textureString;
+            mat->GetTexture(type, i, &textureString);
+            std::string fullPath = (directory / textureString.C_Str()).string();
+
             bool skip = false;
-            for (unsigned int j = 0; j < TexturesLoaded.size(); j++)
+            for (unsigned int j = 0; j < loadedTextures.size(); j++)
             {
-                if (TexturesLoaded[j]->GetPath() == fullPath)
+                if (loadedTextures[j]->GetPath() == fullPath)
                 {
-                    textures.push_back(TexturesLoaded[j]);
-                    skip = true; // a texture with the same filepath has already been loaded, continue to next one. (optimization)
+                    textures.push_back(loadedTextures[j]);
+                    skip = true;
                     break;
                 }
             }
@@ -144,8 +141,8 @@ namespace Alpha
             {
                 std::shared_ptr<Texture> texture = Texture::Create(fullPath);
                 texture->SetType(typeName);
+                loadedTextures.push_back(texture);
                 textures.push_back(texture);
-                TexturesLoaded.push_back(texture);
             }
         }
         return textures;

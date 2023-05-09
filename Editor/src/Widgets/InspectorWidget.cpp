@@ -106,6 +106,17 @@ void InspectorWidget::OnAddBox2DColliderComponent()
 void InspectorWidget::OnAddModelComponent()
 {
 	TryAddComponent<Alpha::ModelComponent>();
+
+	if (selectedEntity->HasComponent<Alpha::ModelComponent>())
+	{
+		auto& component = selectedEntity->GetComponent<Alpha::ModelComponent>();
+
+		static std::string defaultModel = "assets/models/defaultCube/cube.obj";
+		if (std::filesystem::exists(defaultModel))
+		{
+			component.SetPath(defaultModel);
+		}
+	}
 }
 
 void InspectorWidget::OnSelectedEntityChanged(Alpha::Entity& selectedEnitity)
@@ -119,4 +130,5 @@ void InspectorWidget::OnDeleteButtonPressed(rttr::type componentType)
 	TryDeleteComponent<Alpha::OrthoCameraComponent>(componentType);
 	TryDeleteComponent<Alpha::Rigidbody2DComponent>(componentType);
 	TryDeleteComponent<Alpha::Box2DColliderComponent>(componentType);
+	TryDeleteComponent<Alpha::ModelComponent>(componentType);
 }

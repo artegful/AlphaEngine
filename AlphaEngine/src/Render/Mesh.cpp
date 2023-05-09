@@ -10,7 +10,7 @@ namespace Alpha
         vertices(vertices), indices(indices), textures(textures), VAO(0), VBO(0), EBO(0)
 	{ }
 
-	void Mesh::Draw(const Shader& shader)
+	void Mesh::Draw(Shader& shader)
 	{
         if (!IsSetup())
         {
@@ -39,6 +39,8 @@ namespace Alpha
             glUniform1i(glGetUniformLocation(shader.GetId(), (name + number).c_str()), i);
             textures[i]->Bind(i);
         }
+
+        shader.SetMaterial(material);
 
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, static_cast<unsigned int>(indices.size()), GL_UNSIGNED_INT, 0);

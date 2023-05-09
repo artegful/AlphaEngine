@@ -3,13 +3,9 @@
 #include <QtWidgets>
 
 #include "rttr/type.h"
+#include "ECS/Entity.h"
 #include "Edits/ComponentEdit.h"
 #include "ExpandableWidget.h"
-
-namespace Alpha
-{
-	class Entity;
-}
 
 class InspectorWidget : public QWidget
 {

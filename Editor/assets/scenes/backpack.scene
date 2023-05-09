@@ -2,6 +2,22 @@ Version: 2
 Scene: some name here
 Entities:
   - Entity: 43325
+    Name: backpackClone
+    TransformComponent:
+      Position: [10, -1, 0]
+      Rotation: [-80, -30, 0]
+      Scale: [1, 1, 1]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/backpack.obj
+  - Entity: 43325
+    Name: floor
+    TransformComponent:
+      Position: [0, -3, 0]
+      Rotation: [0, 0, 0]
+      Scale: [20, 1, 20]
+    ModelComponent:
+      Path: assets/models/defaultCube/cube.obj
+  - Entity: 43325
     Name: TestBackpack
     TransformComponent:
       Position: [0, 0, 0]

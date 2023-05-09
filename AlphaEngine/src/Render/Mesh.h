@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "Vertex.h"
 #include "Shader.h"
+#include "Material.h"
 
 namespace Alpha
 {
@@ -17,10 +18,11 @@ namespace Alpha
 
         Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices, const std::vector<std::shared_ptr<Texture>>& textures);
         
-        void Draw(const Shader& shader);
+        void Draw(Shader& shader);
 
     private:
         unsigned int VBO, EBO;
+        Material material;
 
         void SetupMesh();
         inline bool IsSetup() { return VAO != 0; }

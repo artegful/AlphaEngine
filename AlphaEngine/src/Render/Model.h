@@ -27,20 +27,18 @@ namespace Alpha
     public:
         static std::shared_ptr<Model> Create(const std::string& path);
 
-        vector<std::shared_ptr<Texture>> TexturesLoaded;
-        vector<Mesh> Meshes;
-        std::filesystem::path Directory;
-
         Model(string const& path);
 
         void Draw(Shader& shader);
 
     private:
-        // loads a model with supported ASSIMP extensions from file and stores the resulting meshes in the meshes vector.
-        void loadModel(string const& path);
+        vector<std::shared_ptr<Texture>> loadedTextures;
+        vector<Mesh> meshes;
+        std::filesystem::path directory;
 
-        void processNode(aiNode* node, const aiScene* scene);
-        Mesh processMesh(aiMesh* mesh, const aiScene* scene);
-        vector<std::shared_ptr<Texture>> loadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName);
+        void LoadModel(string const& path);
+        void HandleNode(aiNode* node, const aiScene* scene);
+        Mesh HandleMesh(aiMesh* mesh, const aiScene* scene);
+        vector<std::shared_ptr<Texture>> LoadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName);
     };
 }

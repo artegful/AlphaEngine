@@ -15,6 +15,8 @@ namespace Alpha
 	{
 		modelShader->Bind();
 		modelShader->SetMat4("uViewProjectionMatrix", camera.GetViewProjectionMatrix());
+		modelShader->SetFloat3("viewPos", camera.GetTransform().Position);
+		modelShader->SetFloat3("lightPos", glm::vec3(30.0f, 30.0f, 30.0f));
 	}
 
 	void Renderer3D::DrawModel(Model& model, const Transform& transform)

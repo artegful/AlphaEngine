@@ -307,6 +307,7 @@
     <ClInclude Include="src\Reflection\MetadataVectorUsage.h" />
     <ClInclude Include="src\Render\API.h" />
     <ClInclude Include="src\Render\BufferLayout.h" />
+    <ClInclude Include="src\Render\Material.h" />
     <ClInclude Include="src\Render\Mesh.h" />
     <ClInclude Include="src\Render\Model.h" />
     <ClInclude Include="src\Render\PerspectiveCamera.h" />

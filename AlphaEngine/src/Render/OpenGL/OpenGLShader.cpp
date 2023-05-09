@@ -8,6 +8,7 @@
 #include "Core/Core.h"
 #include "glm/gtc/type_ptr.hpp"
 #include "Utils/Utils.h"
+#include "Render/Material.h"
 
 using namespace std::string_literals;
 
@@ -74,6 +75,13 @@ namespace Alpha
 		glUniform1i(location, value);
 	}
 
+	void OpenGLShader::SetFloat(const std::string& name, float value)
+	{
+		GLint location = glGetUniformLocation(id, name.data());
+
+		glUniform1f(location, value);
+	}
+
 	void OpenGLShader::SetIntArray(const std::string& name, int values[], size_t amount)
 	{
 		GLint location = glGetUniformLocation(id, name.data());
@@ -100,6 +108,14 @@ namespace Alpha
 		GLint location = glGetUniformLocation(id, name.data());
 
 		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
+	}
+
+	void OpenGLShader::SetMaterial(const Material& material)
+	{
+		SetFloat3("material.ambient", material.Ambient);
+		SetFloat3("material.diffuse", material.Diffuse);
+		SetFloat3("material.specular", material.Specular);
+		SetFloat("material.shininess", material.Shininess);
 	}
 
 	OpenGLShader::OpenGLShader()
