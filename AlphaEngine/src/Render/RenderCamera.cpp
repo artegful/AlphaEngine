@@ -11,6 +11,11 @@ namespace Alpha
 		return camera.GetProjectionMatrix() *  glm::inverse(transform.GetTransformMatrix());
 	}
 
+	glm::mat4 RenderCamera::GetViewProjectionMatrixWithoutTranslate() const
+	{
+		return camera.GetProjectionMatrix() * glm::inverse(transform.GetTransformMatrixWithoutTranslation());
+	}
+
 	const Transform& RenderCamera::GetTransform() const
 	{
 		return transform;

@@ -10,7 +10,9 @@
 
 #include "MetadataType.h"
 #include "MetadataVectorUsage.h"
+#include "MetadataFileType.h"
 #include <Components/ModelComponent.h>
+#include <Components/PointLightComponent.h>
 
 RTTR_REGISTRATION
 {
@@ -29,6 +31,10 @@ RTTR_REGISTRATION
 		.property("Color", &Alpha::SpriteComponent::Color)
 		(
 			metadata(Alpha::MetadataType::VectorUsage, Alpha::MetadataVectorUsage::Color)
+		)
+		.property("SpritePath", &Alpha::SpriteComponent::GetPath, &Alpha::SpriteComponent::SetPath)
+		(
+			metadata(Alpha::MetadataType::FileType, Alpha::MetadataFileType::Sprite)
 		);
 
 	registration::class_<Alpha::Transform>("Transform")
@@ -67,6 +73,28 @@ RTTR_REGISTRATION
 		.property("RestitutionThreshold", &Alpha::Box2DColliderComponent::RestitutionThreshold);
 
 	registration::class_<Alpha::ModelComponent>("ModelComponent")
-		.property("ObjPath", &Alpha::ModelComponent::GetPath, &Alpha::ModelComponent::SetPath);
+		.property("ObjPath", &Alpha::ModelComponent::GetPath, &Alpha::ModelComponent::SetPath)
+		(
+			metadata(Alpha::MetadataType::FileType, Alpha::MetadataFileType::Model)
+		);
+
+	registration::class_<Alpha::PointLightComponent>("PointLightComponent")
+		.property("Light", &Alpha::PointLightComponent::Light)
+		(
+			policy::prop::bind_as_ptr
+		);
+
+	registration::class_<Alpha::Light>("Light")
+		.constructor<>()
+		.property("Color", &Alpha::Light::Color)
+		(
+			metadata(Alpha::MetadataType::VectorUsage, Alpha::MetadataVectorUsage::Color)
+		)
+		.property("Ambient", &Alpha::Light::Ambient)
+		.property("Diffuse", &Alpha::Light::Diffuse)
+		.property("Specular", &Alpha::Light::Specular)
+		.property("ConstantFalloff", &Alpha::Light::ConstantFalloff)
+		.property("LinearFalloff", &Alpha::Light::LinearFalloff)
+		.property("QuadraticFalloff", &Alpha::Light::QuadraticFalloff);
 }
 

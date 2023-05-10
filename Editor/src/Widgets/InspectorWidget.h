@@ -47,6 +47,7 @@ private slots:
 	void OnAddRidigbody2DComponent();
 	void OnAddBox2DColliderComponent();
 	void OnAddModelComponent();
+	void OnAddPointLightComponent();
 };
 
 template<typename T>

@@ -91,7 +91,7 @@
     <ClCompile Include="src\Widgets\Edits\EnumEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Widgets\Edits\StringEdit.cpp">
+    <ClCompile Include="src\Widgets\Edits\FileEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -152,7 +152,7 @@
     <ClInclude Include="src\Widgets\Edits\FloatEdit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Widgets\Edits\StringEdit.h">
+    <ClInclude Include="src\Widgets\Edits\FileEdit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -161,6 +161,7 @@
     <None Include="Editor.pro" />
     <None Include="packages.config" />
     <None Include="assets\shaders\model.glsl" />
+    <None Include="assets\shaders\skybox.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icons\play.png">

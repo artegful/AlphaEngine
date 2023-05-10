@@ -2,10 +2,52 @@ Version: 2
 Scene: some name here
 Entities:
   - Entity: 43325
-    Name: backpackClone
+    Name: Sprite
     TransformComponent:
-      Position: [10, -1, 0]
-      Rotation: [-80, -30, 0]
+      Position: [0, 0, -15]
+      Rotation: [0, 0, 0]
+      Scale: [2, 6, 1]
+    SpriteComponent:
+      Color: [1, 0.129411772, 0.129411772, 1]
+  - Entity: 43325
+    Name: Tree
+    TransformComponent:
+      Position: [-14, -1.70000005, -10]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/LowPolyForest/OakTree.obj
+    PointLightComponent:
+      Light:
+        Color: [0.262745112, 1, 0.149019614, 1]
+        Ambient: [0.300000012, 0.300000012, 0.300000012]
+        Diffuse: [0.699999988, 0.699999988, 0.699999988]
+        Specular: [0.400000006, 0.400000006, 0.400000006]
+        ConstantFalloff: 1
+        LinearFalloff: 0.00899999961
+        QuadraticFalloff: 0.0199999996
+  - Entity: 43325
+    Name: ColdLight
+    TransformComponent:
+      Position: [0, 5, 0]
+      Rotation: [0, 0, 0]
+      Scale: [0.300000012, 0.300000012, 0.300000012]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/defaultSphere/sphere.obj
+    PointLightComponent:
+      Light:
+        Color: [0.592156887, 0.686274529, 1, 1]
+        Ambient: [0.300000012, 0.300000012, 0.300000012]
+        Diffuse: [0.699999988, 0.699999988, 0.699999988]
+        Specular: [0.699999988, 0.699999988, 0.699999988]
+        ConstantFalloff: 1
+        LinearFalloff: 0.00899999961
+        QuadraticFalloff: 0.00319999992
+  - Entity: 43325
+    Name: TestBackpack
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
     ModelComponent:
       Path: D:/Git/AlphaEngine/Editor/assets/models/backpack.obj
@@ -18,10 +60,27 @@ Entities:
     ModelComponent:
       Path: assets/models/defaultCube/cube.obj
   - Entity: 43325
-    Name: TestBackpack
+    Name: backpackClone
     TransformComponent:
-      Position: [0, 0, 0]
-      Rotation: [0, 0, 0]
+      Position: [10, -1, 0]
+      Rotation: [-80, -30, 0]
       Scale: [1, 1, 1]
     ModelComponent:
       Path: D:/Git/AlphaEngine/Editor/assets/models/backpack.obj
+  - Entity: 43325
+    Name: WarmLight
+    TransformComponent:
+      Position: [7, 3, 8]
+      Rotation: [0, 0, 0]
+      Scale: [0.300000012, 0.300000012, 0.300000012]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/defaultSphere/sphere.obj
+    PointLightComponent:
+      Light:
+        Color: [1, 0.662745118, 0.435294122, 1]
+        Ambient: [0.300000012, 0.300000012, 0.300000012]
+        Diffuse: [0.699999988, 0.699999988, 0.699999988]
+        Specular: [0.400000006, 0.400000006, 0.400000006]
+        ConstantFalloff: 1
+        LinearFalloff: 0.0900000036
+        QuadraticFalloff: 0.0320000015

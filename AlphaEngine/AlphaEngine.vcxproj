@@ -202,6 +202,7 @@
   <ItemGroup>
     <ClCompile Include="src\Components\ModelComponent.cpp" />
     <ClCompile Include="src\Components\Rigidbody2DComponent.cpp" />
+    <ClCompile Include="src\Components\SpriteComponent.cpp" />
     <ClCompile Include="src\Controls\Input.cpp" />
     <ClCompile Include="src\Core\Engine.cpp" />
     <ClCompile Include="src\Core\GlfwWindow.cpp" />
@@ -234,6 +235,7 @@
     <ClCompile Include="src\Render\RendererAPI.cpp" />
     <ClCompile Include="src\Render\Shader.cpp" />
     <ClCompile Include="src\Render\PerspectiveCamera.cpp" />
+    <ClCompile Include="src\Render\Skybox.cpp" />
     <ClCompile Include="src\Render\Sprite.cpp" />
     <ClCompile Include="src\Render\SpriteSheet.cpp" />
     <ClCompile Include="src\Render\Texture.cpp" />
@@ -245,7 +247,7 @@
     <ClCompile Include="src\Scene\SceneSerializer.cpp" />
     <ClCompile Include="src\Systems\CameraControllerSystem.cpp" />
     <ClCompile Include="src\Systems\ScriptSystem.cpp" />
-    <ClCompile Include="src\Systems\SpriteRenderSystem.cpp" />
+    <ClCompile Include="src\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\Utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -302,11 +304,13 @@
     <ClInclude Include="src\Layers\GameLayer.h" />
     <ClInclude Include="src\Layers\GameMode.h" />
     <ClInclude Include="src\Layers\ImGuiLayer.h" />
+    <ClInclude Include="src\Reflection\MetadataFileType.h" />
     <ClInclude Include="src\Reflection\Registration.h" />
     <ClInclude Include="src\Reflection\MetadataType.h" />
     <ClInclude Include="src\Reflection\MetadataVectorUsage.h" />
     <ClInclude Include="src\Render\API.h" />
     <ClInclude Include="src\Render\BufferLayout.h" />
+    <ClInclude Include="src\Render\Light.h" />
     <ClInclude Include="src\Render\Material.h" />
     <ClInclude Include="src\Render\Mesh.h" />
     <ClInclude Include="src\Render\Model.h" />
@@ -320,6 +324,7 @@
     <ClInclude Include="src\Render\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Render\OpenGL\OpenGLVertexBuffer.h" />
+    <ClInclude Include="src\Components\PointLightComponent.h" />
     <ClInclude Include="src\Render\ProjectionCamera.h" />
     <ClInclude Include="src\Render\RenderCamera.h" />
     <ClInclude Include="src\Render\RenderCommand.h" />
@@ -329,6 +334,7 @@
     <ClInclude Include="src\Render\RendererAPI.h" />
     <ClInclude Include="src\Render\RenderProperties2D.h" />
     <ClInclude Include="src\Render\Shader.h" />
+    <ClInclude Include="src\Render\Skybox.h" />
     <ClInclude Include="src\Render\Sprite.h" />
     <ClInclude Include="src\Render\SpriteSheet.h" />
     <ClInclude Include="src\Render\Texture.h" />
@@ -341,7 +347,7 @@
     <ClInclude Include="src\Scene\SceneSerializer.h" />
     <ClInclude Include="src\Systems\CameraControllerSystem.h" />
     <ClInclude Include="src\Systems\ScriptSystem.h" />
-    <ClInclude Include="src\Systems\SpriteRenderSystem.h" />
+    <ClInclude Include="src\Systems\RenderSystem.h" />
     <ClInclude Include="src\Utils\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

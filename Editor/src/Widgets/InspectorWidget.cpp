@@ -9,6 +9,7 @@
 #include "Components/Box2DColliderComponent.h"
 #include "ECS/Entity.h"
 #include <Components/ModelComponent.h>
+#include <Components/PointLightComponent.h>
 
 InspectorWidget::InspectorWidget(QWidget* parent) : QWidget(parent)
 {
@@ -32,11 +33,15 @@ InspectorWidget::InspectorWidget(QWidget* parent) : QWidget(parent)
 	QAction* addModelComponent = new QAction(tr("Model Component"));
 	connect(addModelComponent, &QAction::triggered, this, &InspectorWidget::OnAddModelComponent);
 
+	QAction* addPointLightComponent = new QAction(tr("Point Light Component"));
+	connect(addPointLightComponent, &QAction::triggered, this, &InspectorWidget::OnAddPointLightComponent);
+
 	buttonMenu->addAction(addSpriteComponent);
 	buttonMenu->addAction(addCameraComponent);
 	buttonMenu->addAction(addRigidbody2DComponent);
 	buttonMenu->addAction(addBox2DColliderComponent);
 	buttonMenu->addAction(addModelComponent);
+	buttonMenu->addAction(addPointLightComponent);
 
 	addComponentButton = new QToolButton(this);
 	addComponentButton->setPopupMode(QToolButton::MenuButtonPopup);
@@ -71,6 +76,7 @@ void InspectorWidget::Reset()
 	TryShowComponentEdit<Alpha::Rigidbody2DComponent>();
 	TryShowComponentEdit<Alpha::Box2DColliderComponent>();
 	TryShowComponentEdit<Alpha::ModelComponent>();
+	TryShowComponentEdit<Alpha::PointLightComponent>();
 
 	show();
 }
@@ -119,6 +125,11 @@ void InspectorWidget::OnAddModelComponent()
 	}
 }
 
+void InspectorWidget::OnAddPointLightComponent()
+{
+	TryAddComponent<Alpha::PointLightComponent>();
+}
+
 void InspectorWidget::OnSelectedEntityChanged(Alpha::Entity& selectedEnitity)
 {
 	SetEntity(selectedEnitity);
@@ -131,4 +142,5 @@ void InspectorWidget::OnDeleteButtonPressed(rttr::type componentType)
 	TryDeleteComponent<Alpha::Rigidbody2DComponent>(componentType);
 	TryDeleteComponent<Alpha::Box2DColliderComponent>(componentType);
 	TryDeleteComponent<Alpha::ModelComponent>(componentType);
+	TryDeleteComponent<Alpha::PointLightComponent>(componentType);
 }

@@ -6,7 +6,7 @@
 #include "GameMode.h"
 #include "Scene/SceneManager.h"
 #include "Systems/CameraControllerSystem.h"
-#include "Systems/SpriteRenderSystem.h"
+#include "Systems/RenderSystem.h"
 #include "Render/PerspectiveCamera.h"
 #include "Render/RenderCamera.h"
 
@@ -32,7 +32,7 @@ namespace Alpha
 		GameMode mode;
 
 		SceneManager sceneManager;
-		SpriteRenderSystem sceneRenderer;
+		RenderSystem sceneRenderer;
 		CameraControllerSystem cameraController;
 
 		PerspectiveCamera editorCamera;

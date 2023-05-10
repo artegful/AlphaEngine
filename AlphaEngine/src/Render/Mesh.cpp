@@ -7,8 +7,24 @@
 namespace Alpha
 {
 	Mesh::Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices, const std::vector<std::shared_ptr<Texture>>& textures) :
-        vertices(vertices), indices(indices), textures(textures), VAO(0), VBO(0), EBO(0)
-	{ }
+        vertices(vertices), indices(indices), VAO(0), VBO(0), EBO(0)
+	{
+        for (const auto& texture : textures)
+        {
+            std::string name = texture->GetType();
+
+            if (name == "texture_diffuse" && !material.DiffuseMap)
+            {
+                material.DiffuseMap = texture;
+            }
+            else if (name == "texture_specular" && !material.SpecularMap)
+            {
+                material.SpecularMap = texture;
+            }
+
+            //"texture_normal" and "texture_height"
+        }
+    }
 
 	void Mesh::Draw(Shader& shader)
 	{
@@ -17,30 +33,7 @@ namespace Alpha
             SetupMesh();
         }
 
-        unsigned int diffuseNr = 1;
-        unsigned int specularNr = 1;
-        unsigned int normalNr = 1;
-        unsigned int heightNr = 1;
-        for (unsigned int i = 0; i < textures.size(); i++)
-        {
-            glActiveTexture(GL_TEXTURE0 + i); 
-            
-            std::string number;
-            std::string name = textures[i]->GetType();
-            if (name == "texture_diffuse")
-                number = std::to_string(diffuseNr++);
-            else if (name == "texture_specular")
-                number = std::to_string(specularNr++);
-            else if (name == "texture_normal")
-                number = std::to_string(normalNr++);
-            else if (name == "texture_height")
-                number = std::to_string(heightNr++);
-
-            glUniform1i(glGetUniformLocation(shader.GetId(), (name + number).c_str()), i);
-            textures[i]->Bind(i);
-        }
-
-        shader.SetMaterial(material);
+        BindMaterial(shader);
 
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, static_cast<unsigned int>(indices.size()), GL_UNSIGNED_INT, 0);
@@ -70,4 +63,22 @@ namespace Alpha
         glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, TexCoords));
         glBindVertexArray(0);
 	}
+
+    void Mesh::BindMaterial(Shader& shader)
+    {
+        if (material.DiffuseMap)
+        {
+            material.DiffuseMap->Bind(0);
+            shader.SetInt("material.diffuse", 0);
+        }
+
+        if (material.SpecularMap)
+        {
+            material.SpecularMap->Bind(1);
+            shader.SetInt("material.specular", 1);
+        }
+
+        shader.SetFloat("material.minSpecular", material.SpecularMap ? 0.0f : 0.4f);
+        shader.SetFloat("material.shininess", material.Shininess);
+    }
 }

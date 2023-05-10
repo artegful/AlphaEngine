@@ -3,6 +3,7 @@
 #include "glm/vec3.hpp"
 #include "Reflection/MetadataType.h"
 #include "Reflection/MetadataVectorUsage.h"
+#include "Reflection/MetadataFileType.h"
 
 #include "BoolEdit.h"
 #include "FloatEdit.h"
@@ -10,7 +11,7 @@
 #include "ColorEdit.h"
 #include "EnumEdit.h"
 #include "ReflectedItemEdit.h"
-#include "StringEdit.h"
+#include "FileEdit.h"
 
 BaseEdit* EditFactory::CreateEdit(const rttr::instance& instance, const rttr::property& property, QWidget* parent)
 {
@@ -49,7 +50,21 @@ BaseEdit* EditFactory::CreateEdit(const rttr::instance& instance, const rttr::pr
     }
     if (type == rttr::type::get<std::string>())
     {
-        return new StringEdit(instance, property, parent);
+        rttr::variant vectorUsage = property.get_metadata(Alpha::MetadataType::FileType);
+
+        if (vectorUsage.is_valid())
+        {
+            Alpha::MetadataFileType type = vectorUsage.convert<Alpha::MetadataFileType>();
+
+            switch (type)
+            {
+            case Alpha::MetadataFileType::Model:
+                return new FileEdit(instance, property, "Models (*.obj; *.fbx)", parent);
+              
+            case Alpha::MetadataFileType::Sprite:
+                return new FileEdit(instance, property, "Textures (*.png; *.jpg)", parent);
+            }
+        }
     }
 
     return new ReflectedItemEdit(instance, property, parent);

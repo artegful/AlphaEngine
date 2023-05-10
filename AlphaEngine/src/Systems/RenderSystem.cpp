@@ -1,4 +1,4 @@
-#include "SpriteRenderSystem.h"
+#include "RenderSystem.h"
 
 #include "entt/entt.hpp"
 
@@ -14,19 +14,30 @@
 #include <Components/ModelComponent.h>
 #include "Resources/ResourceAllocator.hpp"
 #include <Components/NameComponent.h>
+#include <Components/PointLightComponent.h>
 
 namespace Alpha
 {
-	SpriteRenderSystem::SpriteRenderSystem(SceneManager* sceneManager) : System(sceneManager)
+	RenderSystem::RenderSystem(SceneManager* sceneManager) : System(sceneManager)
 	{ }
 
-	void SpriteRenderSystem::Start()
+	void RenderSystem::Start()
 	{
 		Renderer2D::Initialize();
 		Renderer3D::Initialize();
+
+		skybox = std::make_shared<Skybox>(std::array<std::string, 6>
+			{
+				"assets/skybox/HornstullsStrand/right.jpg",
+				"assets/skybox/HornstullsStrand/left.jpg",
+				"assets/skybox/HornstullsStrand/top.jpg",
+				"assets/skybox/HornstullsStrand/bottom.jpg",
+				"assets/skybox/HornstullsStrand/front.jpg",
+				"assets/skybox/HornstullsStrand/back.jpg"
+			});
 	}
 
-	void SpriteRenderSystem::Update(float deltaTime)
+	void RenderSystem::Update(float deltaTime)
 	{
 		Renderer2D::ResetStats();
 
@@ -40,9 +51,20 @@ namespace Alpha
 		}
 	}
 
-	void SpriteRenderSystem::RenderScene(const RenderCamera& camera)
+	void RenderSystem::RenderScene(const RenderCamera& camera)
 	{
 		Renderer3D::BeginScene(camera);
+
+		auto lightView = GetRegistry().view<TransformComponent, PointLightComponent>();
+		int lightsFound = 0;
+		for (auto& light : lightView)
+		{
+			auto [transform, lightComponent] = lightView.get<TransformComponent, PointLightComponent>(light);
+
+			Renderer3D::BindPointLight(transform, lightComponent.Light);
+		}
+
+		Renderer3D::FinishBindingPointLights();
 
 		auto modelView = GetRegistry().view<TransformComponent, ModelComponent>();
 		for (auto& model : modelView)
@@ -57,7 +79,6 @@ namespace Alpha
 
 		Renderer3D::EndScene();
 
-
 		Renderer2D::BeginScene(camera);
 
 		auto view = GetRegistry().view<TransformComponent, SpriteComponent>();
@@ -70,6 +91,8 @@ namespace Alpha
 		}
 
 		Renderer2D::EndScene();
+
+		Renderer3D::DrawSkybox(*skybox, camera);
 	}
 
 }

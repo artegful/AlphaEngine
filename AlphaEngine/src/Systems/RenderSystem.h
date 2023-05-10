@@ -3,22 +3,26 @@
 #include <vector>
 #include "ECS/System.h"
 #include "Render/Model.h"
+#include <Render/Skybox.h>
 
 namespace Alpha
 {
 	struct WindowResizedEvent;
 	class RenderCamera;
 
-	class SpriteRenderSystem : public System
+	class RenderSystem : public System
 	{
 	public:
-		SpriteRenderSystem(SceneManager* scene);
+		RenderSystem(SceneManager* scene);
 
 		void Start() override;
 		void Update(float deltaTime) override;
 		void RenderScene(const RenderCamera& camera);
 
-		std::shared_ptr<Model> model;
+	private:
+		constexpr static uint32_t MAX_POINT_LIGHTS = 5;
+
+		std::shared_ptr<Skybox> skybox;
 	};
 }
 

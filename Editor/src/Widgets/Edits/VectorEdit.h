@@ -60,7 +60,7 @@ VectorEdit<Components>::VectorEdit(const rttr::instance& instance, const rttr::p
 		editsLayout->addWidget(label);
 
 		lines[i] = new QLineEdit(this);
-		lines[i]->setValidator(new QDoubleValidator(lines[i]));
+		lines[i]->setValidator(new QRegExpValidator(QRegExp("[+-]?\\d*[\\.,]?\\d+"), this));
 		editsLayout->addWidget(lines[i]);
 
 		connect(lines[i], &QLineEdit::textChanged, this, &VectorEdit::OnLineChanged);
@@ -75,7 +75,7 @@ VectorEdit<Components>::VectorEdit(const rttr::instance& instance, const rttr::p
 template<int Components>
 void VectorEdit<Components>::Update()
 {
-	VectorComponentDispatcher<Components>::Type value = GetValue<VectorComponentDispatcher<Components>::Type>();
+	typename VectorComponentDispatcher<Components>::Type value = GetValue<typename VectorComponentDispatcher<Components>::Type>();
 
 	for (int i = 0; i < Components; i++)
 	{
@@ -86,7 +86,7 @@ void VectorEdit<Components>::Update()
 template<int Components>
 void VectorEdit<Components>::OnLineChanged()
 {
-	VectorComponentDispatcher<Components>::Type value;
+	typename VectorComponentDispatcher<Components>::Type value;
 
 	for (int i = 0; i < Components; i++)
 	{

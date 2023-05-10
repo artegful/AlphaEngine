@@ -108,7 +108,7 @@
   <ItemGroup>
     <ClCompile Include="src\Widgets\Edits\EnumEdit.cpp" />
     <ClCompile Include="src\Widgets\Edits\FloatEdit.cpp" />
-    <ClCompile Include="src\Widgets\Edits\StringEdit.cpp" />
+    <ClCompile Include="src\Widgets\Edits\FileEdit.cpp" />
     <ClCompile Include="src\Widgets\ExpanderLayout.cpp" />
     <ClCompile Include="src\Widgets\Edits\ReflectedItemEdit.cpp" />
     <ClCompile Include="src\Widgets\Edits\EditFactory.cpp" />
@@ -145,7 +145,7 @@
     <QtMoc Include="src\Widgets\EditorWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Widgets\Edits\StringEdit.h" />
+    <ClInclude Include="src\Widgets\Edits\FileEdit.h" />
     <ClInclude Include="src\Widgets\Edits\FloatEdit.h" />
     <ClInclude Include="src\Widgets\Edits\ColorEdit.h" />
     <QtMoc Include="src\Widgets\Edits\EnumEdit.h" />
@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shaders\model.glsl" />
+    <None Include="assets\shaders\skybox.glsl" />
     <None Include="Editor.pri" />
     <None Include="Editor.pro" />
     <None Include="packages.config" />

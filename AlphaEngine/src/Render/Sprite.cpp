@@ -53,4 +53,10 @@ namespace Alpha
     {
         return std::make_shared<Sprite>(texture, uvs);
     }
+
+    std::shared_ptr<Sprite> Sprite::Create(const std::shared_ptr<Texture> texture)
+    {
+        return std::make_shared<Sprite>(texture);
+    }
+
 }

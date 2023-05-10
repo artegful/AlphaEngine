@@ -18,6 +18,7 @@
 
 #include "rttr/type.h"
 #include <Components/ModelComponent.h>
+#include <Components/PointLightComponent.h>
 
 namespace YAML
 {
@@ -191,6 +192,29 @@ namespace Alpha
 			yaml << YAML::EndMap;
 		}
 
+		if (entity.HasComponent<PointLightComponent>())
+		{
+			auto& pointLightComponent = entity.GetComponent<PointLightComponent>();
+			auto& light = pointLightComponent.Light;
+
+			yaml << YAML::Key << "PointLightComponent";
+			yaml << YAML::BeginMap;
+
+			yaml << YAML::Key << "Light";
+			yaml << YAML::BeginMap;
+
+			yaml << YAML::Key << "Color" << YAML::Value << light.Color;
+			yaml << YAML::Key << "Ambient" << YAML::Value << light.Ambient;
+			yaml << YAML::Key << "Diffuse" << YAML::Value << light.Diffuse;
+			yaml << YAML::Key << "Specular" << YAML::Value << light.Specular;
+			yaml << YAML::Key << "ConstantFalloff" << YAML::Value << light.ConstantFalloff;
+			yaml << YAML::Key << "LinearFalloff" << YAML::Value << light.LinearFalloff;
+			yaml << YAML::Key << "QuadraticFalloff" << YAML::Value << light.QuadraticFalloff;
+
+			yaml << YAML::EndMap;
+			yaml << YAML::EndMap;
+		}
+
 		yaml << YAML::EndMap;
 	}
 
@@ -224,9 +248,7 @@ namespace Alpha
 				}
 
 				std::string path = spriteNode["Texture"].as<std::string>();
-				std::shared_ptr<Texture> textureResource = ResourceAllocator<Texture>::Get(path);
-
-				spriteComponent.Sprite = Sprite::Create(textureResource, uvs);
+				spriteComponent.SetPathWithUVs(path, uvs);
 			}
 		}
 
@@ -268,6 +290,24 @@ namespace Alpha
 			auto& modelComponent = entity.AddComponent<ModelComponent>();
 
 			modelComponent.SetPath(modelComponentNode["Path"].as<std::string>());
+		}
+
+		const YAML::Node& lightComponentNode = yaml["PointLightComponent"];
+		if (lightComponentNode)
+		{
+			const YAML::Node& lightNode = lightComponentNode["Light"];
+			auto& lightComponent = entity.AddComponent<PointLightComponent>();
+			auto& light = lightComponent.Light;
+
+			light.Color = lightNode["Color"].as<glm::vec4>();
+
+			light.Ambient = lightNode["Ambient"].as<glm::vec3>();
+			light.Diffuse = lightNode["Diffuse"].as<glm::vec3>();
+			light.Specular = lightNode["Specular"].as<glm::vec3>();
+
+			light.ConstantFalloff = lightNode["ConstantFalloff"].as<float>();
+			light.LinearFalloff = lightNode["LinearFalloff"].as<float>();
+			light.QuadraticFalloff = lightNode["QuadraticFalloff"].as<float>();
 		}
 	}
 

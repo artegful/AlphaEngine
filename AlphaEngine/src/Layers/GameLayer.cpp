@@ -4,7 +4,7 @@
 #include "Render/RenderCommand.h"
 #include "Scene/Scene.h"
 #include "Systems/CameraControllerSystem.h"
-#include "Systems/SpriteRenderSystem.h"
+#include "Systems/RenderSystem.h"
 
 namespace Alpha
 {

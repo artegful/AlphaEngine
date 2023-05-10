@@ -110,14 +110,6 @@ namespace Alpha
 		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
 	}
 
-	void OpenGLShader::SetMaterial(const Material& material)
-	{
-		SetFloat3("material.ambient", material.Ambient);
-		SetFloat3("material.diffuse", material.Diffuse);
-		SetFloat3("material.specular", material.Specular);
-		SetFloat("material.shininess", material.Shininess);
-	}
-
 	OpenGLShader::OpenGLShader()
 	{
 		id = glCreateProgram();

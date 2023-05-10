@@ -13,18 +13,17 @@ namespace Alpha
     public:
         std::vector<Vertex> vertices;
         std::vector<unsigned int> indices;
-        std::vector<std::shared_ptr<Texture>> textures;
-        unsigned int VAO;
 
         Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices, const std::vector<std::shared_ptr<Texture>>& textures);
         
         void Draw(Shader& shader);
 
     private:
-        unsigned int VBO, EBO;
+        unsigned int VBO, EBO, VAO;
         Material material;
 
         void SetupMesh();
+        void BindMaterial(Shader& shader);
         inline bool IsSetup() { return VAO != 0; }
     };
 }
