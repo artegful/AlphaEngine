@@ -4,7 +4,7 @@
 
 #include "Controls/Input.h"
 #include "Components/TransformComponent.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include "Render/PerspectiveCamera.h"
 
 #include "Events/WindowResizedEvent.h"
@@ -128,11 +128,11 @@ namespace Alpha
 	{
 		float newAspectRatio = static_cast<float>(event.GetNewSize().x) / event.GetNewSize().y;
 
-		auto view = GetRegistry().view<OrthoCameraComponent>();
+		auto view = GetRegistry().view<PerspectiveCameraComponent>();
 
 		for (auto& entity : view)
 		{
-			auto& camera = view.get<OrthoCameraComponent>(entity);
+			auto& camera = view.get<PerspectiveCameraComponent>(entity);
 
 			camera.Camera.SetAspectRatio(newAspectRatio);
 		}

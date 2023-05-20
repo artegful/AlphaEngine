@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "entt/entt.hpp"
+#include <string>
 
 class b2World;
 
@@ -34,6 +35,7 @@ namespace Alpha
 	protected:
 		entt::registry registry;
 		std::vector<SceneSystem*> sceneSystems;
+		std::string skyboxPath;
 
 	private:
 		size_t amountOfUnnamedEntities = 0;

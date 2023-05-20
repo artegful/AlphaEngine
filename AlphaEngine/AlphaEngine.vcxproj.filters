@@ -169,7 +169,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Components\OrthoCameraComponent.h">
+    <ClInclude Include="src\Components\PerspectiveCameraComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Components\NameComponent.h">

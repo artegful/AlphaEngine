@@ -10,7 +10,7 @@
 
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include <Components/ModelComponent.h>
 #include "Resources/ResourceAllocator.hpp"
 #include <Components/NameComponent.h>
@@ -25,27 +25,17 @@ namespace Alpha
 	{
 		Renderer2D::Initialize();
 		Renderer3D::Initialize();
-
-		skybox = std::make_shared<Skybox>(std::array<std::string, 6>
-			{
-				"assets/skybox/HornstullsStrand/right.jpg",
-				"assets/skybox/HornstullsStrand/left.jpg",
-				"assets/skybox/HornstullsStrand/top.jpg",
-				"assets/skybox/HornstullsStrand/bottom.jpg",
-				"assets/skybox/HornstullsStrand/front.jpg",
-				"assets/skybox/HornstullsStrand/back.jpg"
-			});
 	}
 
 	void RenderSystem::Update(float deltaTime)
 	{
 		Renderer2D::ResetStats();
 
-		auto view = GetRegistry().view<TransformComponent, OrthoCameraComponent>();
+		auto view = GetRegistry().view<TransformComponent, PerspectiveCameraComponent>();
 
 		for (auto& entity : view)
 		{
-			auto [transform, camera] = view.get<TransformComponent, OrthoCameraComponent>(entity);
+			auto [transform, camera] = view.get<TransformComponent, PerspectiveCameraComponent>(entity);
 
 			RenderScene({ camera, transform });
 		}
@@ -92,7 +82,7 @@ namespace Alpha
 
 		Renderer2D::EndScene();
 
-		Renderer3D::DrawSkybox(*skybox, camera);
+		Renderer3D::DrawSkybox(camera);
 	}
 
 }

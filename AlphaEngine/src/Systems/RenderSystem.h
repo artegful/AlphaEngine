@@ -21,8 +21,6 @@ namespace Alpha
 
 	private:
 		constexpr static uint32_t MAX_POINT_LIGHTS = 5;
-
-		std::shared_ptr<Skybox> skybox;
 	};
 }
 

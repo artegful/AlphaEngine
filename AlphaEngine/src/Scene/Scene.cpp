@@ -12,7 +12,7 @@
 #include "Core/Engine.h"
 #include "Render/ProjectionCamera.h"
 #include "Render/RenderCamera.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include "Components/Rigidbody2DComponent.h"
 #include "Components/Box2DColliderComponent.h"
 #include "Systems/ScriptSystem.h"
@@ -20,6 +20,7 @@
 #include "ECS/TestScript.h"
 #include "Core/Window.h"
 #include "Controls/Input.h"
+#include "Render/Renderer3D.h"
 
 namespace Alpha
 {
@@ -41,7 +42,16 @@ namespace Alpha
 	}
 
 	void Scene::Open()
-	{ }
+	{
+		if (!skyboxPath.empty())
+		{
+			Renderer3D::SetSkybox(skyboxPath);
+		}
+		else
+		{
+			Renderer3D::SetDefaultSkybox();
+		}
+	}
 
 	void Scene::Start()
 	{

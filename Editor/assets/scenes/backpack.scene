@@ -1,5 +1,6 @@
-Version: 2
-Scene: some name here
+Version: 3
+Config:
+  SkyboxPath: "assets/skyboxes/HornstullsStrand"
 Entities:
   - Entity: 43325
     Name: Sprite
@@ -84,3 +85,13 @@ Entities:
         ConstantFalloff: 1
         LinearFalloff: 0.0900000036
         QuadraticFalloff: 0.0320000015
+  - Entity: 43325
+    Name: Camera
+    TransformComponent:
+      Position: [-5, -1, 2]
+      Rotation: [20, -30, 0]
+      Scale: [1, 1, 1]
+    PerspectiveCameraComponent:
+      AspectRatio: 1.64295304
+      Zoom: 1
+      NearFarPlane: [0.100000001, 100]

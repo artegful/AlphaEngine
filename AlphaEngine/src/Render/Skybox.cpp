@@ -8,8 +8,29 @@
 
 namespace Alpha
 {
-	Skybox::Skybox(const std::array<std::string, 6> texturePaths)
-	{
+	Skybox::Skybox(const std::array<std::string, 6>& texturePaths) : texturePaths(texturePaths)
+	{ }
+
+    void Skybox::Draw()
+    {
+        if (!vertexArray)
+        {
+            Initialise();
+        }
+
+        glDepthFunc(GL_LEQUAL);
+        vertexArray->Bind();
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapId);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        vertexArray->Unbind();
+
+        glDepthFunc(GL_LESS);
+    }
+
+    void Skybox::Initialise()
+    {
         std::array skyboxVertices = {
             -1.0f,  1.0f, -1.0f,
             -1.0f, -1.0f, -1.0f,
@@ -56,27 +77,14 @@ namespace Alpha
 
         vertexArray = VertexArray::Create();
         std::shared_ptr<VertexBuffer> vertexBuffer = VertexBuffer::Create(skyboxVertices.data(), sizeof(skyboxVertices));
-        vertexBuffer->SetLayout(std::shared_ptr<BufferLayout>(new BufferLayout { { ElementType::Float3, "vPos" } }));
+        vertexBuffer->SetLayout(std::shared_ptr<BufferLayout>(new BufferLayout{ { ElementType::Float3, "vPos" } }));
 
         vertexArray->AddVertexBuffer(vertexBuffer);
 
         LoadTextures(texturePaths);
-	}
-
-    void Skybox::Draw()
-    {
-        glDepthFunc(GL_LEQUAL);
-        vertexArray->Bind();
-
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapId);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        vertexArray->Unbind();
-
-        glDepthFunc(GL_LESS);
     }
 
-    void Skybox::LoadTextures(const std::array<std::string, 6> texturePaths)
+    void Skybox::LoadTextures(const std::array<std::string, 6>& texturePaths)
     {
         glGenTextures(1, &cubemapId);
         glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapId);
@@ -84,6 +92,7 @@ namespace Alpha
         int width, height, nrChannels;
         for (unsigned int i = 0; i < texturePaths.size(); i++)
         {
+            stbi_set_flip_vertically_on_load(0);
             unsigned char* data = stbi_load(texturePaths[i].c_str(), &width, &height, &nrChannels, 0);
             if (data)
             {

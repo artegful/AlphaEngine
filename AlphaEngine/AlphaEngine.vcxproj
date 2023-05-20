@@ -269,7 +269,7 @@
   <ItemGroup>
     <ClInclude Include="src\Components\Box2DColliderComponent.h" />
     <ClInclude Include="src\Components\ModelComponent.h" />
-    <ClInclude Include="src\Components\OrthoCameraComponent.h" />
+    <ClInclude Include="src\Components\PerspectiveCameraComponent.h" />
     <ClInclude Include="src\Components\NameComponent.h" />
     <ClInclude Include="src\Components\NativeScriptComponent.h" />
     <ClInclude Include="src\Components\Rigidbody2DComponent.h" />
