@@ -14,12 +14,12 @@ namespace Alpha
         std::vector<Vertex> vertices;
         std::vector<unsigned int> indices;
 
-        Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices, const std::vector<std::shared_ptr<Texture>>& textures);
+        Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices, const Material& material, unsigned int instanceTransformsBuffer);
         
-        void Draw(Shader& shader);
+        void Draw(Shader& shader, unsigned int amount);
 
     private:
-        unsigned int VBO, EBO, VAO;
+        unsigned int VBO, EBO, VAO, instanceTransformsBuffer;
         Material material;
 
         void SetupMesh();

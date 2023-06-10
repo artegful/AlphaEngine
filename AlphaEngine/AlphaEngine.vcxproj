@@ -178,7 +178,7 @@
       <PreprocessorDefinitions>GLEW_STATIC;AL_DEBUG;_SILENCE_ALL_CXX23_DEPRECATION_WARNINGS;AL_WINDOWS;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;$(SolutionDir)Box2D\include;$(SolutionDir)yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -193,7 +193,7 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;librttr_core_s_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;librttr_core_s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)vendor\rttr\lib;$(SolutionDir)vendor\glfw\lib-vc2022;$(SolutionDir)vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -245,6 +245,7 @@
     <ClCompile Include="src\Scene\Scene.cpp" />
     <ClCompile Include="src\Scene\SceneManager.cpp" />
     <ClCompile Include="src\Scene\SceneSerializer.cpp" />
+    <ClCompile Include="src\Systems\BenchmarkSystem.cpp" />
     <ClCompile Include="src\Systems\CameraControllerSystem.cpp" />
     <ClCompile Include="src\Systems\ScriptSystem.cpp" />
     <ClCompile Include="src\Systems\RenderSystem.cpp" />
@@ -267,6 +268,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\BenchmarkComponent.h" />
     <ClInclude Include="src\Components\Box2DColliderComponent.h" />
     <ClInclude Include="src\Components\ModelComponent.h" />
     <ClInclude Include="src\Components\PerspectiveCameraComponent.h" />
@@ -328,6 +330,7 @@
     <ClInclude Include="src\Render\ProjectionCamera.h" />
     <ClInclude Include="src\Render\RenderCamera.h" />
     <ClInclude Include="src\Render\RenderCommand.h" />
+    <ClInclude Include="src\Render\RenderConstants.h" />
     <ClInclude Include="src\Render\RenderContext.h" />
     <ClInclude Include="src\Render\Renderer2D.h" />
     <ClInclude Include="src\Render\Renderer3D.h" />
@@ -345,6 +348,7 @@
     <ClInclude Include="src\Scene\Scene.h" />
     <ClInclude Include="src\Scene\SceneManager.h" />
     <ClInclude Include="src\Scene\SceneSerializer.h" />
+    <ClInclude Include="src\Systems\BenchmarkSystem.h" />
     <ClInclude Include="src\Systems\CameraControllerSystem.h" />
     <ClInclude Include="src\Systems\ScriptSystem.h" />
     <ClInclude Include="src\Systems\RenderSystem.h" />

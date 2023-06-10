@@ -25,10 +25,18 @@ namespace Alpha
 		static void SetDefaultSkybox();
 
 	private:
+		struct ModelData
+		{
+			Model* Model;
+			std::vector<glm::mat4> Transforms;
+		};
+
+		static std::unordered_map<std::string, ModelData> modelsToDraw;
 		static std::shared_ptr<Shader> modelShader;
 		static std::shared_ptr<Shader> skyboxShader;
 		static int pointLightsBound;
 		static std::shared_ptr<Skybox> skybox;
+		static std::shared_ptr<Texture> defaultTexture;
 
 		static void BindPointLight(const Light& light, const glm::vec3 position, int slot);
 		static void BindLight(const Light& light, const std::string& prefix);

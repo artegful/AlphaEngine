@@ -2,31 +2,15 @@
 
 #include <string>
 #include "GL/glew.h"
-#include <iostream>
+#include "RenderConstants.h"
 
 namespace Alpha
 {
-	Mesh::Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices, const std::vector<std::shared_ptr<Texture>>& textures) :
-        vertices(vertices), indices(indices), VAO(0), VBO(0), EBO(0)
-	{
-        for (const auto& texture : textures)
-        {
-            std::string name = texture->GetType();
+	Mesh::Mesh(const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices, const Material& material, unsigned int instanceTransformsBuffer) :
+        vertices(vertices), indices(indices), material(material), VAO(0), VBO(0), EBO(0), instanceTransformsBuffer(instanceTransformsBuffer)
+	{ }
 
-            if (name == "texture_diffuse" && !material.DiffuseMap)
-            {
-                material.DiffuseMap = texture;
-            }
-            else if (name == "texture_specular" && !material.SpecularMap)
-            {
-                material.SpecularMap = texture;
-            }
-
-            //"texture_normal" and "texture_height"
-        }
-    }
-
-	void Mesh::Draw(Shader& shader)
+	void Mesh::Draw(Shader& shader, unsigned int amount)
 	{
         if (!IsSetup())
         {
@@ -36,7 +20,7 @@ namespace Alpha
         BindMaterial(shader);
 
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, static_cast<unsigned int>(indices.size()), GL_UNSIGNED_INT, 0);
+        glDrawElementsInstanced(GL_TRIANGLES, static_cast<unsigned int>(indices.size()), GL_UNSIGNED_INT, 0, amount);
         glBindVertexArray(0);
 
         glActiveTexture(GL_TEXTURE0);
@@ -61,6 +45,23 @@ namespace Alpha
         glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Normal));
         glEnableVertexAttribArray(2);
         glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, TexCoords));
+
+        glBindBuffer(GL_ARRAY_BUFFER, instanceTransformsBuffer);
+
+        glEnableVertexAttribArray(3);
+        glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)0);
+        glEnableVertexAttribArray(4);
+        glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(sizeof(glm::vec4)));
+        glEnableVertexAttribArray(5);
+        glVertexAttribPointer(5, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(2 * sizeof(glm::vec4)));
+        glEnableVertexAttribArray(6);
+        glVertexAttribPointer(6, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(3 * sizeof(glm::vec4)));
+
+        glVertexAttribDivisor(3, 1);
+        glVertexAttribDivisor(4, 1);
+        glVertexAttribDivisor(5, 1);
+        glVertexAttribDivisor(6, 1);
+
         glBindVertexArray(0);
 	}
 
@@ -71,14 +72,23 @@ namespace Alpha
             material.DiffuseMap->Bind(0);
             shader.SetInt("material.diffuse", 0);
         }
+        else 
+        {
+            shader.SetInt("material.diffuse", RenderConstants::DEFAULT_TEXTURE_SLOT);
+        }
 
         if (material.SpecularMap)
         {
             material.SpecularMap->Bind(1);
             shader.SetInt("material.specular", 1);
         }
+        else
+        {
+            shader.SetInt("material.specular", RenderConstants::DEFAULT_TEXTURE_SLOT);
+        }
 
         shader.SetFloat("material.minSpecular", material.SpecularMap ? 0.0f : 0.4f);
         shader.SetFloat("material.shininess", material.Shininess);
+        shader.SetFloat3("material.diffuseColor", material.DiffuseColor);
     }
 }

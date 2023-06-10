@@ -1,0 +1,107 @@
+Version: 3
+Config:
+  SkyboxPath: ""
+Entities:
+  - Entity: 43325
+    Name: Camera
+    TransformComponent:
+      Position: [-3.61815238, 0.716575146, 20]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    PerspectiveCameraComponent:
+      AspectRatio: 1.64295304
+      Zoom: 1
+      NearFarPlane: [0.100000001, 300]
+  - Entity: 43325
+    Name: box
+    TransformComponent:
+      Position: [-3.45533681, 0.716575146, 0]
+      Rotation: [0, 0, -7735.00049]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0, 0], [1, 0], [1, 1], [0, 1]]
+        Texture: D:/Git/AlphaEngine/x64/Debug/assets/images/test.jpg
+    Rigidbody2DComponent:
+      Type: 1
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 1
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: Roof
+    TransformComponent:
+      Position: [0, 19, 0]
+      Rotation: [0, 0, 0]
+      Scale: [20, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: RightWall
+    TransformComponent:
+      Position: [10, 9.5, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 20, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: LeftWall
+    TransformComponent:
+      Position: [-10, 9.5, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 20, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5
+  - Entity: 43325
+    Name: Floor
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 5]
+      Scale: [20, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+    Rigidbody2DComponent:
+      Type: 0
+      IsFixedRotation: false
+    Box2DColliderComponent:
+      Offset: [0, 0]
+      Size: [1, 1]
+      Density: 1
+      Friction: 0.5
+      Restitution: 0
+      RestitutionThreshold: 0.5

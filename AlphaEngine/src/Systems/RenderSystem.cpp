@@ -5,6 +5,7 @@
 #include "Render/RenderCamera.h"
 #include "Render/Renderer2D.h"
 #include "Render/Renderer3D.h"
+#include "Render/RenderCommand.h"
 
 #include "Events/WindowResizedEvent.h"
 
@@ -30,6 +31,7 @@ namespace Alpha
 	void RenderSystem::Update(float deltaTime)
 	{
 		Renderer2D::ResetStats();
+		RenderCommand::Clear();
 
 		auto view = GetRegistry().view<TransformComponent, PerspectiveCameraComponent>();
 

@@ -11,7 +11,7 @@ namespace Alpha
 		virtual ~Texture() = default;
 
 		virtual void Bind(int slot = 0) = 0;
-		virtual void Unbind() = 0;
+		virtual void Unbind(int slot = 0) = 0;
 
 		virtual void SetData(void* data, size_t size, int channels = 3) = 0;
 		virtual void SetType(const std::string& type) = 0;

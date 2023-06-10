@@ -72,7 +72,6 @@ namespace Alpha
 
 	void Input::SetMousePos(glm::vec2 position)
 	{
-		Input::PreviousMousePosition = Input::MousePosition;
 		Input::MousePosition = position;
 	}
 
@@ -93,6 +92,7 @@ namespace Alpha
 
 		Scroll = { 0, 0 };
 		HasScrolled = false;
+		Input::PreviousMousePosition = Input::MousePosition;
 	}
 
 	void Input::OnEvent(Event& event)

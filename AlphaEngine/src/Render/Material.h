@@ -11,5 +11,6 @@ namespace Alpha
 		std::shared_ptr<Texture> SpecularMap;
 
 		float Shininess = 32.0f;
+		glm::vec3 DiffuseColor = glm::vec3(1.0f);
 	};
 }

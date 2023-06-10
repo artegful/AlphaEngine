@@ -37,12 +37,30 @@ namespace Alpha
 
 	Engine::Engine(const Alpha::Config& config) :
 		isImGuiEnabled(config.IsImGuiEnabled),
-		window(nullptr)
+		window(nullptr),
+		config(config)
 	{
 		Instance = this;
 		RenderCommand::SetAPI(config.RenderApi);
 		window.reset(new GlfwWindow(config.Width, config.Height));
    	}
+
+	void Engine::Initialize()
+	{
+		window->Initialize();
+		window->SetEventCallback(EVENT_BIND(OnEvent));
+		RenderCommand::Initialize();
+
+		previousTime = std::chrono::steady_clock::now();
+
+		gameLayer = new GameLayer(config.Mode);
+		layerStack.AddLayer(gameLayer);
+
+		if (isImGuiEnabled)
+		{
+			layerStack.AddOverlay(new ImGuiLayer());
+		}
+	}
 
 	void Engine::SetCustomWindow(const std::shared_ptr<Window>& customWindow)
 	{
@@ -115,23 +133,6 @@ namespace Alpha
 		}
 
 		ImGuiLayer::End();
-	}
-
-	void Engine::Initialize()
-	{
-		window->Initialize();
-		window->SetEventCallback(EVENT_BIND(OnEvent));
-		RenderCommand::Initialize();
-
-		previousTime = std::chrono::steady_clock::now();
-
-		gameLayer = new GameLayer();
-		layerStack.AddLayer(gameLayer);
-
-		if (isImGuiEnabled)
-		{
-			layerStack.AddOverlay(new ImGuiLayer());
-		}
 	}
 
 	void Engine::OnEvent(Event& event)

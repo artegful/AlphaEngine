@@ -114,12 +114,9 @@ void EditorWidget::initializeGL()
 {
 	engineWindow.reset(new QtWidgetWindow(*this));
 
-	engine = new Alpha::Engine({ 600, 400, Alpha::API::OpenGL });
+	engine = new Alpha::Engine({ 600, 400, Alpha::API::OpenGL, Alpha::GameMode::Editor });
 	engine->SetCustomWindow(engineWindow);
 	engine->Initialize();
-	engine->GetGameLayer().SetMode(Alpha::GameMode::Editor);
-
-    glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
 
     QOpenGLExtraFunctions functions(this->context());
     functions.glDebugMessageCallback(GLDebugMessageCallback, NULL);

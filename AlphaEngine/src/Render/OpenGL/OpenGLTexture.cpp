@@ -70,8 +70,9 @@ namespace Alpha
 		glBindTexture(GL_TEXTURE_2D, id);
 	}
 
-	void OpenGLTexture::Unbind()
+	void OpenGLTexture::Unbind(int slot)
 	{
+		glActiveTexture(GL_TEXTURE0 + slot);
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 

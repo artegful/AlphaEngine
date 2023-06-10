@@ -2,6 +2,7 @@
 
 #include "Core/Log.h"
 #include <filesystem>
+#include "GL/glew.h"
 
 namespace Alpha
 {
@@ -11,16 +12,21 @@ namespace Alpha
     }
 
 
-    Model::Model(string const& path)
+    Model::Model(string const& path) : path(path)
     {
+        glGenBuffers(1, &instanceTransformsBuffer);
+
         LoadModel(path);
     }
 
-    void Model::Draw(Shader& shader)
+    void Model::Draw(Shader& shader, std::vector<glm::mat4>& transforms)
     {
+        glBindBuffer(GL_ARRAY_BUFFER, instanceTransformsBuffer);
+        glBufferData(GL_ARRAY_BUFFER, transforms.size() * sizeof(glm::mat4), transforms.data(), GL_DYNAMIC_DRAW);
+
         for (unsigned int i = 0; i < meshes.size(); i++)
         {
-            meshes[i].Draw(shader);
+            meshes[i].Draw(shader, transforms.size());
         }
     }
 
@@ -52,7 +58,6 @@ namespace Alpha
         {
             HandleNode(node->mChildren[i], scene);
         }
-
     }
 
     Mesh Model::HandleMesh(aiMesh* mesh, const aiScene* scene)
@@ -103,19 +108,42 @@ namespace Alpha
             }
         }
 
-        aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
+        aiMaterial* modelMaterial = scene->mMaterials[mesh->mMaterialIndex];
+        Material material;
 
-        vector<std::shared_ptr<Texture>> diffuseMaps = LoadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
-        vector<std::shared_ptr<Texture>> specularMaps = LoadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
-        std::vector<std::shared_ptr<Texture>> normalMaps = LoadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
-        std::vector<std::shared_ptr<Texture>> heightMaps = LoadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
+        vector<std::shared_ptr<Texture>> diffuseMaps = LoadMaterialTextures(modelMaterial, aiTextureType_DIFFUSE, "texture_diffuse");
+        vector<std::shared_ptr<Texture>> specularMaps = LoadMaterialTextures(modelMaterial, aiTextureType_SPECULAR, "texture_specular");
+        std::vector<std::shared_ptr<Texture>> normalMaps = LoadMaterialTextures(modelMaterial, aiTextureType_HEIGHT, "texture_normal");
+        std::vector<std::shared_ptr<Texture>> heightMaps = LoadMaterialTextures(modelMaterial, aiTextureType_AMBIENT, "texture_height");
 
         textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
         textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
         textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
         textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
 
-        return Mesh(std::move(vertices), std::move(indices), std::move(textures));
+        aiColor3D color(1.0f, 1.0f, 1.0f);
+        if (modelMaterial->Get(AI_MATKEY_COLOR_DIFFUSE, color) == AI_SUCCESS)
+        {
+            material.DiffuseColor = glm::vec3(color.r, color.g, color.b);
+        }
+
+        for (const auto& texture : textures)
+        {
+            std::string name = texture->GetType();
+
+            if (name == "texture_diffuse" && !material.DiffuseMap)
+            {
+                material.DiffuseMap = texture;
+            }
+            else if (name == "texture_specular" && !material.SpecularMap)
+            {
+                material.SpecularMap = texture;
+            }
+
+            //"texture_normal" and "texture_height"
+        }
+
+        return Mesh(std::move(vertices), std::move(indices), std::move(material), instanceTransformsBuffer);
     }
 
     vector<std::shared_ptr<Texture>> Model::LoadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName)

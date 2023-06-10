@@ -162,6 +162,9 @@
     <ClCompile Include="src\Components\SpriteComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Systems\BenchmarkSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\shaders\vertex.vert" />
@@ -413,6 +416,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Reflection\MetadataFileType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\RenderConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Systems\BenchmarkSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\BenchmarkComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

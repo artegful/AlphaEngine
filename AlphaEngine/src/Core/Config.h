@@ -3,6 +3,7 @@
 #include <memory>
 #include "Window.h"
 #include "Render/API.h"
+#include "Layers/GameMode.h"
 
 namespace Alpha
 {
@@ -11,6 +12,7 @@ namespace Alpha
 		int Width;
 		int Height;
 		API RenderApi;
+		GameMode Mode;
 		bool IsImGuiEnabled = false;
 	};
 }

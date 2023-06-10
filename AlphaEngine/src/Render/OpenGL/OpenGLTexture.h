@@ -14,7 +14,7 @@ namespace Alpha
 		OpenGLTexture(size_t width, size_t height);
 
 		void Bind(int slot = 0) override;
-		void Unbind() override;
+		void Unbind(int slot = 0) override;
 
 		virtual void SetType(const std::string& type) override;
 		void SetData(void* data, size_t size, int channels) override;

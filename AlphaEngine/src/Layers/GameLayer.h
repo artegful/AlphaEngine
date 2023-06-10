@@ -17,7 +17,7 @@ namespace Alpha
 	class GameLayer : public Layer
 	{
 	public:
-		GameLayer();
+		GameLayer(GameMode mode);
 
 		void Open() override;
 		void Close() override;
@@ -40,6 +40,7 @@ namespace Alpha
 
 		void UpdateGame(float deltaTime);
 		void UpdateEditor(float deltaTime);
+		void SetModeInternal(GameMode mode);
 	};
 }
 

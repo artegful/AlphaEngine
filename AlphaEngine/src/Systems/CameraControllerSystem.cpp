@@ -20,7 +20,14 @@ namespace Alpha
 
 	void CameraControllerSystem::Update(float deltaTime)
 	{
+		auto view = GetRegistry().view<TransformComponent, PerspectiveCameraComponent>();
 
+		for (auto& entity : view)
+		{
+			auto& [transform, camera] = view.get<TransformComponent, PerspectiveCameraComponent>(entity);
+
+			UpdateCamera(deltaTime, transform.Transform, camera.Camera);
+		}
 	}
 
 	void CameraControllerSystem::OnEvent(Event& event)
@@ -30,6 +37,12 @@ namespace Alpha
 
 	void CameraControllerSystem::UpdateCamera(float deltaTime, Transform& cameraTransform, PerspectiveCamera& camera)
 	{
+		if (Input::IsKeyPressed(GLFW_KEY_R))
+		{
+			ResetCamera(cameraTransform, camera);
+			return;
+		}
+
 		if (Input::IsMouseButtonDown(1))
 		{
 			UpdateTransformPositionWhenRightKeyIsHeld(deltaTime, cameraTransform);
@@ -39,9 +52,16 @@ namespace Alpha
 			UpdateTransformPosition(deltaTime, cameraTransform);
 		}
 
-
 		UpdateCameraZoom(deltaTime, camera);
 		UpdateCameraRotation(deltaTime, cameraTransform);
+	}
+
+	void CameraControllerSystem::ResetCamera(Transform& transform, PerspectiveCamera& camera)
+	{
+		transform.Position = { 0, 0, 20 };
+		transform.Rotation = glm::vec3(0.0f);
+		
+		camera.SetZoom(1.0f);
 	}
 
 	void CameraControllerSystem::UpdateTransformPosition(float deltaTime, Transform& transform)

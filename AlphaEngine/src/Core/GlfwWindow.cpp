@@ -10,6 +10,7 @@
 #include "Events/MouseButtonPressedEvent.h"
 #include "Events/MouseButtonReleasedEvent.h"
 #include "Events/MouseScrolledEvent.h"
+#include "Events/MouseMovedEvent.h"
 
 namespace Alpha
 {
@@ -33,12 +34,12 @@ namespace Alpha
 
 	void GlfwWindow::SwapBuffers()
 	{
-		renderContext->SwapBuffers();
+		glfwSwapBuffers(window);
 	}
 
 	void GlfwWindow::SetEventCallback(std::function<void(Event&)> callback)
 	{
-		eventCallback = eventCallback;
+		eventCallback = callback;
 
 		BindEvents();
 	}
@@ -158,6 +159,14 @@ namespace Alpha
 				GlfwWindow* window = reinterpret_cast<GlfwWindow*>(glfwGetWindowUserPointer(glfwWindow));
 
 				MouseScrolledEvent event(xoffset, yoffset);
+				window->eventCallback(event);
+			});
+
+		glfwSetCursorPosCallback(window, [](GLFWwindow* glfwWindow, double xpos, double ypos)
+			{
+				GlfwWindow* window = reinterpret_cast<GlfwWindow*>(glfwGetWindowUserPointer(glfwWindow));
+
+				MouseMovedEvent event({ xpos, ypos });
 				window->eventCallback(event);
 			});
 	}
