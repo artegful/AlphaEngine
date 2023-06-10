@@ -2,7 +2,7 @@
 
 #include "Controls/Input.h"
 #include "Components/Rigidbody2DComponent.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include "Components/TransformComponent.h"
 #include "box2d/b2_body.h"
 
@@ -91,7 +91,7 @@ namespace Alpha
 
 	void TestScript::UpdateCameraFollower()
 	{
-		auto view = registry.view<OrthoCameraComponent>();
+		auto view = registry.view<PerspectiveCameraComponent>();
 
 		for (auto e : view)
 		{

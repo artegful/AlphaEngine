@@ -22,6 +22,7 @@ namespace Alpha
 		static std::shared_ptr<Sprite> CreateFromCount(const std::shared_ptr<Texture> spriteSheet, const glm::ivec2 spriteCoodsInCells,
 			const glm::ivec2 amountOfCells, const glm::i8vec2 spriteSizeInCells = { 1, 1 });
 		static std::shared_ptr<Sprite> Create(const std::shared_ptr<Texture> texture, const glm::vec2 uvs[4]);
+		static std::shared_ptr<Sprite> Create(const std::shared_ptr<Texture> texture);
 
 	private:
 		std::shared_ptr<Texture> texture;

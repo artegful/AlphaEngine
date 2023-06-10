@@ -8,6 +8,7 @@
 #include "Core/Core.h"
 #include "glm/gtc/type_ptr.hpp"
 #include "Utils/Utils.h"
+#include "Render/Material.h"
 
 using namespace std::string_literals;
 
@@ -62,11 +63,23 @@ namespace Alpha
 		glUseProgram(0);
 	}
 
+	uint32_t OpenGLShader::GetId() const
+	{
+		return id;
+	}
+
 	void OpenGLShader::SetInt(const std::string& name, int value)
 	{
 		GLint location = glGetUniformLocation(id, name.data());
 
 		glUniform1i(location, value);
+	}
+
+	void OpenGLShader::SetFloat(const std::string& name, float value)
+	{
+		GLint location = glGetUniformLocation(id, name.data());
+
+		glUniform1f(location, value);
 	}
 
 	void OpenGLShader::SetIntArray(const std::string& name, int values[], size_t amount)

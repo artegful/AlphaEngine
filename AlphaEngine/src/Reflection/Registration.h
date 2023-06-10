@@ -4,12 +4,15 @@
 
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include "Components/Rigidbody2DComponent.h"
 #include "Components/Box2DColliderComponent.h"
 
 #include "MetadataType.h"
 #include "MetadataVectorUsage.h"
+#include "MetadataFileType.h"
+#include <Components/ModelComponent.h>
+#include <Components/PointLightComponent.h>
 
 RTTR_REGISTRATION
 {
@@ -28,6 +31,10 @@ RTTR_REGISTRATION
 		.property("Color", &Alpha::SpriteComponent::Color)
 		(
 			metadata(Alpha::MetadataType::VectorUsage, Alpha::MetadataVectorUsage::Color)
+		)
+		.property("SpritePath", &Alpha::SpriteComponent::GetPath, &Alpha::SpriteComponent::SetPath)
+		(
+			metadata(Alpha::MetadataType::FileType, Alpha::MetadataFileType::Sprite)
 		);
 
 	registration::class_<Alpha::Transform>("Transform")
@@ -36,15 +43,16 @@ RTTR_REGISTRATION
 		.property("Rotation", &Alpha::Transform::Rotation)
 		.property("Scale", &Alpha::Transform::Scale);
 
-	registration::class_<Alpha::OrthoCameraComponent>("OrthoCameraComponent")
-		.property("Camera", &Alpha::OrthoCameraComponent::Camera)
+	registration::class_<Alpha::PerspectiveCameraComponent>("PerspectiveCameraComponent")
+		.property("Camera", &Alpha::PerspectiveCameraComponent::Camera)
 		(
 			policy::prop::bind_as_ptr
 		);
 
-	registration::class_<Alpha::OrthoCamera>("OrthoCamera")
-		.property("Size", &Alpha::OrthoCamera::GetSize, &Alpha::OrthoCamera::SetSize)
-		.property("Zoom", &Alpha::OrthoCamera::GetZoom, &Alpha::OrthoCamera::SetZoom);
+	registration::class_<Alpha::PerspectiveCamera>("PerspectiveCamera")
+		.property("Zoom", &Alpha::PerspectiveCamera::GetZoom, &Alpha::PerspectiveCamera::SetZoom)
+		.property("AspectRatio", &Alpha::PerspectiveCamera::GetAspectRatio, &Alpha::PerspectiveCamera::SetAspectRatio)
+		.property("NearFarPlane", &Alpha::PerspectiveCamera::GetNearFarPlane, &Alpha::PerspectiveCamera::SetNearFarPlane);
 
 	registration::enumeration<Alpha::Rigidbody2DComponent::BodyType>("PhysicsBodyType")
 		(
@@ -65,5 +73,29 @@ RTTR_REGISTRATION
 		.property("Restitution", &Alpha::Box2DColliderComponent::Restitution)
 		.property("RestitutionThreshold", &Alpha::Box2DColliderComponent::RestitutionThreshold);
 
+	registration::class_<Alpha::ModelComponent>("ModelComponent")
+		.property("ObjPath", &Alpha::ModelComponent::GetPath, &Alpha::ModelComponent::SetPath)
+		(
+			metadata(Alpha::MetadataType::FileType, Alpha::MetadataFileType::Model)
+		);
+
+	registration::class_<Alpha::PointLightComponent>("PointLightComponent")
+		.property("Light", &Alpha::PointLightComponent::Light)
+		(
+			policy::prop::bind_as_ptr
+		);
+
+	registration::class_<Alpha::Light>("Light")
+		.constructor<>()
+		.property("Color", &Alpha::Light::Color)
+		(
+			metadata(Alpha::MetadataType::VectorUsage, Alpha::MetadataVectorUsage::Color)
+		)
+		.property("Ambient", &Alpha::Light::Ambient)
+		.property("Diffuse", &Alpha::Light::Diffuse)
+		.property("Specular", &Alpha::Light::Specular)
+		.property("ConstantFalloff", &Alpha::Light::ConstantFalloff)
+		.property("LinearFalloff", &Alpha::Light::LinearFalloff)
+		.property("QuadraticFalloff", &Alpha::Light::QuadraticFalloff);
 }
 

@@ -4,10 +4,12 @@
 
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include "Components/Rigidbody2DComponent.h"
 #include "Components/Box2DColliderComponent.h"
 #include "ECS/Entity.h"
+#include <Components/ModelComponent.h>
+#include <Components/PointLightComponent.h>
 
 InspectorWidget::InspectorWidget(QWidget* parent) : QWidget(parent)
 {
@@ -19,19 +21,27 @@ InspectorWidget::InspectorWidget(QWidget* parent) : QWidget(parent)
 	QAction* addSpriteComponent = new QAction(tr("Sprite Component"));
 	connect(addSpriteComponent, &QAction::triggered, this, &InspectorWidget::OnAddSpriteComponent);
 
-	QAction* addCameraComponent = new QAction(tr("OrthoCamera Component"));
+	QAction* addCameraComponent = new QAction(tr("Perspective Camera Component"));
 	connect(addCameraComponent, &QAction::triggered, this, &InspectorWidget::OnAddCameraComponent);
 
 	QAction* addRigidbody2DComponent = new QAction(tr("Rigidbody 2D"));
 	connect(addRigidbody2DComponent, &QAction::triggered, this, &InspectorWidget::OnAddRidigbody2DComponent);
 
-	QAction* addBox2DColliderComponent = new QAction(tr("2D Box Collider"));
+	QAction* addBox2DColliderComponent = new QAction(tr("2D Box Collider Component"));
 	connect(addBox2DColliderComponent, &QAction::triggered, this, &InspectorWidget::OnAddBox2DColliderComponent);
+
+	QAction* addModelComponent = new QAction(tr("Model Component"));
+	connect(addModelComponent, &QAction::triggered, this, &InspectorWidget::OnAddModelComponent);
+
+	QAction* addPointLightComponent = new QAction(tr("Point Light Component"));
+	connect(addPointLightComponent, &QAction::triggered, this, &InspectorWidget::OnAddPointLightComponent);
 
 	buttonMenu->addAction(addSpriteComponent);
 	buttonMenu->addAction(addCameraComponent);
 	buttonMenu->addAction(addRigidbody2DComponent);
 	buttonMenu->addAction(addBox2DColliderComponent);
+	buttonMenu->addAction(addModelComponent);
+	buttonMenu->addAction(addPointLightComponent);
 
 	addComponentButton = new QToolButton(this);
 	addComponentButton->setPopupMode(QToolButton::MenuButtonPopup);
@@ -62,9 +72,11 @@ void InspectorWidget::Reset()
 
 	TryShowComponentEdit<Alpha::TransformComponent>();
 	TryShowComponentEdit<Alpha::SpriteComponent>();
-	TryShowComponentEdit<Alpha::OrthoCameraComponent>();
+	TryShowComponentEdit<Alpha::PerspectiveCameraComponent>();
 	TryShowComponentEdit<Alpha::Rigidbody2DComponent>();
 	TryShowComponentEdit<Alpha::Box2DColliderComponent>();
+	TryShowComponentEdit<Alpha::ModelComponent>();
+	TryShowComponentEdit<Alpha::PointLightComponent>();
 
 	show();
 }
@@ -84,7 +96,7 @@ void InspectorWidget::OnAddSpriteComponent()
 
 void InspectorWidget::OnAddCameraComponent()
 {
-	TryAddComponent<Alpha::OrthoCameraComponent>();
+	TryAddComponent<Alpha::PerspectiveCameraComponent>();
 }
 
 void InspectorWidget::OnAddRidigbody2DComponent()
@@ -97,6 +109,27 @@ void InspectorWidget::OnAddBox2DColliderComponent()
 	TryAddComponent<Alpha::Box2DColliderComponent>();
 }
 
+void InspectorWidget::OnAddModelComponent()
+{
+	TryAddComponent<Alpha::ModelComponent>();
+
+	if (selectedEntity->HasComponent<Alpha::ModelComponent>())
+	{
+		auto& component = selectedEntity->GetComponent<Alpha::ModelComponent>();
+
+		static std::string defaultModel = "assets/models/defaultCube/cube.obj";
+		if (std::filesystem::exists(defaultModel))
+		{
+			component.SetPath(defaultModel);
+		}
+	}
+}
+
+void InspectorWidget::OnAddPointLightComponent()
+{
+	TryAddComponent<Alpha::PointLightComponent>();
+}
+
 void InspectorWidget::OnSelectedEntityChanged(Alpha::Entity& selectedEnitity)
 {
 	SetEntity(selectedEnitity);
@@ -105,7 +138,9 @@ void InspectorWidget::OnSelectedEntityChanged(Alpha::Entity& selectedEnitity)
 void InspectorWidget::OnDeleteButtonPressed(rttr::type componentType)
 {
 	TryDeleteComponent<Alpha::SpriteComponent>(componentType);
-	TryDeleteComponent<Alpha::OrthoCameraComponent>(componentType);
+	TryDeleteComponent<Alpha::PerspectiveCameraComponent>(componentType);
 	TryDeleteComponent<Alpha::Rigidbody2DComponent>(componentType);
 	TryDeleteComponent<Alpha::Box2DColliderComponent>(componentType);
+	TryDeleteComponent<Alpha::ModelComponent>(componentType);
+	TryDeleteComponent<Alpha::PointLightComponent>(componentType);
 }

@@ -12,11 +12,13 @@
 #include "Components/TransformComponent.h"
 #include "Components/SpriteComponent.h"
 #include "Render/Sprite.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include "Components/Rigidbody2DComponent.h"
 #include "Components/Box2DColliderComponent.h"
 
 #include "rttr/type.h"
+#include <Components/ModelComponent.h>
+#include <Components/PointLightComponent.h>
 
 namespace YAML
 {
@@ -135,15 +137,16 @@ namespace Alpha
 			yaml << YAML::EndMap;
 		}
 
-		if (entity.HasComponent<OrthoCameraComponent>())
+		if (entity.HasComponent<PerspectiveCameraComponent>())
 		{
-			auto& cameraComponent = entity.GetComponent<OrthoCameraComponent>();
+			auto& cameraComponent = entity.GetComponent<PerspectiveCameraComponent>();
 
-			yaml << YAML::Key << "OrthoCameraComponent";
+			yaml << YAML::Key << "PerspectiveCameraComponent";
 			yaml << YAML::BeginMap;
 
-			yaml << YAML::Key << "Size" << YAML::Value << cameraComponent.Camera.GetSize();
+			yaml << YAML::Key << "AspectRatio" << YAML::Value << cameraComponent.Camera.GetAspectRatio();
 			yaml << YAML::Key << "Zoom" << YAML::Value << cameraComponent.Camera.GetZoom();
+			yaml << YAML::Key << "NearFarPlane" << YAML::Value << cameraComponent.Camera.GetNearFarPlane();
 
 			yaml << YAML::EndMap;
 		}
@@ -175,6 +178,41 @@ namespace Alpha
 			yaml << YAML::Key << "Restitution" << YAML::Value << box2DComponent.Restitution;
 			yaml << YAML::Key << "RestitutionThreshold" << YAML::Value << box2DComponent.RestitutionThreshold;
 
+			yaml << YAML::EndMap;
+		}
+
+		if (entity.HasComponent<ModelComponent>())
+		{
+			auto& modelComponent = entity.GetComponent<ModelComponent>();
+
+			yaml << YAML::Key << "ModelComponent";
+			yaml << YAML::BeginMap;
+
+			yaml << YAML::Key << "Path" << YAML::Value << modelComponent.GetPath();
+
+			yaml << YAML::EndMap;
+		}
+
+		if (entity.HasComponent<PointLightComponent>())
+		{
+			auto& pointLightComponent = entity.GetComponent<PointLightComponent>();
+			auto& light = pointLightComponent.Light;
+
+			yaml << YAML::Key << "PointLightComponent";
+			yaml << YAML::BeginMap;
+
+			yaml << YAML::Key << "Light";
+			yaml << YAML::BeginMap;
+
+			yaml << YAML::Key << "Color" << YAML::Value << light.Color;
+			yaml << YAML::Key << "Ambient" << YAML::Value << light.Ambient;
+			yaml << YAML::Key << "Diffuse" << YAML::Value << light.Diffuse;
+			yaml << YAML::Key << "Specular" << YAML::Value << light.Specular;
+			yaml << YAML::Key << "ConstantFalloff" << YAML::Value << light.ConstantFalloff;
+			yaml << YAML::Key << "LinearFalloff" << YAML::Value << light.LinearFalloff;
+			yaml << YAML::Key << "QuadraticFalloff" << YAML::Value << light.QuadraticFalloff;
+
+			yaml << YAML::EndMap;
 			yaml << YAML::EndMap;
 		}
 
@@ -211,20 +249,21 @@ namespace Alpha
 				}
 
 				std::string path = spriteNode["Texture"].as<std::string>();
-				std::shared_ptr<Texture> textureResource = ResourceAllocator<Texture>::Get(path);
-
-				spriteComponent.Sprite = Sprite::Create(textureResource, uvs);
+				spriteComponent.SetPathWithUVs(path, uvs);
 			}
 		}
 
-		const YAML::Node& cameraComponentNode = yaml["OrthoCameraComponent"];
+		const YAML::Node& cameraComponentNode = yaml["PerspectiveCameraComponent"];
 		if (cameraComponentNode)
 		{
-			glm::vec2 serializedSize = cameraComponentNode["Size"].as<glm::vec2>();
-			OrthoCameraComponent& cameraComponent = entity.AddComponent<OrthoCameraComponent>(OrthoCamera(serializedSize));
+			float aspect = cameraComponentNode["AspectRatio"].as<float>();
+			PerspectiveCameraComponent& cameraComponent = entity.AddComponent<PerspectiveCameraComponent>(PerspectiveCamera(aspect, 90.0f));
 
 			float zoom = cameraComponentNode["Zoom"].as<float>();
 			cameraComponent.Camera.SetZoom(zoom);
+
+			glm::vec2 nearFarPlane = cameraComponentNode["NearFarPlane"].as<glm::vec2>();
+			cameraComponent.Camera.SetNearFarPlane(nearFarPlane);
 		}
 
 		const YAML::Node& rigidbody2DComponentNode = yaml["Rigidbody2DComponent"];
@@ -248,6 +287,32 @@ namespace Alpha
 			box2DComponent.Restitution = Box2DColliderComponentNode["Restitution"].as<float>();
 			box2DComponent.RestitutionThreshold = Box2DColliderComponentNode["RestitutionThreshold"].as<float>();
 		}
+
+		const YAML::Node& modelComponentNode = yaml["ModelComponent"];
+		if (modelComponentNode)
+		{
+			auto& modelComponent = entity.AddComponent<ModelComponent>();
+
+			modelComponent.SetPath(modelComponentNode["Path"].as<std::string>());
+		}
+
+		const YAML::Node& lightComponentNode = yaml["PointLightComponent"];
+		if (lightComponentNode)
+		{
+			const YAML::Node& lightNode = lightComponentNode["Light"];
+			auto& lightComponent = entity.AddComponent<PointLightComponent>();
+			auto& light = lightComponent.Light;
+
+			light.Color = lightNode["Color"].as<glm::vec4>();
+
+			light.Ambient = lightNode["Ambient"].as<glm::vec3>();
+			light.Diffuse = lightNode["Diffuse"].as<glm::vec3>();
+			light.Specular = lightNode["Specular"].as<glm::vec3>();
+
+			light.ConstantFalloff = lightNode["ConstantFalloff"].as<float>();
+			light.LinearFalloff = lightNode["LinearFalloff"].as<float>();
+			light.QuadraticFalloff = lightNode["QuadraticFalloff"].as<float>();
+		}
 	}
 
 	SceneSerializer::SceneSerializer(Scene* scene) :
@@ -259,8 +324,12 @@ namespace Alpha
 		YAML::Emitter yaml;
 
 		yaml << YAML::BeginMap;
-		yaml << YAML::Key << "Version" << YAML::Value << 1;
-		yaml << YAML::Key << "Scene" << YAML::Value << "some name here";
+		yaml << YAML::Key << "Version" << YAML::Value << 3;
+		yaml << YAML::Key << "Config" << YAML::BeginMap;
+
+		yaml << YAML::Key << "SkyboxPath" << YAML::Value << scene->skyboxPath;
+
+		yaml << YAML::EndMap;
 
 		yaml << YAML::Key << "Entities" << YAML::BeginSeq;
 
@@ -283,6 +352,14 @@ namespace Alpha
 		input << inputFile.rdbuf();
 
 		YAML::Node yaml = YAML::Load(input.str());
+
+		int version = yaml["Version"].as<int>();
+
+		if (version >= 3)
+		{
+			YAML::Node config = yaml["Config"];
+			scene->skyboxPath = config["SkyboxPath"].as<std::string>();
+		}
 
 		YAML::Node entities = yaml["Entities"];
 

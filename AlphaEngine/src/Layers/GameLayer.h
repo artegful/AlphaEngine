@@ -6,7 +6,7 @@
 #include "GameMode.h"
 #include "Scene/SceneManager.h"
 #include "Systems/CameraControllerSystem.h"
-#include "Systems/SpriteRenderSystem.h"
+#include "Systems/RenderSystem.h"
 #include "Render/PerspectiveCamera.h"
 #include "Render/RenderCamera.h"
 
@@ -17,7 +17,7 @@ namespace Alpha
 	class GameLayer : public Layer
 	{
 	public:
-		GameLayer();
+		GameLayer(GameMode mode);
 
 		void Open() override;
 		void Close() override;
@@ -32,7 +32,7 @@ namespace Alpha
 		GameMode mode;
 
 		SceneManager sceneManager;
-		SpriteRenderSystem sceneRenderer;
+		RenderSystem sceneRenderer;
 		CameraControllerSystem cameraController;
 
 		PerspectiveCamera editorCamera;
@@ -40,6 +40,7 @@ namespace Alpha
 
 		void UpdateGame(float deltaTime);
 		void UpdateEditor(float deltaTime);
+		void SetModeInternal(GameMode mode);
 	};
 }
 

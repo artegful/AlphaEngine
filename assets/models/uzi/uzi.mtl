@@ -1,0 +1,30 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl UZI
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump UZI_Normal_OpenGL.png
+map_Kd UZI_Base_color.png
+map_Ns UZI_Roughness.png
+refl  UZI_Metallic.png
+
+newmtl UZI_Magazine_and_Bullet
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Magazine and Bullet_Normal_OpenGL.png
+map_Kd Magazine and Bullet_Base_color.png
+map_Ns Magazine and Bullet_Roughness.png
+refl Magazine and Bullet_Metallic.png

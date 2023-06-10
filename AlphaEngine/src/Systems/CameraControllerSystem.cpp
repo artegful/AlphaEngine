@@ -4,7 +4,7 @@
 
 #include "Controls/Input.h"
 #include "Components/TransformComponent.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include "Render/PerspectiveCamera.h"
 
 #include "Events/WindowResizedEvent.h"
@@ -15,11 +15,19 @@ namespace Alpha
 	{
 		movementSpeed = 10.0f;
 		scrollSpeed = 10.0f;
+		lookAroundSpeed = 15.0f;
 	}
 
 	void CameraControllerSystem::Update(float deltaTime)
 	{
+		auto view = GetRegistry().view<TransformComponent, PerspectiveCameraComponent>();
 
+		for (auto& entity : view)
+		{
+			auto& [transform, camera] = view.get<TransformComponent, PerspectiveCameraComponent>(entity);
+
+			UpdateCamera(deltaTime, transform.Transform, camera.Camera);
+		}
 	}
 
 	void CameraControllerSystem::OnEvent(Event& event)
@@ -29,8 +37,31 @@ namespace Alpha
 
 	void CameraControllerSystem::UpdateCamera(float deltaTime, Transform& cameraTransform, PerspectiveCamera& camera)
 	{
-		UpdateTransformPosition(deltaTime, cameraTransform);
+		if (Input::IsKeyPressed(GLFW_KEY_R))
+		{
+			ResetCamera(cameraTransform, camera);
+			return;
+		}
+
+		if (Input::IsMouseButtonDown(1))
+		{
+			UpdateTransformPositionWhenRightKeyIsHeld(deltaTime, cameraTransform);
+		}
+		else
+		{
+			UpdateTransformPosition(deltaTime, cameraTransform);
+		}
+
 		UpdateCameraZoom(deltaTime, camera);
+		UpdateCameraRotation(deltaTime, cameraTransform);
+	}
+
+	void CameraControllerSystem::ResetCamera(Transform& transform, PerspectiveCamera& camera)
+	{
+		transform.Position = { 0, 0, 20 };
+		transform.Rotation = glm::vec3(0.0f);
+		
+		camera.SetZoom(1.0f);
 	}
 
 	void CameraControllerSystem::UpdateTransformPosition(float deltaTime, Transform& transform)
@@ -65,20 +96,75 @@ namespace Alpha
 		}
 	}
 
+	void CameraControllerSystem::UpdateCameraRotation(float deltaTime, Transform& transform)
+	{
+		if (!Input::IsMouseButtonDown(1))
+		{
+			return;
+		}
+
+		glm::vec2 mouseDelta = Input::GetMouseDelta();
+		transform.Rotation.y -= deltaTime * mouseDelta.x * lookAroundSpeed;
+		transform.Rotation.x -= deltaTime * mouseDelta.y * lookAroundSpeed;
+
+		transform.Rotation.x = glm::clamp(transform.Rotation.x, -90.0f, 90.0f);
+
+	}
+
+	void CameraControllerSystem::UpdateTransformPositionWhenRightKeyIsHeld(float deltaTime, Transform& transform)
+	{
+		glm::mat4 rotationMatrix = glm::toMat4(glm::quat(transform.Rotation));
+
+		if (Alpha::Input::IsKeyDown(GLFW_KEY_W))
+		{
+			transform.Position += GetLocalTranslation(glm::vec3(0.0f, 0.0f, -1.0f), transform) * movementSpeed * deltaTime;
+		}
+		else if (Alpha::Input::IsKeyDown(GLFW_KEY_S))
+		{
+			transform.Position += GetLocalTranslation(glm::vec3(0.0f, 0.0f, 1.0f), transform) * movementSpeed * deltaTime;
+		}
+
+		if (Alpha::Input::IsKeyDown(GLFW_KEY_D))
+		{
+			transform.Position += GetLocalTranslation(glm::vec3(1.0f, 0.0f, 0.0f), transform) * movementSpeed * deltaTime;
+		}
+		else if (Alpha::Input::IsKeyDown(GLFW_KEY_A))
+		{
+			transform.Position += GetLocalTranslation(glm::vec3(-1.0f, 0.0f, 0.0f), transform) * movementSpeed * deltaTime;
+		}
+
+		if (Alpha::Input::IsKeyDown(GLFW_KEY_E))
+		{
+			transform.Position += GetLocalTranslation(glm::vec3(0.0f, 1.0f, 0.0f), transform) * movementSpeed * deltaTime;
+		}
+		else if (Alpha::Input::IsKeyDown(GLFW_KEY_Q))
+		{
+			transform.Position += GetLocalTranslation(glm::vec3(0.0f, -1.0f, 0.0f), transform) * movementSpeed * deltaTime;
+		}
+
+	}
+
 	bool CameraControllerSystem::OnWindowResized(WindowResizedEvent& event)
 	{
 		float newAspectRatio = static_cast<float>(event.GetNewSize().x) / event.GetNewSize().y;
 
-		auto view = GetRegistry().view<OrthoCameraComponent>();
+		auto view = GetRegistry().view<PerspectiveCameraComponent>();
 
 		for (auto& entity : view)
 		{
-			auto& camera = view.get<OrthoCameraComponent>(entity);
+			auto& camera = view.get<PerspectiveCameraComponent>(entity);
 
 			camera.Camera.SetAspectRatio(newAspectRatio);
 		}
 
 		return false;
+	}
+
+	glm::vec3 CameraControllerSystem::GetLocalTranslation(const glm::vec3& translation, const Transform& transform)
+	{
+		glm::vec4 rotatedVector = transform.GetTransformMatrix() * glm::vec4(translation, 0.0f);
+		
+		return glm::normalize(glm::vec3(rotatedVector));
 	}
 }
 

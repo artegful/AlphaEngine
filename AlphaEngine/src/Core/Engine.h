@@ -3,6 +3,7 @@
 #include <chrono>
 
 #include "Core/Core.h"
+#include "Core/Config.h"
 #include "LayerStack.h"
 #include "Scene/SceneManager.h"
 
@@ -36,6 +37,7 @@ namespace Alpha
 		std::shared_ptr<Alpha::Window> window;
 		LayerStack layerStack;
 		GameLayer* gameLayer;
+		Config config;
 
 		std::chrono::time_point<std::chrono::steady_clock> previousTime;
 		float deltaTime = 0;
