@@ -89,11 +89,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)AlphaEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)AlphaEngine\src;$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,13 +106,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)AlphaEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)AlphaEngine\src;$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -119,11 +123,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)AlphaEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)AlphaEngine\src;$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,13 +141,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)AlphaEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)AlphaEngine\src;$(SolutionDir)vendor\entt;$(SolutionDir)vendor\glm;$(SolutionDir)vendor\glew\include;$(SolutionDir)vendor\stb;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\glfw\include;$(SolutionDir)ImGui\ImGui\backends;$(SolutionDir)ImGui\ImGui;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -149,6 +159,18 @@
   <ItemGroup>
     <ProjectReference Include="..\AlphaEngine\AlphaEngine.vcxproj">
       <Project>{e59ff692-f97d-4a55-a731-b43c60ca2995}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\box2d\box2d.vcxproj">
+      <Project>{3aebee7f-ac0a-4b95-9c6c-d83f04d7979e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\glew\glew.vcxproj">
+      <Project>{708ac1eb-b13e-4c18-8d04-6ee90d3d8188}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ImGui\ImGui.vcxproj">
+      <Project>{141b2989-deb2-48a7-ac6a-d439d9acd811}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\yaml-cpp\yaml-cpp.vcxproj">
+      <Project>{915c63de-af5c-4e88-9326-bb83f91d781d}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

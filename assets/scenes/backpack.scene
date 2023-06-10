@@ -1,0 +1,154 @@
+Version: 3
+Config:
+  SkyboxPath: assets/skyboxes/HornstullsStrand
+Entities:
+  - Entity: 43325
+    Name: Sprite
+    TransformComponent:
+      Position: [0, 0, -15]
+      Rotation: [0, 0, 0]
+      Scale: [2, 6, 1]
+    SpriteComponent:
+      Color: [1, 0.129411772, 0.129411772, 1]
+  - Entity: 43325
+    Name: Tree
+    TransformComponent:
+      Position: [-14, -1.70000005, -10]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/LowPolyForest/OakTree.obj
+    PointLightComponent:
+      Light:
+        Color: [0.262745112, 1, 0.149019614, 1]
+        Ambient: [0.300000012, 0.300000012, 0.300000012]
+        Diffuse: [0.699999988, 0.699999988, 0.699999988]
+        Specular: [0.400000006, 0.400000006, 0.400000006]
+        ConstantFalloff: 1
+        LinearFalloff: 0.00899999961
+        QuadraticFalloff: 0.0199999996
+  - Entity: 43325
+    Name: ColdLight
+    TransformComponent:
+      Position: [2, 2, 0.699999988]
+      Rotation: [0, 0, 0]
+      Scale: [0.300000012, 0.300000012, 0.300000012]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/defaultSphere/sphere.obj
+    PointLightComponent:
+      Light:
+        Color: [0.20784314, 0.325490206, 1, 1]
+        Ambient: [0.300000012, 0.300000012, 0.300000012]
+        Diffuse: [0.699999988, 0.699999988, 0.699999988]
+        Specular: [0.699999988, 0.699999988, 0.699999988]
+        ConstantFalloff: 0.100000001
+        LinearFalloff: 0
+        QuadraticFalloff: 0.119999997
+  - Entity: 43325
+    Name: TestBackpack
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/backpack.obj
+  - Entity: 43325
+    Name: floor
+    TransformComponent:
+      Position: [0, -3, 0]
+      Rotation: [0, 0, 0]
+      Scale: [30, 1, 30]
+    ModelComponent:
+      Path: assets/models/defaultCube/cube.obj
+  - Entity: 43325
+    Name: backpackClone
+    TransformComponent:
+      Position: [10, -1, 9]
+      Rotation: [-80, -30, 0]
+      Scale: [1, 1, 1]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/backpack.obj
+  - Entity: 43325
+    Name: WarmLight
+    TransformComponent:
+      Position: [7, 3, 8]
+      Rotation: [0, 0, 0]
+      Scale: [0.300000012, 0.300000012, 0.300000012]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/defaultSphere/sphere.obj
+    PointLightComponent:
+      Light:
+        Color: [1, 0.662745118, 0.435294122, 1]
+        Ambient: [0.300000012, 0.300000012, 0.300000012]
+        Diffuse: [0.699999988, 0.699999988, 0.699999988]
+        Specular: [0.400000006, 0.400000006, 0.400000006]
+        ConstantFalloff: 0.100000001
+        LinearFalloff: 0.200000003
+        QuadraticFalloff: 0.00319999992
+  - Entity: 43325
+    Name: Camera
+    TransformComponent:
+      Position: [-5, -1, 2]
+      Rotation: [20, -30, 0]
+      Scale: [1, 1, 1]
+    PerspectiveCameraComponent:
+      AspectRatio: 1.63855422
+      Zoom: 1
+      NearFarPlane: [0.100000001, 100]
+  - Entity: 43325
+    Name: Minecart
+    TransformComponent:
+      Position: [15, -2, -8]
+      Rotation: [0, 0, 0]
+      Scale: [5, 5, 5]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/env/Cave_Prop_Minecart_1.obj
+  - Entity: 43325
+    Name: Palm
+    TransformComponent:
+      Position: [-13, -2, 10]
+      Rotation: [0, 0, 0]
+      Scale: [3, 3, 3]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/env/Beach_Prop_Tree_Palm_2.obj
+  - Entity: 43325
+    Name: Chest
+    TransformComponent:
+      Position: [-16, -2, 0]
+      Rotation: [0, -90, 0]
+      Scale: [2, 2, 2]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/env/Beach_Prop_Treasure_Chest.obj
+    PointLightComponent:
+      Light:
+        Color: [0.745098054, 0.776470602, 0.13333334, 1]
+        Ambient: [0.300000012, 0.300000012, 0.300000012]
+        Diffuse: [0.699999988, 0.699999988, 0.699999988]
+        Specular: [0.400000006, 0.400000006, 0.400000006]
+        ConstantFalloff: 0.5
+        LinearFalloff: 0.300000012
+        QuadraticFalloff: 0.200000003
+  - Entity: 43325
+    Name: Stop
+    TransformComponent:
+      Position: [10, -2, -10]
+      Rotation: [0, 180, 0]
+      Scale: [5, 5, 5]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/env/Cave_Prop_Railway_Bumpstop.obj
+  - Entity: 43325
+    Name: railway
+    TransformComponent:
+      Position: [15, -2, -5]
+      Rotation: [0, 0, 0]
+      Scale: [5, 5, 5]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/env/Cave_Prop_Railway_Intersection.obj
+  - Entity: 43325
+    Name: Turn
+    TransformComponent:
+      Position: [20, -2, -10]
+      Rotation: [0, 90, 0]
+      Scale: [5, 5, 5]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/env/Cave_Prop_Railway_Curve_Large.obj

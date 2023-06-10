@@ -105,7 +105,7 @@ void EditorWindow::CreateToolBar()
 
     toolBar->addWidget(CreateSpacerWidget());
 
-    playAction = new QAction(QIcon("icons/play.png"), tr("&Play"), toolBar);
+    playAction = new QAction(QIcon(":/icons/play.png"), tr("&Play"), toolBar);
     playAction->setShortcut(Qt::CTRL + Qt::Key_P);
     playAction->setCheckable(true);
     playAction->setStatusTip(tr("Toggle play mode"));

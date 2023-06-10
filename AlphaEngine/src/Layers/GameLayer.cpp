@@ -4,12 +4,12 @@
 #include "Render/RenderCommand.h"
 #include "Scene/Scene.h"
 #include "Systems/CameraControllerSystem.h"
-#include "Systems/SpriteRenderSystem.h"
+#include "Systems/RenderSystem.h"
 
 namespace Alpha
 {
-	GameLayer::GameLayer() :
-		mode(GameMode::Game),
+	GameLayer::GameLayer(GameMode mode) :
+		mode(mode),
 		sceneRenderer(&sceneManager),
 		cameraController(&sceneManager),
 		editorCamera(16.0f / 9.0f, 90),
@@ -20,6 +20,8 @@ namespace Alpha
 	{
 		sceneManager.ChangeScene(new Scene());
 		RenderCommand::SetClearColor({ 0.5f, 0.5f, 0.5f, 1.0f });
+
+		SetModeInternal(mode);
 
 		sceneRenderer.Start();
 		cameraController.Start();
@@ -60,18 +62,8 @@ namespace Alpha
 
 		if (isChanged)
 		{
-			switch (this->mode)
-			{
-			case GameMode::Editor:
-				sceneManager.Stop();
-				break;
-
-			case GameMode::Game:
-				sceneManager.Start();
-				break;
-			}
+			SetModeInternal(mode);
 		}
-
 	}
 
 	SceneManager& GameLayer::GetSceneManager()
@@ -81,8 +73,8 @@ namespace Alpha
 
 	void GameLayer::UpdateGame(float deltaTime)
 	{
+		cameraController.Update(deltaTime);
 		sceneRenderer.Update(deltaTime);
-
 		sceneManager.Update(deltaTime);
 	}
 
@@ -90,5 +82,26 @@ namespace Alpha
 	{
 		sceneRenderer.RenderScene({ editorCamera, editorCameraTransform });
 		cameraController.UpdateCamera(deltaTime, editorCameraTransform, editorCamera);
+	}
+
+	void GameLayer::SetModeInternal(GameMode mode)
+	{
+		switch (this->mode)
+		{
+		case GameMode::Editor:
+			if (sceneManager.IsStarted())
+			{
+				sceneManager.Stop();
+			}
+			break;
+
+		case GameMode::Game:
+			if (!sceneManager.IsStarted())
+			{
+				sceneManager.Start();
+			}
+
+			break;
+		}
 	}
 }

@@ -12,6 +12,8 @@ namespace Alpha
 		RenderCamera(const ProjectionCamera& camera, const Transform& transform);
 
 		glm::mat4 GetViewProjectionMatrix() const;
+		glm::mat4 GetViewProjectionMatrixWithoutTranslate() const;
+		const Transform& GetTransform() const;
 
 	private:
 		const ProjectionCamera& camera;

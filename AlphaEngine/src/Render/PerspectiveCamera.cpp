@@ -8,7 +8,7 @@ namespace Alpha
         zoom(1.0f),
         aspectRatio(width / height),
         fov(fov),
-        nearFarPlane(0.0f, 100.0f)
+        nearFarPlane(0.0f, 300.0f)
     {
         UpdateProjectionMatrix();
     }
@@ -17,7 +17,7 @@ namespace Alpha
         zoom(1.0f),
         aspectRatio(aspectRatio),
         fov(fov),
-        nearFarPlane(1.0f, 100.0f)
+        nearFarPlane(0.1f, 300.0f)
     {
         UpdateProjectionMatrix();
     }

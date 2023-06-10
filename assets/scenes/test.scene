@@ -1,0 +1,25 @@
+Version: 3
+Config:
+  SkyboxPath: assets/skyboxes/HornstullsStrand
+Entities:
+  - Entity: 43325
+    Name: House
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, -90, 0]
+      Scale: [1, 1, 1]
+  - Entity: 43325
+    Name: Light
+    TransformComponent:
+      Position: [-3.4000001, 1, 6.80000019]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    PointLightComponent:
+      Light:
+        Color: [1, 0.819607854, 0.270588249, 1]
+        Ambient: [0.300000012, 0.300000012, 0.300000012]
+        Diffuse: [0.699999988, 0.699999988, 0.699999988]
+        Specular: [0.400000006, 0.400000006, 0.400000006]
+        ConstantFalloff: 0
+        LinearFalloff: 0.0900000036
+        QuadraticFalloff: 0.0120000001

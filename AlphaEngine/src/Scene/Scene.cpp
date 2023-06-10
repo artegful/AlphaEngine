@@ -12,7 +12,7 @@
 #include "Core/Engine.h"
 #include "Render/ProjectionCamera.h"
 #include "Render/RenderCamera.h"
-#include "Components/OrthoCameraComponent.h"
+#include "Components/PerspectiveCameraComponent.h"
 #include "Components/Rigidbody2DComponent.h"
 #include "Components/Box2DColliderComponent.h"
 #include "Systems/ScriptSystem.h"
@@ -20,6 +20,11 @@
 #include "ECS/TestScript.h"
 #include "Core/Window.h"
 #include "Controls/Input.h"
+#include "Render/Renderer3D.h"
+#include <Components/SpriteComponent.h>
+#include "Systems/BenchmarkSystem.h"
+#include <Components/BenchmarkComponent.h>
+#include <Components/ModelComponent.h>
 
 namespace Alpha
 {
@@ -35,13 +40,22 @@ namespace Alpha
 
 	Scene::Scene() :
 		registry{},
-		sceneSystems{ new ScriptSystem(this) }
+		sceneSystems{ new ScriptSystem(this), new BenchmarkSystem(this) }
 	{ 
 
 	}
 
 	void Scene::Open()
-	{ }
+	{
+		if (!skyboxPath.empty())
+		{
+			Renderer3D::SetSkybox(skyboxPath);
+		}
+		else
+		{
+			Renderer3D::SetDefaultSkybox();
+		}
+	}
 
 	void Scene::Start()
 	{
@@ -59,7 +73,6 @@ namespace Alpha
 			b2BodyDef bodyDef;
 			bodyDef.type = EditorPhysicsBodyTypeToBox2D(rigidbodyComponent.Type);
 
-			//remove
 			if (rigidbodyComponent.Type == Rigidbody2DComponent::BodyType::Dynamic && !entity.HasComponent<NativeScriptComponent>())
 			{
 				auto& component = entity.AddComponent<NativeScriptComponent>();

@@ -10,6 +10,7 @@ void ApplyStyles(QApplication& application)
     file.open(QFile::ReadOnly | QFile::Text);
     QTextStream stream(&file);
     application.setStyleSheet(stream.readAll());
+    application.setWindowIcon(QIcon(":/icons/icon.png"));
 }
 
 int main(int argc, char *argv[])

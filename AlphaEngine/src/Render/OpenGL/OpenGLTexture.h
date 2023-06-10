@@ -14,13 +14,15 @@ namespace Alpha
 		OpenGLTexture(size_t width, size_t height);
 
 		void Bind(int slot = 0) override;
-		void Unbind() override;
+		void Unbind(int slot = 0) override;
 
+		virtual void SetType(const std::string& type) override;
 		void SetData(void* data, size_t size, int channels) override;
 
 		int GetWidth() const override;
 		int GetHeight() const override;
 		std::string GetPath() const override;
+		std::string GetType() const override;
 
 		bool operator==(const Texture& texture) override;
 
@@ -31,6 +33,7 @@ namespace Alpha
 
 		std::string name;
 		std::string path;
+		std::string type;
 		GLuint id;
 		int width;
 		int height;

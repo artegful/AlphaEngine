@@ -5,11 +5,13 @@
 #include "Core/Core.h"
 #include "Scene.h"
 #include "Events/Event.h"
+#include "SceneSerializer.h"
 
 namespace Alpha
 {
 	SceneManager::SceneManager() :
-		currentScene(nullptr)
+		currentScene(nullptr),
+		isStarted(false)
 	{ }
 
 	SceneManager::~SceneManager()
@@ -18,6 +20,15 @@ namespace Alpha
 		{
 			delete currentScene;
 		}
+	}
+
+	void SceneManager::ChangeScene(const std::string& path)
+	{
+		Alpha::Scene* scene = new Alpha::Scene();
+		Alpha::SceneSerializer serializer(scene);
+		serializer.Deserialize(path);
+
+		ChangeScene(scene);
 	}
 
 	void SceneManager::ChangeScene(Scene* scene)
@@ -31,16 +42,23 @@ namespace Alpha
 		currentScene = scene;
 
 		currentScene->Open();
+
+		if (isStarted)
+		{
+			currentScene->Start();
+		}
 	}
 
 	void SceneManager::Start()
 	{
 		currentScene->Start();
+		isStarted = true;
 	}
 
 	void SceneManager::Stop()
 	{
 		currentScene->Stop();
+		isStarted = false;
 	}
 
 	void SceneManager::Update(float deltaTime)
@@ -59,6 +77,11 @@ namespace Alpha
 	Scene* SceneManager::GetCurrentScene()
 	{
 		return currentScene;
+	}
+
+	bool SceneManager::IsStarted() const
+	{
+		return isStarted;
 	}
 }
 

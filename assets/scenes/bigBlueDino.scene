@@ -1,0 +1,4871 @@
+Version: 3
+Config:
+  SkyboxPath: ""
+Entities:
+  - Entity: 43325
+    Name: Entity (0)
+    TransformComponent:
+      Position: [10, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (1)
+    TransformComponent:
+      Position: [10, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (2)
+    TransformComponent:
+      Position: [10, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (3)
+    TransformComponent:
+      Position: [10, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (4)
+    TransformComponent:
+      Position: [10, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (5)
+    TransformComponent:
+      Position: [10, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (6)
+    TransformComponent:
+      Position: [10, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (7)
+    TransformComponent:
+      Position: [10, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (8)
+    TransformComponent:
+      Position: [10, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (9)
+    TransformComponent:
+      Position: [10, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (10)
+    TransformComponent:
+      Position: [10, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (11)
+    TransformComponent:
+      Position: [10, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (12)
+    TransformComponent:
+      Position: [10, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (13)
+    TransformComponent:
+      Position: [10, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (14)
+    TransformComponent:
+      Position: [10, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (15)
+    TransformComponent:
+      Position: [10, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (16)
+    TransformComponent:
+      Position: [10, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (17)
+    TransformComponent:
+      Position: [10, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (18)
+    TransformComponent:
+      Position: [10, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (19)
+    TransformComponent:
+      Position: [10, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (20)
+    TransformComponent:
+      Position: [10, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (21)
+    TransformComponent:
+      Position: [9, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (22)
+    TransformComponent:
+      Position: [9, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (23)
+    TransformComponent:
+      Position: [9, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (24)
+    TransformComponent:
+      Position: [9, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (25)
+    TransformComponent:
+      Position: [9, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (26)
+    TransformComponent:
+      Position: [9, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (27)
+    TransformComponent:
+      Position: [9, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (28)
+    TransformComponent:
+      Position: [9, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (29)
+    TransformComponent:
+      Position: [9, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (30)
+    TransformComponent:
+      Position: [9, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (31)
+    TransformComponent:
+      Position: [9, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (32)
+    TransformComponent:
+      Position: [9, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (33)
+    TransformComponent:
+      Position: [9, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (34)
+    TransformComponent:
+      Position: [9, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (35)
+    TransformComponent:
+      Position: [9, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (36)
+    TransformComponent:
+      Position: [9, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (37)
+    TransformComponent:
+      Position: [9, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (38)
+    TransformComponent:
+      Position: [9, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (39)
+    TransformComponent:
+      Position: [9, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (40)
+    TransformComponent:
+      Position: [9, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (41)
+    TransformComponent:
+      Position: [9, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (42)
+    TransformComponent:
+      Position: [8, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (43)
+    TransformComponent:
+      Position: [8, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (44)
+    TransformComponent:
+      Position: [8, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (45)
+    TransformComponent:
+      Position: [8, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (46)
+    TransformComponent:
+      Position: [8, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (47)
+    TransformComponent:
+      Position: [8, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (48)
+    TransformComponent:
+      Position: [8, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (49)
+    TransformComponent:
+      Position: [8, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (50)
+    TransformComponent:
+      Position: [8, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (51)
+    TransformComponent:
+      Position: [8, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (52)
+    TransformComponent:
+      Position: [8, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (53)
+    TransformComponent:
+      Position: [8, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (54)
+    TransformComponent:
+      Position: [8, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (55)
+    TransformComponent:
+      Position: [8, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (56)
+    TransformComponent:
+      Position: [8, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (57)
+    TransformComponent:
+      Position: [8, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (58)
+    TransformComponent:
+      Position: [8, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (59)
+    TransformComponent:
+      Position: [8, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (60)
+    TransformComponent:
+      Position: [8, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (61)
+    TransformComponent:
+      Position: [8, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (62)
+    TransformComponent:
+      Position: [8, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (63)
+    TransformComponent:
+      Position: [7, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (64)
+    TransformComponent:
+      Position: [7, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (65)
+    TransformComponent:
+      Position: [7, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (66)
+    TransformComponent:
+      Position: [7, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (67)
+    TransformComponent:
+      Position: [7, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (68)
+    TransformComponent:
+      Position: [7, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (69)
+    TransformComponent:
+      Position: [7, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (70)
+    TransformComponent:
+      Position: [7, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (71)
+    TransformComponent:
+      Position: [7, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (72)
+    TransformComponent:
+      Position: [7, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (73)
+    TransformComponent:
+      Position: [7, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (74)
+    TransformComponent:
+      Position: [7, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (75)
+    TransformComponent:
+      Position: [7, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (76)
+    TransformComponent:
+      Position: [7, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (77)
+    TransformComponent:
+      Position: [7, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (78)
+    TransformComponent:
+      Position: [7, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (79)
+    TransformComponent:
+      Position: [7, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (80)
+    TransformComponent:
+      Position: [7, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (81)
+    TransformComponent:
+      Position: [7, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (82)
+    TransformComponent:
+      Position: [7, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (83)
+    TransformComponent:
+      Position: [7, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (84)
+    TransformComponent:
+      Position: [6, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (85)
+    TransformComponent:
+      Position: [6, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (86)
+    TransformComponent:
+      Position: [6, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (87)
+    TransformComponent:
+      Position: [6, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (88)
+    TransformComponent:
+      Position: [6, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (89)
+    TransformComponent:
+      Position: [6, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (90)
+    TransformComponent:
+      Position: [6, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (91)
+    TransformComponent:
+      Position: [6, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (92)
+    TransformComponent:
+      Position: [6, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (93)
+    TransformComponent:
+      Position: [6, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (94)
+    TransformComponent:
+      Position: [6, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (95)
+    TransformComponent:
+      Position: [6, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (96)
+    TransformComponent:
+      Position: [6, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (97)
+    TransformComponent:
+      Position: [6, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (98)
+    TransformComponent:
+      Position: [6, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (99)
+    TransformComponent:
+      Position: [6, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (100)
+    TransformComponent:
+      Position: [6, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (101)
+    TransformComponent:
+      Position: [6, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (102)
+    TransformComponent:
+      Position: [6, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (103)
+    TransformComponent:
+      Position: [6, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (104)
+    TransformComponent:
+      Position: [6, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (105)
+    TransformComponent:
+      Position: [5, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (106)
+    TransformComponent:
+      Position: [5, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (107)
+    TransformComponent:
+      Position: [5, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (108)
+    TransformComponent:
+      Position: [5, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (109)
+    TransformComponent:
+      Position: [5, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (110)
+    TransformComponent:
+      Position: [5, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (111)
+    TransformComponent:
+      Position: [5, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (112)
+    TransformComponent:
+      Position: [5, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (113)
+    TransformComponent:
+      Position: [5, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (114)
+    TransformComponent:
+      Position: [5, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (115)
+    TransformComponent:
+      Position: [5, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (116)
+    TransformComponent:
+      Position: [5, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (117)
+    TransformComponent:
+      Position: [5, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (118)
+    TransformComponent:
+      Position: [5, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (119)
+    TransformComponent:
+      Position: [5, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (120)
+    TransformComponent:
+      Position: [5, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (121)
+    TransformComponent:
+      Position: [5, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (122)
+    TransformComponent:
+      Position: [5, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (123)
+    TransformComponent:
+      Position: [5, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (124)
+    TransformComponent:
+      Position: [5, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (125)
+    TransformComponent:
+      Position: [5, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (126)
+    TransformComponent:
+      Position: [4, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (127)
+    TransformComponent:
+      Position: [4, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (128)
+    TransformComponent:
+      Position: [4, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (129)
+    TransformComponent:
+      Position: [4, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (130)
+    TransformComponent:
+      Position: [4, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (131)
+    TransformComponent:
+      Position: [4, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (132)
+    TransformComponent:
+      Position: [4, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (133)
+    TransformComponent:
+      Position: [4, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (134)
+    TransformComponent:
+      Position: [4, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (135)
+    TransformComponent:
+      Position: [4, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (136)
+    TransformComponent:
+      Position: [4, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (137)
+    TransformComponent:
+      Position: [4, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (138)
+    TransformComponent:
+      Position: [4, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (139)
+    TransformComponent:
+      Position: [4, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (140)
+    TransformComponent:
+      Position: [4, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (141)
+    TransformComponent:
+      Position: [4, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (142)
+    TransformComponent:
+      Position: [4, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (143)
+    TransformComponent:
+      Position: [4, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (144)
+    TransformComponent:
+      Position: [4, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (145)
+    TransformComponent:
+      Position: [4, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (146)
+    TransformComponent:
+      Position: [4, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (147)
+    TransformComponent:
+      Position: [3, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (148)
+    TransformComponent:
+      Position: [3, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (149)
+    TransformComponent:
+      Position: [3, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (150)
+    TransformComponent:
+      Position: [3, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (151)
+    TransformComponent:
+      Position: [3, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (152)
+    TransformComponent:
+      Position: [3, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (153)
+    TransformComponent:
+      Position: [3, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (154)
+    TransformComponent:
+      Position: [3, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (155)
+    TransformComponent:
+      Position: [3, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (156)
+    TransformComponent:
+      Position: [3, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (157)
+    TransformComponent:
+      Position: [3, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (158)
+    TransformComponent:
+      Position: [3, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (159)
+    TransformComponent:
+      Position: [3, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (160)
+    TransformComponent:
+      Position: [3, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (161)
+    TransformComponent:
+      Position: [3, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (162)
+    TransformComponent:
+      Position: [3, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (163)
+    TransformComponent:
+      Position: [3, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (164)
+    TransformComponent:
+      Position: [3, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (165)
+    TransformComponent:
+      Position: [3, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (166)
+    TransformComponent:
+      Position: [3, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (167)
+    TransformComponent:
+      Position: [3, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (168)
+    TransformComponent:
+      Position: [2, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (169)
+    TransformComponent:
+      Position: [2, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (170)
+    TransformComponent:
+      Position: [2, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (171)
+    TransformComponent:
+      Position: [2, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (172)
+    TransformComponent:
+      Position: [2, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (173)
+    TransformComponent:
+      Position: [2, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (174)
+    TransformComponent:
+      Position: [2, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (175)
+    TransformComponent:
+      Position: [2, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (176)
+    TransformComponent:
+      Position: [2, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (177)
+    TransformComponent:
+      Position: [2, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (178)
+    TransformComponent:
+      Position: [2, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (179)
+    TransformComponent:
+      Position: [2, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (180)
+    TransformComponent:
+      Position: [2, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (181)
+    TransformComponent:
+      Position: [2, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (182)
+    TransformComponent:
+      Position: [2, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (183)
+    TransformComponent:
+      Position: [2, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (184)
+    TransformComponent:
+      Position: [2, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (185)
+    TransformComponent:
+      Position: [2, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (186)
+    TransformComponent:
+      Position: [2, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (187)
+    TransformComponent:
+      Position: [2, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (188)
+    TransformComponent:
+      Position: [2, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (189)
+    TransformComponent:
+      Position: [1, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (190)
+    TransformComponent:
+      Position: [1, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (191)
+    TransformComponent:
+      Position: [1, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (192)
+    TransformComponent:
+      Position: [1, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (193)
+    TransformComponent:
+      Position: [1, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (194)
+    TransformComponent:
+      Position: [1, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (195)
+    TransformComponent:
+      Position: [1, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (196)
+    TransformComponent:
+      Position: [1, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (197)
+    TransformComponent:
+      Position: [1, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (198)
+    TransformComponent:
+      Position: [1, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (199)
+    TransformComponent:
+      Position: [1, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (200)
+    TransformComponent:
+      Position: [1, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (201)
+    TransformComponent:
+      Position: [1, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (202)
+    TransformComponent:
+      Position: [1, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (203)
+    TransformComponent:
+      Position: [1, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (204)
+    TransformComponent:
+      Position: [1, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (205)
+    TransformComponent:
+      Position: [1, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (206)
+    TransformComponent:
+      Position: [1, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (207)
+    TransformComponent:
+      Position: [1, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (208)
+    TransformComponent:
+      Position: [1, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (209)
+    TransformComponent:
+      Position: [1, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (210)
+    TransformComponent:
+      Position: [0, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (211)
+    TransformComponent:
+      Position: [0, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (212)
+    TransformComponent:
+      Position: [0, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (213)
+    TransformComponent:
+      Position: [0, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (214)
+    TransformComponent:
+      Position: [0, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (215)
+    TransformComponent:
+      Position: [0, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (216)
+    TransformComponent:
+      Position: [0, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (217)
+    TransformComponent:
+      Position: [0, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (218)
+    TransformComponent:
+      Position: [0, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (219)
+    TransformComponent:
+      Position: [0, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (220)
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (221)
+    TransformComponent:
+      Position: [0, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (222)
+    TransformComponent:
+      Position: [0, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (223)
+    TransformComponent:
+      Position: [0, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (224)
+    TransformComponent:
+      Position: [0, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (225)
+    TransformComponent:
+      Position: [0, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (226)
+    TransformComponent:
+      Position: [0, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (227)
+    TransformComponent:
+      Position: [0, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (228)
+    TransformComponent:
+      Position: [0, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (229)
+    TransformComponent:
+      Position: [0, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (230)
+    TransformComponent:
+      Position: [0, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (231)
+    TransformComponent:
+      Position: [-1, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (232)
+    TransformComponent:
+      Position: [-1, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (233)
+    TransformComponent:
+      Position: [-1, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (234)
+    TransformComponent:
+      Position: [-1, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (235)
+    TransformComponent:
+      Position: [-1, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (236)
+    TransformComponent:
+      Position: [-1, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (237)
+    TransformComponent:
+      Position: [-1, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (238)
+    TransformComponent:
+      Position: [-1, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (239)
+    TransformComponent:
+      Position: [-1, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (240)
+    TransformComponent:
+      Position: [-1, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (241)
+    TransformComponent:
+      Position: [-1, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (242)
+    TransformComponent:
+      Position: [-1, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (243)
+    TransformComponent:
+      Position: [-1, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (244)
+    TransformComponent:
+      Position: [-1, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (245)
+    TransformComponent:
+      Position: [-1, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (246)
+    TransformComponent:
+      Position: [-1, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (247)
+    TransformComponent:
+      Position: [-1, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (248)
+    TransformComponent:
+      Position: [-1, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (249)
+    TransformComponent:
+      Position: [-1, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (250)
+    TransformComponent:
+      Position: [-1, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (251)
+    TransformComponent:
+      Position: [-1, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (252)
+    TransformComponent:
+      Position: [-2, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (253)
+    TransformComponent:
+      Position: [-2, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (254)
+    TransformComponent:
+      Position: [-2, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (255)
+    TransformComponent:
+      Position: [-2, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (256)
+    TransformComponent:
+      Position: [-2, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (257)
+    TransformComponent:
+      Position: [-2, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (258)
+    TransformComponent:
+      Position: [-2, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (259)
+    TransformComponent:
+      Position: [-2, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (260)
+    TransformComponent:
+      Position: [-2, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (261)
+    TransformComponent:
+      Position: [-2, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (262)
+    TransformComponent:
+      Position: [-2, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (263)
+    TransformComponent:
+      Position: [-2, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (264)
+    TransformComponent:
+      Position: [-2, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (265)
+    TransformComponent:
+      Position: [-2, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (266)
+    TransformComponent:
+      Position: [-2, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (267)
+    TransformComponent:
+      Position: [-2, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (268)
+    TransformComponent:
+      Position: [-2, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (269)
+    TransformComponent:
+      Position: [-2, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (270)
+    TransformComponent:
+      Position: [-2, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (271)
+    TransformComponent:
+      Position: [-2, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (272)
+    TransformComponent:
+      Position: [-2, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (273)
+    TransformComponent:
+      Position: [-3, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (274)
+    TransformComponent:
+      Position: [-3, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (275)
+    TransformComponent:
+      Position: [-3, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (276)
+    TransformComponent:
+      Position: [-3, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (277)
+    TransformComponent:
+      Position: [-3, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (278)
+    TransformComponent:
+      Position: [-3, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (279)
+    TransformComponent:
+      Position: [-3, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (280)
+    TransformComponent:
+      Position: [-3, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (281)
+    TransformComponent:
+      Position: [-3, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (282)
+    TransformComponent:
+      Position: [-3, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (283)
+    TransformComponent:
+      Position: [-3, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (284)
+    TransformComponent:
+      Position: [-3, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (285)
+    TransformComponent:
+      Position: [-3, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (286)
+    TransformComponent:
+      Position: [-3, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (287)
+    TransformComponent:
+      Position: [-3, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (288)
+    TransformComponent:
+      Position: [-3, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (289)
+    TransformComponent:
+      Position: [-3, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (290)
+    TransformComponent:
+      Position: [-3, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (291)
+    TransformComponent:
+      Position: [-3, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (292)
+    TransformComponent:
+      Position: [-3, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (293)
+    TransformComponent:
+      Position: [-3, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (294)
+    TransformComponent:
+      Position: [-4, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (295)
+    TransformComponent:
+      Position: [-4, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (296)
+    TransformComponent:
+      Position: [-4, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (297)
+    TransformComponent:
+      Position: [-4, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (298)
+    TransformComponent:
+      Position: [-4, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (299)
+    TransformComponent:
+      Position: [-4, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (300)
+    TransformComponent:
+      Position: [-4, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (301)
+    TransformComponent:
+      Position: [-4, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (302)
+    TransformComponent:
+      Position: [-4, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (303)
+    TransformComponent:
+      Position: [-4, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (304)
+    TransformComponent:
+      Position: [-4, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (305)
+    TransformComponent:
+      Position: [-4, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (306)
+    TransformComponent:
+      Position: [-4, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (307)
+    TransformComponent:
+      Position: [-4, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (308)
+    TransformComponent:
+      Position: [-4, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (309)
+    TransformComponent:
+      Position: [-4, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (310)
+    TransformComponent:
+      Position: [-4, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (311)
+    TransformComponent:
+      Position: [-4, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (312)
+    TransformComponent:
+      Position: [-4, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (313)
+    TransformComponent:
+      Position: [-4, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (314)
+    TransformComponent:
+      Position: [-4, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (315)
+    TransformComponent:
+      Position: [-5, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (316)
+    TransformComponent:
+      Position: [-5, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (317)
+    TransformComponent:
+      Position: [-5, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (318)
+    TransformComponent:
+      Position: [-5, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (319)
+    TransformComponent:
+      Position: [-5, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (320)
+    TransformComponent:
+      Position: [-5, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (321)
+    TransformComponent:
+      Position: [-5, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (322)
+    TransformComponent:
+      Position: [-5, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (323)
+    TransformComponent:
+      Position: [-5, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (324)
+    TransformComponent:
+      Position: [-5, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (325)
+    TransformComponent:
+      Position: [-5, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (326)
+    TransformComponent:
+      Position: [-5, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (327)
+    TransformComponent:
+      Position: [-5, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (328)
+    TransformComponent:
+      Position: [-5, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (329)
+    TransformComponent:
+      Position: [-5, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (330)
+    TransformComponent:
+      Position: [-5, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (331)
+    TransformComponent:
+      Position: [-5, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (332)
+    TransformComponent:
+      Position: [-5, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (333)
+    TransformComponent:
+      Position: [-5, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (334)
+    TransformComponent:
+      Position: [-5, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (335)
+    TransformComponent:
+      Position: [-5, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (336)
+    TransformComponent:
+      Position: [-6, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (337)
+    TransformComponent:
+      Position: [-6, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (338)
+    TransformComponent:
+      Position: [-6, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (339)
+    TransformComponent:
+      Position: [-6, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (340)
+    TransformComponent:
+      Position: [-6, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (341)
+    TransformComponent:
+      Position: [-6, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (342)
+    TransformComponent:
+      Position: [-6, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (343)
+    TransformComponent:
+      Position: [-6, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (344)
+    TransformComponent:
+      Position: [-6, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (345)
+    TransformComponent:
+      Position: [-6, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (346)
+    TransformComponent:
+      Position: [-6, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (347)
+    TransformComponent:
+      Position: [-6, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (348)
+    TransformComponent:
+      Position: [-6, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (349)
+    TransformComponent:
+      Position: [-6, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (350)
+    TransformComponent:
+      Position: [-6, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (351)
+    TransformComponent:
+      Position: [-6, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (352)
+    TransformComponent:
+      Position: [-6, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (353)
+    TransformComponent:
+      Position: [-6, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (354)
+    TransformComponent:
+      Position: [-6, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (355)
+    TransformComponent:
+      Position: [-6, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (356)
+    TransformComponent:
+      Position: [-6, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (357)
+    TransformComponent:
+      Position: [-7, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (358)
+    TransformComponent:
+      Position: [-7, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (359)
+    TransformComponent:
+      Position: [-7, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (360)
+    TransformComponent:
+      Position: [-7, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (361)
+    TransformComponent:
+      Position: [-7, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (362)
+    TransformComponent:
+      Position: [-7, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (363)
+    TransformComponent:
+      Position: [-7, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (364)
+    TransformComponent:
+      Position: [-7, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (365)
+    TransformComponent:
+      Position: [-7, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (366)
+    TransformComponent:
+      Position: [-7, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (367)
+    TransformComponent:
+      Position: [-7, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (368)
+    TransformComponent:
+      Position: [-7, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (369)
+    TransformComponent:
+      Position: [-7, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (370)
+    TransformComponent:
+      Position: [-7, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (371)
+    TransformComponent:
+      Position: [-7, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (372)
+    TransformComponent:
+      Position: [-7, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (373)
+    TransformComponent:
+      Position: [-7, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (374)
+    TransformComponent:
+      Position: [-7, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (375)
+    TransformComponent:
+      Position: [-7, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (376)
+    TransformComponent:
+      Position: [-7, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (377)
+    TransformComponent:
+      Position: [-7, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (378)
+    TransformComponent:
+      Position: [-8, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (379)
+    TransformComponent:
+      Position: [-8, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (380)
+    TransformComponent:
+      Position: [-8, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (381)
+    TransformComponent:
+      Position: [-8, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (382)
+    TransformComponent:
+      Position: [-8, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (383)
+    TransformComponent:
+      Position: [-8, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (384)
+    TransformComponent:
+      Position: [-8, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (385)
+    TransformComponent:
+      Position: [-8, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (386)
+    TransformComponent:
+      Position: [-8, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (387)
+    TransformComponent:
+      Position: [-8, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (388)
+    TransformComponent:
+      Position: [-8, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (389)
+    TransformComponent:
+      Position: [-8, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (390)
+    TransformComponent:
+      Position: [-8, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (391)
+    TransformComponent:
+      Position: [-8, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (392)
+    TransformComponent:
+      Position: [-8, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (393)
+    TransformComponent:
+      Position: [-8, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (394)
+    TransformComponent:
+      Position: [-8, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (395)
+    TransformComponent:
+      Position: [-8, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (396)
+    TransformComponent:
+      Position: [-8, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (397)
+    TransformComponent:
+      Position: [-8, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (398)
+    TransformComponent:
+      Position: [-8, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (399)
+    TransformComponent:
+      Position: [-9, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (400)
+    TransformComponent:
+      Position: [-9, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (401)
+    TransformComponent:
+      Position: [-9, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (402)
+    TransformComponent:
+      Position: [-9, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (403)
+    TransformComponent:
+      Position: [-9, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (404)
+    TransformComponent:
+      Position: [-9, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (405)
+    TransformComponent:
+      Position: [-9, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (406)
+    TransformComponent:
+      Position: [-9, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (407)
+    TransformComponent:
+      Position: [-9, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (408)
+    TransformComponent:
+      Position: [-9, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (409)
+    TransformComponent:
+      Position: [-9, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (410)
+    TransformComponent:
+      Position: [-9, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (411)
+    TransformComponent:
+      Position: [-9, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (412)
+    TransformComponent:
+      Position: [-9, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (413)
+    TransformComponent:
+      Position: [-9, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (414)
+    TransformComponent:
+      Position: [-9, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (415)
+    TransformComponent:
+      Position: [-9, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (416)
+    TransformComponent:
+      Position: [-9, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (417)
+    TransformComponent:
+      Position: [-9, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (418)
+    TransformComponent:
+      Position: [-9, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (419)
+    TransformComponent:
+      Position: [-9, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (420)
+    TransformComponent:
+      Position: [-10, 10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (421)
+    TransformComponent:
+      Position: [-10, 9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (422)
+    TransformComponent:
+      Position: [-10, 8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (423)
+    TransformComponent:
+      Position: [-10, 7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (424)
+    TransformComponent:
+      Position: [-10, 6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (425)
+    TransformComponent:
+      Position: [-10, 5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (426)
+    TransformComponent:
+      Position: [-10, 4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (427)
+    TransformComponent:
+      Position: [-10, 3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (428)
+    TransformComponent:
+      Position: [-10, 2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (429)
+    TransformComponent:
+      Position: [-10, 1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (430)
+    TransformComponent:
+      Position: [-10, 0, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (431)
+    TransformComponent:
+      Position: [-10, -1, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (432)
+    TransformComponent:
+      Position: [-10, -2, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (433)
+    TransformComponent:
+      Position: [-10, -3, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (434)
+    TransformComponent:
+      Position: [-10, -4, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (435)
+    TransformComponent:
+      Position: [-10, -5, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (436)
+    TransformComponent:
+      Position: [-10, -6, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (437)
+    TransformComponent:
+      Position: [-10, -7, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (438)
+    TransformComponent:
+      Position: [-10, -8, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (439)
+    TransformComponent:
+      Position: [-10, -9, 0]
+      Rotation: [0, 0, 45]
+      Scale: [1, 1, 1]
+    SpriteComponent:
+      Color: [1, 1, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (440)
+    TransformComponent:
+      Position: [-10, -10, 0]
+      Rotation: [0, 0, 45]
+      Scale: [10, 10, 10]
+    SpriteComponent:
+      Color: [0, 0.13333334, 1, 1]
+      Sprite:
+        Uvs: [[0.5, 0.5], [1, 0.5], [1, 1], [0.5, 1]]
+        Texture: assets/images/dino.png
+  - Entity: 43325
+    Name: Entity (441)
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+  - Entity: 43325
+    Name: Camera
+    TransformComponent:
+      Position: [0, 0, 20]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    PerspectiveCameraComponent:
+      AspectRatio: 1.77778006
+      Zoom: 1
+      NearFarPlane: [0.100000001, 300]

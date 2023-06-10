@@ -3,13 +3,9 @@
 #include <QtWidgets>
 
 #include "rttr/type.h"
+#include "ECS/Entity.h"
 #include "Edits/ComponentEdit.h"
 #include "ExpandableWidget.h"
-
-namespace Alpha
-{
-	class Entity;
-}
 
 class InspectorWidget : public QWidget
 {
@@ -50,6 +46,8 @@ private slots:
 	void OnAddCameraComponent();
 	void OnAddRidigbody2DComponent();
 	void OnAddBox2DColliderComponent();
+	void OnAddModelComponent();
+	void OnAddPointLightComponent();
 };
 
 template<typename T>

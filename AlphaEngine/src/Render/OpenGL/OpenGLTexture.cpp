@@ -51,6 +51,11 @@ namespace Alpha
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	}
 
+	void OpenGLTexture::SetType(const std::string& type)
+	{
+		this->type = type;
+	}
+
 	void OpenGLTexture::SetData(void* data, size_t size, int channels)
 	{
 		this->channels = channels;
@@ -65,8 +70,9 @@ namespace Alpha
 		glBindTexture(GL_TEXTURE_2D, id);
 	}
 
-	void OpenGLTexture::Unbind()
+	void OpenGLTexture::Unbind(int slot)
 	{
+		glActiveTexture(GL_TEXTURE0 + slot);
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 
@@ -85,6 +91,10 @@ namespace Alpha
 		return path;
 	};
 
+	std::string OpenGLTexture::GetType() const
+	{
+		return type;
+	};
 
 	bool OpenGLTexture::operator==(const Texture& texture)
 	{

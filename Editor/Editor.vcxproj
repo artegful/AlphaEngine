@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\vcpkg.D.Git.vcpkg.1.0.0\build\native\vcpkg.D.Git.vcpkg.props" Condition="Exists('..\packages\vcpkg.D.Git.vcpkg.1.0.0\build\native\vcpkg.D.Git.vcpkg.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
@@ -60,15 +61,23 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor\glm;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\entt;$(SolutionDir)AlphaEngine\src;$(ProjectDir)src;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor\glm;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\entt;$(SolutionDir)AlphaEngine\src;$(ProjectDir)src;$(SolutionDir)vendor\glew\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)vendor\glm;$(SolutionDir)vendor\rttr\include;$(SolutionDir)vendor\entt;$(SolutionDir)AlphaEngine\src;$(ProjectDir)src;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -99,6 +108,7 @@
   <ItemGroup>
     <ClCompile Include="src\Widgets\Edits\EnumEdit.cpp" />
     <ClCompile Include="src\Widgets\Edits\FloatEdit.cpp" />
+    <ClCompile Include="src\Widgets\Edits\FileEdit.cpp" />
     <ClCompile Include="src\Widgets\ExpanderLayout.cpp" />
     <ClCompile Include="src\Widgets\Edits\ReflectedItemEdit.cpp" />
     <ClCompile Include="src\Widgets\Edits\EditFactory.cpp" />
@@ -124,11 +134,18 @@
     <ProjectReference Include="..\AlphaEngine\AlphaEngine.vcxproj">
       <Project>{e59ff692-f97d-4a55-a731-b43c60ca2995}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\glew\glew.vcxproj">
+      <Project>{708ac1eb-b13e-4c18-8d04-6ee90d3d8188}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\yaml-cpp\yaml-cpp.vcxproj">
+      <Project>{915c63de-af5c-4e88-9326-bb83f91d781d}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Widgets\EditorWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Widgets\Edits\FileEdit.h" />
     <ClInclude Include="src\Widgets\Edits\FloatEdit.h" />
     <ClInclude Include="src\Widgets\Edits\ColorEdit.h" />
     <QtMoc Include="src\Widgets\Edits\EnumEdit.h" />
@@ -148,8 +165,11 @@
     <ClInclude Include="src\Windows\QtWidgetWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\shaders\model.glsl" />
+    <None Include="assets\shaders\skybox.glsl" />
     <None Include="Editor.pri" />
     <None Include="Editor.pro" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icons\play.png" />
@@ -159,5 +179,13 @@
     <Import Project="$(QtMsBuild)\qt.targets" />
   </ImportGroup>
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\vcpkg.D.Git.vcpkg.1.0.0\build\native\vcpkg.D.Git.vcpkg.targets" Condition="Exists('..\packages\vcpkg.D.Git.vcpkg.1.0.0\build\native\vcpkg.D.Git.vcpkg.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\vcpkg.D.Git.vcpkg.1.0.0\build\native\vcpkg.D.Git.vcpkg.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\vcpkg.D.Git.vcpkg.1.0.0\build\native\vcpkg.D.Git.vcpkg.props'))" />
+    <Error Condition="!Exists('..\packages\vcpkg.D.Git.vcpkg.1.0.0\build\native\vcpkg.D.Git.vcpkg.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\vcpkg.D.Git.vcpkg.1.0.0\build\native\vcpkg.D.Git.vcpkg.targets'))" />
+  </Target>
 </Project>
