@@ -1,15 +1,9 @@
-Version: 3
+Version: 4
 Config:
   SkyboxPath: assets/skyboxes/HornstullsStrand
+Systems:
+  []
 Entities:
-  - Entity: 43325
-    Name: House
-    TransformComponent:
-      Position: [0, 0, 0]
-      Rotation: [0, -90, 0]
-      Scale: [1, 1, 1]
-    ModelComponent:
-      Path: D:/Git/AlphaEngine/Editor/assets/models/house/casa.obj
   - Entity: 43325
     Name: Light
     TransformComponent:
@@ -25,3 +19,11 @@ Entities:
         ConstantFalloff: 0
         LinearFalloff: 0.0900000036
         QuadraticFalloff: 0.0120000001
+  - Entity: 43325
+    Name: House
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, -90, 0]
+      Scale: [1, 1, 1]
+    ModelComponent:
+      Path: D:/Git/AlphaEngine/Editor/assets/models/house/casa.obj

@@ -8,7 +8,7 @@
 
 namespace Alpha
 {
-	static class Renderer3D
+	class Renderer3D
 	{
 	public:
 		static void Initialize();
@@ -21,7 +21,7 @@ namespace Alpha
 		static void DrawSkybox(const RenderCamera& camera);
 
 		static void DrawModel(Model& model, const Transform& transform);
-		static void SetSkybox(const std::string& skyboxPath);
+		static void SetSkybox(const std::string& skyboxPath, const std::string& extension = ".jpg");
 		static void SetDefaultSkybox();
 
 	private:

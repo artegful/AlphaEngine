@@ -4,7 +4,7 @@
 #include "EditFactory.h"
 #include "Reflection/MetadataType.h"
 
-ComponentEdit::ComponentEdit(const rttr::instance& instancePtr, rttr::type type, QWidget* parent) : ExpandableWidget(QString::fromStdString(type.get_name()), parent)
+ComponentEdit::ComponentEdit(const rttr::instance& instancePtr, rttr::type type, QWidget* parent) : ExpandableWidget(QString::fromStdString(type.get_name().to_string()), parent)
 {
 	rttr::variant isNecessary = type.get_metadata(Alpha::MetadataType::ComponentNecessity).to_bool();
 

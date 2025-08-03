@@ -9,7 +9,7 @@ Here is a comparison of perfomance of Unity and Alpha Engine when running a scen
 
 ## Acknowledgments
 - [entt](https://github.com/skypjack/entt)
-- [QT](https://www.qt.io/)
+- [QT5](https://www.qt.io/)
 - [Box2D](https://box2d.org/)
 - [ImGui](https://github.com/ocornut/imgui)
 - [yaml-cpp](https://github.com/jbeder/yaml-cpp)

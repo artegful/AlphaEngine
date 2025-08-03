@@ -24,7 +24,7 @@ namespace Alpha
 		std::string GetPath() const override;
 		std::string GetType() const override;
 
-		bool operator==(const Texture& texture) override;
+		bool operator==(const Texture& texture) const override;
 
 	private:
 		OpenGLTexture();

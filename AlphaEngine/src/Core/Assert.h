@@ -18,4 +18,7 @@
 
 #else
 
+	#define AL_ASSERT(...)
+	#define AL_ENGINE_ASSERT(...)
+	
 #endif

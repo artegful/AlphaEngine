@@ -14,14 +14,6 @@ namespace Alpha
 		isStarted(false)
 	{ }
 
-	SceneManager::~SceneManager()
-	{
-		if (currentScene)
-		{
-			delete currentScene;
-		}
-	}
-
 	void SceneManager::ChangeScene(const std::string& path)
 	{
 		Alpha::Scene* scene = new Alpha::Scene();
@@ -38,8 +30,7 @@ namespace Alpha
 			currentScene->Close();
 		}
 
-		delete currentScene;
-		currentScene = scene;
+		currentScene.reset(scene);
 
 		currentScene->Open();
 
@@ -76,7 +67,7 @@ namespace Alpha
 
 	Scene* SceneManager::GetCurrentScene()
 	{
-		return currentScene;
+		return currentScene.get();
 	}
 
 	bool SceneManager::IsStarted() const

@@ -2,11 +2,8 @@
 	path = ImGui/ImGui
 	url = https://github.com/ocornut/imgui.git
 [submodule "box2d"]
-	path = box2d
+	path = Box2D
 	url = https://github.com/erincatto/box2d.git
 [submodule "yaml"]
 	path = yaml
 	url = https://github.com/jbeder/yaml-cpp.git
-[submodule "ImGui/imgui"]
-	path = ImGui/imgui
-	url = https://github.com/ocornut/imgui.git

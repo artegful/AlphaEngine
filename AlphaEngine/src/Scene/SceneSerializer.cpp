@@ -328,6 +328,7 @@ namespace Alpha
 		yaml << YAML::Key << "Config" << YAML::BeginMap;
 
 		yaml << YAML::Key << "SkyboxPath" << YAML::Value << scene->skyboxPath;
+		yaml << YAML::Key << "SkyboxExtension" << YAML::Value << std::filesystem::path(scene->skyboxPath).extension().string();
 
 		yaml << YAML::EndMap;
 
@@ -359,6 +360,7 @@ namespace Alpha
 		{
 			YAML::Node config = yaml["Config"];
 			scene->skyboxPath = config["SkyboxPath"].as<std::string>();
+			scene->skyboxExtension = config["SkyboxExtension"] ? config["SkyboxExtension"].as<std::string>() : ".jpg";
 		}
 
 		YAML::Node entities = yaml["Entities"];

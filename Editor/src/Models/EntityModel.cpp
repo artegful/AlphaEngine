@@ -7,7 +7,8 @@
 EntityModel::EntityModel(Alpha::Scene* scene) :
     currentScene(scene)
 { 
-    entities = QVector<Alpha::Entity>::fromStdVector(currentScene->GetAllEntities());
+    auto vector = currentScene->GetAllEntities();
+    entities = QVector<Alpha::Entity>(vector.begin(), vector.end());
 }
 
 EntityModel::~EntityModel()
@@ -18,7 +19,10 @@ void EntityModel::ChangeScene(Alpha::Scene* scene)
     currentScene = scene;
 
     beginResetModel();
-    entities = QVector<Alpha::Entity>::fromStdVector(currentScene->GetAllEntities());
+
+    auto vector = currentScene->GetAllEntities();
+
+    entities = QVector<Alpha::Entity>(vector.begin(), vector.end());
     endResetModel();
 }
 

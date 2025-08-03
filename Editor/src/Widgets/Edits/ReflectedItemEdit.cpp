@@ -8,7 +8,7 @@ ReflectedItemEdit::ReflectedItemEdit(const rttr::instance& instance, const rttr:
 	rttr::variant propertyVariant = GetValue();
 	Q_ASSERT(propertyVariant.get_type().is_pointer());
 
-	ExpanderLayout* mainLayout = new ExpanderLayout(QString::fromStdString(property.get_name()), this);
+	ExpanderLayout* mainLayout = new ExpanderLayout(QString::fromStdString(property.get_name().to_string()), this);
 	mainLayout->setMargin(0);
 	QVBoxLayout* innerLayout = new QVBoxLayout(this);
 	innerLayout->setSpacing(4);

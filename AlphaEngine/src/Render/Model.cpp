@@ -1,5 +1,9 @@
 #include "Model.h"
 
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
 #include "Core/Log.h"
 #include <filesystem>
 #include "GL/glew.h"
@@ -146,7 +150,7 @@ namespace Alpha
         return Mesh(std::move(vertices), std::move(indices), std::move(material), instanceTransformsBuffer);
     }
 
-    vector<std::shared_ptr<Texture>> Model::LoadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName)
+    vector<std::shared_ptr<Texture>> Model::LoadMaterialTextures(aiMaterial* mat, aiTextureType type, const string& typeName)
     {
         vector<std::shared_ptr<Texture>> textures;
         for (unsigned int i = 0; i < mat->GetTextureCount(type); i++)
