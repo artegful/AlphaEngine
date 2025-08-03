@@ -7,6 +7,28 @@ Here is a comparison of perfomance of Unity and Alpha Engine when running a scen
 
 ![benchmark](media/benchmark.gif)
 
+## Build
+### Configuration
+```
+mkdir build
+cd build
+cmake .. [-DINCLUDE_EDITOR=OFF]
+```
+Set INCLUDE_EDITOR to OFF if you don't have Qt5 installed.
+
+### Game build
+```
+cmake --build . --target Game
+```
+### Editor build
+Requirements: 
+- configuration with INCLUDE_EDITOR=ON
+- Qt5 installation
+- Qt deploy
+```
+cmake --build . --target Editor
+```
+
 ## Acknowledgments
 - [entt](https://github.com/skypjack/entt)
 - [QT5](https://www.qt.io/)
