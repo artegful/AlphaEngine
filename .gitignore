@@ -11,11 +11,12 @@ DartConfiguration.tcl
 Testing/
 
 # IDE-specific files (if applicable)
-.idea/ # CLion
+.idea/
+.vscode/
+.vs/
 *.suo # Visual Studio
 *.user # Visual Studio
 *.vcproj.user # Visual Studio
 *.vcxproj.filters # Visual Studio
 *.vcxproj.user # Visual Studio
 *.sln.docstates # Visual Studio
-.vscode
