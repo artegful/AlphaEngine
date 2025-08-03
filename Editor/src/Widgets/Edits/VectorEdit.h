@@ -50,7 +50,7 @@ VectorEdit<Components>::VectorEdit(const rttr::instance& instance, const rttr::p
 	QString names[4]{ "x", "y", "z", "a" };
 
 	QLabel* propertyLabel = new QLabel(this);
-	propertyLabel->setText(QString::fromStdString(property.get_name()));
+	propertyLabel->setText(QString::fromStdString(property.get_name().to_string()));
 	mainLayout->addWidget(propertyLabel);
 
 	for (int i = 0; i < Components; i++)

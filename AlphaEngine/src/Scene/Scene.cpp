@@ -22,8 +22,6 @@
 #include "Controls/Input.h"
 #include "Render/Renderer3D.h"
 #include <Components/SpriteComponent.h>
-#include "Systems/BenchmarkSystem.h"
-#include <Components/BenchmarkComponent.h>
 #include <Components/ModelComponent.h>
 
 namespace Alpha
@@ -40,7 +38,7 @@ namespace Alpha
 
 	Scene::Scene() :
 		registry{},
-		sceneSystems{ new ScriptSystem(this), new BenchmarkSystem(this) }
+		sceneSystems{ new ScriptSystem(this) }
 	{ 
 
 	}
@@ -49,7 +47,7 @@ namespace Alpha
 	{
 		if (!skyboxPath.empty())
 		{
-			Renderer3D::SetSkybox(skyboxPath);
+			Renderer3D::SetSkybox(skyboxPath, skyboxExtension);
 		}
 		else
 		{

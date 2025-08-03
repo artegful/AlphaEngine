@@ -1,6 +1,6 @@
 #include "StandardEditLayout.h"
 
-StandardEditLayout::StandardEditLayout(const rttr::property& property, QWidget* parent) : StandardEditLayout(QString::fromStdString(property.get_name()), parent)
+StandardEditLayout::StandardEditLayout(const rttr::property& property, QWidget* parent) : StandardEditLayout(QString::fromStdString(property.get_name().to_string()), parent)
 { }
 
 StandardEditLayout::StandardEditLayout(const QString& name, QWidget* parent) : QHBoxLayout(parent)

@@ -67,16 +67,16 @@ namespace Alpha
 		}
 	}
 
-	void Renderer3D::SetSkybox(const std::string& skyboxPath)
+	void Renderer3D::SetSkybox(const std::string& skyboxPath, const std::string& extension)
 	{
 		auto textures = std::array<std::string, 6>
 		{
-				skyboxPath + "/right.jpg",
-				skyboxPath + "/left.jpg",
-				skyboxPath + "/top.jpg",
-				skyboxPath + "/bottom.jpg",
-				skyboxPath + "/front.jpg",
-				skyboxPath + "/back.jpg"
+				skyboxPath + "/right" + extension,
+				skyboxPath + "/left" + extension,
+				skyboxPath + "/top" + extension,
+				skyboxPath + "/bottom" + extension,
+				skyboxPath + "/front" + extension,
+				skyboxPath + "/back" + extension
 		};
 
 		skybox = std::make_shared<Skybox>(textures);

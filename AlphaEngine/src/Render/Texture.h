@@ -21,7 +21,7 @@ namespace Alpha
 		virtual std::string GetPath() const = 0;
 		virtual std::string GetType() const = 0;
 
-		virtual bool operator==(const Texture& texture) = 0;
+		virtual bool operator==(const Texture& texture) const = 0;
 
 		static std::shared_ptr<Texture> Create(const std::string& path);
 		static std::shared_ptr<Texture> Create(size_t width, size_t height);

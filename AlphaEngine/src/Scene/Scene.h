@@ -36,6 +36,7 @@ namespace Alpha
 		entt::registry registry;
 		std::vector<SceneSystem*> sceneSystems;
 		std::string skyboxPath;
+		std::string skyboxExtension;
 
 	private:
 		size_t amountOfUnnamedEntities = 0;

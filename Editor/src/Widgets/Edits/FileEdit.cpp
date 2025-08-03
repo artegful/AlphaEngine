@@ -16,7 +16,7 @@ FileEdit::FileEdit(const rttr::instance& instance, const rttr::property& propert
 	editsLayout->setSpacing(3);
 
 	QLabel* propertyLabel = new QLabel(this);
-	propertyLabel->setText(QString::fromStdString(property.get_name()));
+	propertyLabel->setText(QString::fromStdString(property.get_name().to_string()));
 	mainLayout->addWidget(propertyLabel);
 
 	QHBoxLayout* layout = new QHBoxLayout(this);

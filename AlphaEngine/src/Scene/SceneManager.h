@@ -14,7 +14,6 @@ namespace Alpha
 	{
 	public:
 		SceneManager();
-		~SceneManager();
 
 		void ChangeScene(Scene* scene);
 		void ChangeScene(const std::string& path);
@@ -27,7 +26,7 @@ namespace Alpha
 		Scene* GetCurrentScene();
 
 	private:
-		Scene* currentScene;
+		std::unique_ptr<Scene> currentScene;
 		bool isStarted;
 	};
 }
