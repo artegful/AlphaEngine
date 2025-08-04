@@ -2,10 +2,6 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <stb_image.h>
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
 #include "Texture.h"
 #include "Shader.h"
 #include "Mesh.h"
@@ -17,6 +13,12 @@
 #include <map>
 #include <vector>
 #include <filesystem>
+
+struct aiNode;
+struct aiMesh;
+struct aiScene;
+struct aiMaterial;
+enum aiTextureType: int;
 
 namespace Alpha
 {
@@ -42,6 +44,6 @@ namespace Alpha
         void LoadModel(string const& path);
         void HandleNode(aiNode* node, const aiScene* scene);
         Mesh HandleMesh(aiMesh* mesh, const aiScene* scene);
-        vector<std::shared_ptr<Texture>> LoadMaterialTextures(aiMaterial* mat, aiTextureType type, string typeName);
+        vector<std::shared_ptr<Texture>> LoadMaterialTextures(aiMaterial* mat, aiTextureType type, const string& typeName);
     };
 }

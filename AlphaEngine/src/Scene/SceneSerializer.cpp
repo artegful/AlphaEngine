@@ -376,7 +376,7 @@ namespace Alpha
 			YAML::Node config = yaml["Config"];
 			scene->skyboxPath = config["SkyboxPath"].as<std::string>();
 
-			scene->skyboxExtension = version >= 5 ? config["SkyboxExtension"].as<std::string>() : "jpg";
+			scene->skyboxExtension = version >= 5 ? config["SkyboxExtension"].as<std::string>() : ".jpg";
 		}
 
 		if (version >= 4)

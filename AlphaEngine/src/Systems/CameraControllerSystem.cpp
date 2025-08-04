@@ -24,9 +24,9 @@ namespace Alpha
 
 		for (auto& entity : view)
 		{
-			auto& [transform, camera] = view.get<TransformComponent, PerspectiveCameraComponent>(entity);
+			auto [transformComponent, cameraComponent] = view.get<TransformComponent, PerspectiveCameraComponent>(entity);
 
-			UpdateCamera(deltaTime, transform.Transform, camera.Camera);
+			UpdateCamera(deltaTime, transformComponent.Transform, cameraComponent.Camera);
 		}
 	}
 

@@ -10,11 +10,12 @@ EnumEdit::EnumEdit(const rttr::instance& instance, const rttr::property& propert
 	layout->addWidget(comboBox);
 
 	rttr::enumeration enumeration = property.get_enumeration();
-	values = enumeration.get_values();
+	auto range = enumeration.get_values();
+	values = std::vector(range.begin(), range.end());
 
 	for (auto name : enumeration.get_names())
 	{
-		comboBox->addItem(QString::fromStdString(name));
+		comboBox->addItem(QString::fromStdString(name.to_string()));
 	}
 
 	connect(comboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &EnumEdit::OnIndexChanged);

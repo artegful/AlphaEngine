@@ -37,9 +37,9 @@ namespace Alpha
 		auto versionStart = source.find("#version");
 		AL_ASSERT(versionStart != std::string::npos, "Shader file must include version directive");
 
-		auto versionLineEnd = source.find("\r\n", versionStart);
+		auto versionLineEnd = source.find("\n", versionStart);
 
-		std::string versionLine = source.substr(versionStart, versionLineEnd - versionStart + 2);
+		std::string versionLine = source.substr(versionStart, versionLineEnd - versionStart + 1);
 		source.erase(versionStart, versionLineEnd);
 
 		for (auto& [key, value] : ShaderTypeToDefine)

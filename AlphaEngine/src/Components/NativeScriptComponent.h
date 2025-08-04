@@ -1,5 +1,6 @@
 #pragma once
 
+#include <functional>
 #include "Core/Core.h"
 #include "ECS/Script.h"
 
@@ -15,10 +16,10 @@ namespace Alpha
 		template<typename T>
 		void SetScript()
 		{
-			instantiatePtr = [](Entity& entity, entt::registry& registry) { return (Script*) new T(entity, registry); };
+			instantiatePtr = [](const Entity& entity, entt::registry& registry) { return (Script*) new T(entity, registry); };
 		}
 
-		void Start(Entity& entity, entt::registry& registry)
+		void Start(const Entity& entity, entt::registry& registry)
 		{
 			AL_ASSERT(instantiatePtr, "No script in the script component!");
 			script = instantiatePtr(entity, registry);
@@ -32,6 +33,6 @@ namespace Alpha
 		}
 
 	private:
-		Script* (*instantiatePtr)(Entity& entity, entt::registry& registry) = nullptr;
+		std::function<Script* (const Entity&, entt::registry&)> instantiatePtr = nullptr;
 	};
 }

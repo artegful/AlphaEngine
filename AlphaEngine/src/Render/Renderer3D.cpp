@@ -72,12 +72,12 @@ namespace Alpha
 	{
 		auto textures = std::array<std::string, 6>
 		{
-				skyboxPath + "/right." + extension,
-				skyboxPath + "/left." + extension,
-				skyboxPath + "/top." + extension,
-				skyboxPath + "/bottom." + extension,
-				skyboxPath + "/front." + extension,
-				skyboxPath + "/back." + extension
+				skyboxPath + "/right" + extension,
+				skyboxPath + "/left" + extension,
+				skyboxPath + "/top" + extension,
+				skyboxPath + "/bottom" + extension,
+				skyboxPath + "/front" + extension,
+				skyboxPath + "/back" + extension
 		};
 
 		skybox = std::make_shared<Skybox>(textures);

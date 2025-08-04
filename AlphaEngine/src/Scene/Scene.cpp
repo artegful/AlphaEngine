@@ -57,6 +57,7 @@ namespace Alpha
 		if (!skyboxPath.empty())
 		{
 			Renderer3D::SetSkybox(skyboxPath, skyboxExtension);
+			Renderer3D::SetSkybox(skyboxPath, skyboxExtension);
 		}
 		else
 		{

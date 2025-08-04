@@ -96,7 +96,7 @@ namespace Alpha
 		return type;
 	};
 
-	bool OpenGLTexture::operator==(const Texture& texture)
+	bool OpenGLTexture::operator==(const Texture& texture) const
 	{
 		return id == ((OpenGLTexture&)texture).id;
 	}
