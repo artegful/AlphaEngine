@@ -18,7 +18,7 @@ namespace Alpha
 	{
 	public:
 		Scene();
-		virtual ~Scene() = default;
+		virtual ~Scene();
 
 		virtual void Open();
 		virtual void Start();
@@ -27,15 +27,19 @@ namespace Alpha
 		virtual void Close() { };
 		virtual void OnEvent(Event& event);
 
+		void AddSystem(SceneSystem* system);
 		Entity CreateEntity();
 		Entity CreateEntity(const std::string& name);
 		void DestroyEntity(const Entity& entity);
 		std::vector<Entity> GetAllEntities();
+		std::vector<SceneSystem*> GetAllSystems() const;
+		void RemoveSystem(int index);
 
 	protected:
 		entt::registry registry;
 		std::vector<SceneSystem*> sceneSystems;
 		std::string skyboxPath;
+		std::string skyboxExtension;
 
 	private:
 		size_t amountOfUnnamedEntities = 0;

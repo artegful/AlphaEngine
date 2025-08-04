@@ -20,8 +20,8 @@ namespace Alpha
 		static void DrawSkybox(Skybox& skybox, const RenderCamera& camera);
 		static void DrawSkybox(const RenderCamera& camera);
 
-		static void DrawModel(Model& model, const Transform& transform);
-		static void SetSkybox(const std::string& skyboxPath);
+		static void DrawModel(std::shared_ptr<Model>& model, const Transform& transform);
+		static void SetSkybox(const std::string& skyboxPath, const std::string& extension = "jpg");
 		static void SetDefaultSkybox();
 
 	private:

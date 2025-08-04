@@ -94,6 +94,12 @@
     <ClCompile Include="src\Widgets\Edits\FileEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Models\SystemModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Widgets\SystemsWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Widgets\EditorWindow.h">
@@ -118,6 +124,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="src\Widgets\Edits\EnumEdit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Models\SystemModel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Widgets\SystemsWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

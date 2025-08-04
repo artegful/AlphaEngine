@@ -65,7 +65,7 @@ namespace Alpha
 
 			if (modelComponent.Model != nullptr)
 			{
-				Renderer3D::DrawModel(*modelComponent.Model, transform);
+				Renderer3D::DrawModel(modelComponent.Model, transform);
 			}
 		}
 

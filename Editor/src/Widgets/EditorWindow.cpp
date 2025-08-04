@@ -4,14 +4,16 @@
 #include "EditorWidget.h"
 #include "SceneHierarchyWidget.h"
 #include "InspectorWidget.h"
+#include "SystemsWidget.h"
 
 #include "Core/Engine.h"
 #include "Layers/GameLayer.h"
 #include "Layers/GameMode.h"
+#include <Scene/SceneSerializer.h>
 
 EditorWindow::EditorWindow() : QMainWindow()
 {
-    EditorWidget* editor = new EditorWidget();
+    editor = new EditorWidget();
 
     editor->setFocus();
     setCentralWidget(editor);
@@ -26,6 +28,7 @@ EditorWindow::EditorWindow() : QMainWindow()
     CreateAssetsExplorer();
     CreateSceneHierarchy();
     CreateInspector();
+    CreateSystemsEditor();
     CreateActions();
     CreateToolBar();
 
@@ -115,6 +118,43 @@ void EditorWindow::CreateToolBar()
     toolBar->addWidget(CreateSpacerWidget());
 }
 
+void EditorWindow::CreateSystemsEditor()
+{
+    systems = new SystemsWidget("Systems", this);
+
+    systems->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+    addDockWidget(Qt::RightDockWidgetArea, systems);
+}
+
+void EditorWindow::showEvent(QShowEvent* event)
+{
+    QMainWindow::showEvent(event);
+
+    currentScene = Alpha::Engine::Get()->GetGameLayer().GetSceneManager().GetCurrentScene();
+
+    hierarchy->InitScene(currentScene);
+    systems->InitScene(currentScene);
+}
+
+void EditorWindow::OpenScene(const std::string& path)
+{
+    Alpha::SceneManager& manager = editor->GetEngine()->GetGameLayer().GetSceneManager();
+    manager.ChangeScene(path);
+    Alpha::Scene* nextScene = manager.GetCurrentScene();
+
+    hierarchy->SetScene(nextScene);
+    systems->SetScene(nextScene);
+    currentScenePath = QString::fromStdString(path);
+    currentScene = nextScene;
+}
+
+void EditorWindow::SaveScene(const std::string& path)
+{
+    Alpha::SceneSerializer serializer(currentScene);
+    serializer.Serialize(path);
+    currentScenePath = QString::fromStdString(path);
+}
+
 QWidget* EditorWindow::CreateSpacerWidget()
 {
     QWidget* spacerWidget = new QWidget(this);
@@ -131,7 +171,7 @@ void EditorWindow::OnOpenScene()
 
     if (!filePath.isEmpty())
     {
-        hierarchy->OpenScene(filePath);
+        OpenScene(filePath.toStdString());
     }
 }
 
@@ -142,18 +182,41 @@ void EditorWindow::OnSaveAsScene()
 
     if (!filePath.isEmpty())
     {
-        hierarchy->SaveScene(filePath);
+        SaveScene(filePath.toStdString());
     }
 }
 
 void EditorWindow::OnNewScene()
 {
-    hierarchy->CreateNewScene();
+    currentScene = new Alpha::Scene();
+    hierarchy->SetScene(currentScene);
+    systems->SetScene(currentScene);
 }
 
 void EditorWindow::OnPlayModeToggled()
 {
     Alpha::GameMode mode = playAction->isChecked() ? Alpha::GameMode::Game : Alpha::GameMode::Editor;
 
-    Alpha::Engine::Get()->GetGameLayer().SetMode(mode);
+    if (currentScenePath.isEmpty())
+    {
+        OnSaveAsScene();
+
+        if (currentScenePath.isEmpty())
+        {
+            playAction->setChecked(false);
+            return;
+        }
+    }
+
+    switch (mode)
+    {
+    case Alpha::GameMode::Game:
+        SaveScene(currentScenePath.toStdString());
+        Alpha::Engine::Get()->GetGameLayer().SetMode(mode);
+        break;
+    case Alpha::GameMode::Editor:
+        Alpha::Engine::Get()->GetGameLayer().SetMode(mode);
+        OpenScene(currentScenePath.toStdString());
+        break;
+    }
 }

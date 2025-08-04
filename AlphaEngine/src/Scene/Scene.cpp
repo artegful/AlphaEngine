@@ -22,7 +22,6 @@
 #include "Controls/Input.h"
 #include "Render/Renderer3D.h"
 #include <Components/SpriteComponent.h>
-#include "Systems/BenchmarkSystem.h"
 #include <Components/BenchmarkComponent.h>
 #include <Components/ModelComponent.h>
 
@@ -40,20 +39,33 @@ namespace Alpha
 
 	Scene::Scene() :
 		registry{},
-		sceneSystems{ new ScriptSystem(this), new BenchmarkSystem(this) }
+		sceneSystems{}
 	{ 
 
+	}
+
+	Scene::~Scene()
+	{
+		for (SceneSystem* system : sceneSystems)
+		{
+			delete system;
+		}
 	}
 
 	void Scene::Open()
 	{
 		if (!skyboxPath.empty())
 		{
-			Renderer3D::SetSkybox(skyboxPath);
+			Renderer3D::SetSkybox(skyboxPath, skyboxExtension);
 		}
 		else
 		{
 			Renderer3D::SetDefaultSkybox();
+		}
+
+		for (auto system : sceneSystems)
+		{
+			system->Open();
 		}
 	}
 
@@ -152,6 +164,12 @@ namespace Alpha
 		}
 	}
 
+	void Scene::AddSystem(SceneSystem* system)
+	{
+		sceneSystems.push_back(system);
+	}
+
+
 	Entity Scene::CreateEntity()
 	{
 		return CreateEntity("Entity (" + std::to_string(amountOfUnnamedEntities++) + ")");
@@ -183,4 +201,18 @@ namespace Alpha
 
 		return entities;
 	}
+
+	std::vector<SceneSystem*> Scene::GetAllSystems() const
+	{
+		return sceneSystems;
+	}
+
+	void Scene::RemoveSystem(int index)
+	{
+		auto it = sceneSystems.begin() + index;
+
+		delete* it;
+		sceneSystems.erase(it);
+	}
+
 }

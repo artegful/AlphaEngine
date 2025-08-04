@@ -17,8 +17,11 @@
 #include "Components/Box2DColliderComponent.h"
 
 #include "rttr/type.h"
+#include "rttr/variant.h"
+#include "ECS/SceneSystem.h"
 #include <Components/ModelComponent.h>
 #include <Components/PointLightComponent.h>
+#include <Systems/ScriptSystem.h>
 
 namespace YAML
 {
@@ -324,12 +327,25 @@ namespace Alpha
 		YAML::Emitter yaml;
 
 		yaml << YAML::BeginMap;
-		yaml << YAML::Key << "Version" << YAML::Value << 3;
+		yaml << YAML::Key << "Version" << YAML::Value << 5;
 		yaml << YAML::Key << "Config" << YAML::BeginMap;
 
 		yaml << YAML::Key << "SkyboxPath" << YAML::Value << scene->skyboxPath;
+		yaml << YAML::Key << "SkyboxExtension" << YAML::Value << scene->skyboxExtension;
 
 		yaml << YAML::EndMap;
+
+		yaml << YAML::Key << "Systems" << YAML::BeginSeq;
+
+		for (SceneSystem* system : scene->sceneSystems)
+		{
+			SceneSystem& systemRef = *system;
+			rttr::type type = rttr::type::get(systemRef);
+
+			yaml << type.get_name();
+		}
+
+		yaml << YAML::EndSeq;
 
 		yaml << YAML::Key << "Entities" << YAML::BeginSeq;
 
@@ -359,6 +375,22 @@ namespace Alpha
 		{
 			YAML::Node config = yaml["Config"];
 			scene->skyboxPath = config["SkyboxPath"].as<std::string>();
+
+			scene->skyboxExtension = version >= 5 ? config["SkyboxExtension"].as<std::string>() : "jpg";
+		}
+
+		if (version >= 4)
+		{
+			YAML::Node systems = yaml["Systems"];
+
+			for (YAML::const_iterator it = systems.begin(); it != systems.end(); it++)
+			{
+				std::string systemName = it->as<std::string>();
+				rttr::type type = rttr::type::get_by_name(systemName.c_str());
+
+				rttr::variant instance = type.create({ scene });
+				scene->AddSystem(instance.get_value<ScriptSystem*>());
+			}
 		}
 
 		YAML::Node entities = yaml["Entities"];

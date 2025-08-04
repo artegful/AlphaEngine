@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Events/Event.h"
+#include "rttr/rttr_enable.h"
 
 namespace entt
 {
@@ -23,6 +24,7 @@ namespace Alpha
 		SceneSystem(Scene* scene);
 		virtual ~SceneSystem() = default;
 
+		virtual void Open() { }
 		virtual void Start() { }
 		virtual void Update(float deltaTime) = 0;
 		virtual void OnEvent(Event& event) { };
@@ -30,6 +32,9 @@ namespace Alpha
 	protected:
 		entt::registry& GetRegistry() const;
 		Scene* scene;
+
+
+		RTTR_ENABLE()
 	};
 }
 

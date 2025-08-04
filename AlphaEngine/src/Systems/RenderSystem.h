@@ -20,7 +20,7 @@ namespace Alpha
 		void RenderScene(const RenderCamera& camera);
 
 	private:
-		constexpr static uint32_t MAX_POINT_LIGHTS = 5;
+		constexpr static uint32_t MAX_POINT_LIGHTS = 10;
 	};
 }
 

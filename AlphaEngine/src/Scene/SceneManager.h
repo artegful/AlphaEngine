@@ -7,6 +7,7 @@
 namespace Alpha
 {
 	class Scene;
+	class SceneSystem;
 
 	struct Event;
 
@@ -23,6 +24,7 @@ namespace Alpha
 		void Update(float deltaTime);
 		void OnEvent(Event& event);
 		bool IsStarted() const;
+		void AddSystem(SceneSystem* system);
 
 		Scene* GetCurrentScene();
 

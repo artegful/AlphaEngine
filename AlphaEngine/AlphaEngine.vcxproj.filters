@@ -162,6 +162,9 @@
     <ClCompile Include="src\Components\SpriteComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Systems\OrbitSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\Systems\BenchmarkSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -421,10 +424,13 @@
     <ClInclude Include="src\Render\RenderConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Systems\BenchmarkSystem.h">
+    <ClInclude Include="src\Components\BenchmarkComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\BenchmarkComponent.h">
+    <ClInclude Include="src\Systems\OrbitSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Systems\BenchmarkSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

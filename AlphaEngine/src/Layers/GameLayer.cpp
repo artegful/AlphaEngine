@@ -74,14 +74,14 @@ namespace Alpha
 	void GameLayer::UpdateGame(float deltaTime)
 	{
 		cameraController.Update(deltaTime);
-		sceneRenderer.Update(deltaTime);
 		sceneManager.Update(deltaTime);
+		sceneRenderer.Update(deltaTime);
 	}
 
 	void GameLayer::UpdateEditor(float deltaTime)
 	{
-		sceneRenderer.RenderScene({ editorCamera, editorCameraTransform });
 		cameraController.UpdateCamera(deltaTime, editorCameraTransform, editorCamera);
+		sceneRenderer.RenderScene({ editorCamera, editorCameraTransform });
 	}
 
 	void GameLayer::SetModeInternal(GameMode mode)

@@ -43,7 +43,7 @@ namespace Alpha
 			return;
 		}
 
-		if (Input::IsMouseButtonDown(1))
+		if (Input::IsMouseButtonDown(1) || Input::IsMouseButtonDown(2))
 		{
 			UpdateTransformPositionWhenRightKeyIsHeld(deltaTime, cameraTransform);
 		}

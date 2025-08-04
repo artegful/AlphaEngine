@@ -247,6 +247,7 @@
     <ClCompile Include="src\Scene\SceneSerializer.cpp" />
     <ClCompile Include="src\Systems\BenchmarkSystem.cpp" />
     <ClCompile Include="src\Systems\CameraControllerSystem.cpp" />
+    <ClCompile Include="src\Systems\OrbitSystem.cpp" />
     <ClCompile Include="src\Systems\ScriptSystem.cpp" />
     <ClCompile Include="src\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\Utils\Utils.cpp" />
@@ -350,6 +351,7 @@
     <ClInclude Include="src\Scene\SceneSerializer.h" />
     <ClInclude Include="src\Systems\BenchmarkSystem.h" />
     <ClInclude Include="src\Systems\CameraControllerSystem.h" />
+    <ClInclude Include="src\Systems\OrbitSystem.h" />
     <ClInclude Include="src\Systems\ScriptSystem.h" />
     <ClInclude Include="src\Systems\RenderSystem.h" />
     <ClInclude Include="src\Utils\Utils.h" />

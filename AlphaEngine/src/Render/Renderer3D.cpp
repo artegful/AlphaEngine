@@ -36,7 +36,7 @@ namespace Alpha
 		modelShader->SetFloat3("dirLight.direction", glm::vec3(0.4f, -1.0f, 0.3f));
 		modelShader->SetFloat3("dirLight.ambient", glm::vec3(0.1f));
 		modelShader->SetFloat3("dirLight.diffuse", glm::vec3(0.3f));
-		modelShader->SetFloat3("dirLight.specular", glm::vec3(0.2f));
+		modelShader->SetFloat3("dirLight.specular", glm::vec3(0.01f));
 
 		pointLightsBound = 0;
 
@@ -53,30 +53,31 @@ namespace Alpha
 		modelShader->SetInt("pointLightsBound", pointLightsBound);
 	}
 
-	void Renderer3D::DrawModel(Model& model, const Transform& transform)
+	void Renderer3D::DrawModel(std::shared_ptr<Model>& model, const Transform& transform)
 	{
-		if (auto it = modelsToDraw.find(model.GetPath()); it != modelsToDraw.end())
+		if (auto it = modelsToDraw.find(model->GetPath()); it != modelsToDraw.end())
 		{
 			it->second.Transforms.push_back(transform.GetTransformMatrix());
 		}
 		else
 		{
-			auto& value = modelsToDraw[model.GetPath()];
-			value.Model = &model;
+			auto& value = modelsToDraw[model->GetPath()];
+			value.Model = model.get();
+			value.Transforms.reserve(model.use_count());
 			value.Transforms.push_back(transform.GetTransformMatrix());
 		}
 	}
 
-	void Renderer3D::SetSkybox(const std::string& skyboxPath)
+	void Renderer3D::SetSkybox(const std::string& skyboxPath, const std::string& extension)
 	{
 		auto textures = std::array<std::string, 6>
 		{
-				skyboxPath + "/right.jpg",
-				skyboxPath + "/left.jpg",
-				skyboxPath + "/top.jpg",
-				skyboxPath + "/bottom.jpg",
-				skyboxPath + "/front.jpg",
-				skyboxPath + "/back.jpg"
+				skyboxPath + "/right." + extension,
+				skyboxPath + "/left." + extension,
+				skyboxPath + "/top." + extension,
+				skyboxPath + "/bottom." + extension,
+				skyboxPath + "/front." + extension,
+				skyboxPath + "/back." + extension
 		};
 
 		skybox = std::make_shared<Skybox>(textures);

@@ -1,0 +1,17 @@
+Version: 5
+Config:
+  SkyboxPath: ""
+  SkyboxExtension: ""
+Systems:
+  - BenchmarkSystem
+Entities:
+  - Entity: 43325
+    Name: Camera
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    PerspectiveCameraComponent:
+      AspectRatio: 1.77778006
+      Zoom: 1
+      NearFarPlane: [0.100000001, 1500]

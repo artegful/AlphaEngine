@@ -1,0 +1,17 @@
+Version: 5
+Config:
+  SkyboxPath: "assets/skyboxes/RedSpace"
+  SkyboxExtension: png
+Systems:
+  - OrbitSystem
+Entities:
+  - Entity: 43325
+    Name: Camera
+    TransformComponent:
+      Position: [250, 100, 100]
+      Rotation: [-20, 50, 0]
+      Scale: [1, 1, 1]
+    PerspectiveCameraComponent:
+      AspectRatio: 1.82013428
+      Zoom: 1
+      NearFarPlane: [0.100000001, 2000]

@@ -17,16 +17,13 @@ class SceneHierarchyWidget : public QDockWidget
 public:
 	SceneHierarchyWidget(const QString& title, QWidget* parent);
 
-	void showEvent(QShowEvent* event);
-	void OpenScene(const QString& filePath);
-	void SaveScene(const QString& filePath);
-	void CreateNewScene();
+	void InitScene(Alpha::Scene* scene);
+	void SetScene(Alpha::Scene* scene);
 
 private:
 	QTreeView* treeView;
 	EntityModel* entityModel;
 
-	void SetScene(Alpha::Scene* scene);
 
 private slots:
 	void OnSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);

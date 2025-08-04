@@ -6,6 +6,7 @@
 #include "Scene.h"
 #include "Events/Event.h"
 #include "SceneSerializer.h"
+#include "ECS/SceneSystem.h"
 
 namespace Alpha
 {
@@ -82,6 +83,19 @@ namespace Alpha
 	bool SceneManager::IsStarted() const
 	{
 		return isStarted;
+	}
+
+	void SceneManager::AddSystem(SceneSystem* system)
+	{
+		AL_ASSERT(currentScene, "Scene should be open before adding systems");
+
+		currentScene->AddSystem(system);
+		system->Open();
+
+		if (isStarted)
+		{
+			system->Start();
+		}
 	}
 }
 

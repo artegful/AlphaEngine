@@ -11,5 +11,8 @@ namespace Alpha
 
 		void Start() override;
 		void Update(float deltaTime) override;
+
+
+		RTTR_ENABLE(SceneSystem)
 	};
 }

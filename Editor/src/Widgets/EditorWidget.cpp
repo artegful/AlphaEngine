@@ -177,3 +177,8 @@ void EditorWidget::mouseReleaseEvent(QMouseEvent* releaseEvent)
 
 	engineWindow->MouseReleased(releaseEvent);
 }
+
+Alpha::Engine* EditorWidget::GetEngine() const
+{
+    return engine;
+}

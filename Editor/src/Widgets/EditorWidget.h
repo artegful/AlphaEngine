@@ -12,6 +12,8 @@ class EditorWidget : public QOpenGLWidget
 public:
     EditorWidget(QWidget *parent = Q_NULLPTR);
 
+    Alpha::Engine* GetEngine() const;
+
     void initializeGL() override;
     void paintGL() override;
 

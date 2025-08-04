@@ -9,9 +9,7 @@
 #include "Scene/SceneManager.h"
 #include "Components/NameComponent.h"
 #include "Scene/SceneSerializer.h"
-
 #include "Models/EntityModel.h"
-
 #include "Scene/SceneSerializer.h"
 
 SceneHierarchyWidget::SceneHierarchyWidget(const QString& title, QWidget* parent) : QDockWidget(title, parent)
@@ -31,48 +29,27 @@ SceneHierarchyWidget::SceneHierarchyWidget(const QString& title, QWidget* parent
 	setWidget(treeView);
 }
 
-void SceneHierarchyWidget::showEvent(QShowEvent* event)
+void SceneHierarchyWidget::InitScene(Alpha::Scene* scene)
 {
-	QDockWidget::showEvent(event);
-
-	Alpha::Scene* sceneFromRuntime = Alpha::Engine::Get()->GetGameLayer().GetSceneManager().GetCurrentScene();
-
-	entityModel = new EntityModel(sceneFromRuntime);
+	entityModel = new EntityModel(scene);
 	treeView->setModel(entityModel);
 	connect(treeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &SceneHierarchyWidget::OnSelectionChanged);
-}
-
-void SceneHierarchyWidget::OpenScene(const QString& filePath)
-{
-	Alpha::Scene* scene = new Alpha::Scene();
-	Alpha::SceneSerializer serializer(scene);
-	serializer.Deserialize(filePath.toStdString());
-
-	SetScene(scene);
-}
-
-void SceneHierarchyWidget::SaveScene(const QString& filePath)
-{
-	Alpha::SceneSerializer serializer(entityModel->GetCurrentScene());
-	serializer.Serialize(filePath.toStdString());
-}
-
-void SceneHierarchyWidget::CreateNewScene()
-{
-	Alpha::Scene* scene = new Alpha::Scene();
-	SetScene(scene);
 }
 
 void SceneHierarchyWidget::SetScene(Alpha::Scene* scene)
 {
 	treeView->selectionModel()->clearSelection();
 
-	Alpha::Engine::Get()->GetGameLayer().GetSceneManager().ChangeScene(scene);
 	entityModel->ChangeScene(scene);
 }
 
 void SceneHierarchyWidget::OnRightClickEntityDelete()
 {
+	if (!treeView->selectionModel() || !treeView->selectionModel()->hasSelection())
+	{
+		return;
+	}
+
 	QModelIndexList indexes = treeView->selectionModel()->selectedIndexes();
 
 	if (!treeView->selectionModel()->hasSelection())

@@ -11,8 +11,12 @@
 #include "MetadataType.h"
 #include "MetadataVectorUsage.h"
 #include "MetadataFileType.h"
-#include <Components/ModelComponent.h>
-#include <Components/PointLightComponent.h>
+#include "Components/ModelComponent.h"
+#include "Components/PointLightComponent.h"
+#include "Systems/OrbitSystem.h"
+#include "Systems/ScriptSystem.h"
+#include "Systems/BenchmarkSystem.h"
+#include "Systems/CameraControllerSystem.h"
 
 RTTR_REGISTRATION
 {
@@ -97,5 +101,14 @@ RTTR_REGISTRATION
 		.property("ConstantFalloff", &Alpha::Light::ConstantFalloff)
 		.property("LinearFalloff", &Alpha::Light::LinearFalloff)
 		.property("QuadraticFalloff", &Alpha::Light::QuadraticFalloff);
+
+
+	registration::class_<Alpha::SceneSystem>("SceneSystem");
+	registration::class_<Alpha::OrbitSystem>("OrbitSystem")
+		.constructor<Alpha::Scene*>()(rttr::policy::ctor::as_raw_ptr);
+	registration::class_<Alpha::ScriptSystem>("ScriptSystem")
+		.constructor<Alpha::Scene*>()(rttr::policy::ctor::as_raw_ptr);
+	registration::class_<Alpha::BenchmarkSystem>("BenchmarkSystem")
+		.constructor<Alpha::Scene*>()(rttr::policy::ctor::as_raw_ptr);
 }
 
